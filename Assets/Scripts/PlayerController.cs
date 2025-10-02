@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : Entity
 {
     //config vars
-    [SerializeField] float moveSpeed = 5f;
-    [SerializeField] float jumpForce = 5f;
+    [SerializeField, Range(1f, 15f)] float moveSpeed = 7f;
+    [SerializeField, Range(1f,30f)] float jumpForce = 15f;
 
     //reference vars
     private PlayerActionControls input;
@@ -20,26 +20,26 @@ public class PlayerController : Entity
         input.Player.Enable();
     }
 
-    void Update()
+    protected override void Update()
     {
-        if (input.Player.Jump.triggered)
+        base.Update(); //base entity physics
+
+        if (input.Player.Jump.triggered && IsGrounded)
         {
             Jump();
         }
 
-        if (horizontalMovement != 0) Debug.Log("HorizontalMovement = " + horizontalMovement + ", becoming " + (Vector2.right * horizontalMovement * moveSpeed * Time.deltaTime));
-        transform.Translate(Vector2.right * horizontalMovement * moveSpeed * Time.deltaTime);
+        horizontalMovement = input.Player.Move.ReadValue<Vector2>().x;
+        if (horizontalMovement > 0) FaceRight();
+        else if (horizontalMovement < 0) FaceLeft(); 
 
-    }
-    public void Move(InputAction.CallbackContext context)
-    {
-        Debug.Log("MOVE CALLED");
-        horizontalMovement = context.ReadValue<Vector2>().x;
+        //if (horizontalMovement != 0) Debug.Log("HorizontalMovement = " + horizontalMovement + ", becoming " + (Vector2.right * horizontalMovement * moveSpeed * Time.deltaTime));
+        transform.position += Vector3.right * horizontalMovement * moveSpeed * Time.deltaTime;
+
     }
 
     public void Jump()
     {
-        Debug.Log("[PLAYER CONTROLLER] Jumping");
         rb.AddForceY(jumpForce, ForceMode2D.Impulse);
     }
 }
