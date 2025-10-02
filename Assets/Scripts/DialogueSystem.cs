@@ -29,7 +29,6 @@ public class DialogSystem : MonoBehaviour
         if (continueButton != null)
             continueButton.onClick.AddListener(OnContinueClicked);
         
-        // Enable the input action
         if (continueAction != null)
         {
             continueAction.Enable();
@@ -97,7 +96,6 @@ public class DialogSystem : MonoBehaviour
     {
         if (isTyping)
         {
-            // Skip typing animation and show full text
             StopCoroutine(typingCoroutine);
             dialogText.text = currentLines[currentLineIndex];
             isTyping = false;
@@ -112,15 +110,12 @@ public class DialogSystem : MonoBehaviour
 
     void Update()
     {
-        // Allow advancing with Space or Enter key using new Input System
         if (dialogPanel.activeSelf)
         {
-            // Check if Input Action is set up and triggered
             if (continueAction != null && continueAction.triggered)
             {
                 OnContinueClicked();
             }
-            // Fallback: Direct keyboard check with new Input System
             else if (Keyboard.current != null && 
                     (Keyboard.current.spaceKey.wasPressedThisFrame || 
                      Keyboard.current.enterKey.wasPressedThisFrame))

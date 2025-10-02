@@ -21,7 +21,6 @@ public class NPC : MonoBehaviour
 
     void Update()
     {
-        // Check for E key press when player is in range
         if (playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
             StartDialog();
