@@ -9,7 +9,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private DialogSystem dialogSystem;
     
     [Header("Interaction Prompt")]
-    [SerializeField] private GameObject interactionPrompt; // Optional UI prompt
+    [SerializeField] private GameObject interactionPrompt;
     
     private bool playerInRange = false;
 
@@ -58,7 +58,7 @@ public class NPC : MonoBehaviour
         }
     }
 
-    // Optional: Keep this if you still want to use Input Actions
+    //InputAction handler. Move this jurisdiction over to the player controller at some point?
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (playerInRange && context.performed)
