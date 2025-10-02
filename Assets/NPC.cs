@@ -9,7 +9,10 @@ public class NPC : MonoBehaviour
 
     void Start()
     {
-        dialogSystem = FindAnyObjectByType<DialogSystem>();
+        if (dialogSystem == null)
+        {
+            Debug.LogError("DialogSystem sahnede bulunamadi!");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)

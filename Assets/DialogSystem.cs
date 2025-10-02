@@ -1,5 +1,4 @@
 using TMPro;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +8,7 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] private TMP_Text dialogText;
 
     private string[] dialogLines;
-    private int currentLine = 2;
+    private int currentLine = 0;
     private bool isActive = false;
 
     public void StartDialog(string[] newLines)
