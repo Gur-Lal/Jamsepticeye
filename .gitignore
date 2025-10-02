@@ -14,8 +14,9 @@
 /.vscode
 
 # Ignore TMP package files
-[Aa]ssets/TextMesh*Pro/
-[Aa]ssets/TextMesh*Pro.meta
+/Packages
+/Assets/TextMesh Pro/
+.vsconfig
 
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
 *.blend1
