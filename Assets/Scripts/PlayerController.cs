@@ -10,6 +10,7 @@ public class PlayerController : Entity
 
     //reference vars
     private PlayerActionControls input;
+    private Animator animator;
 
     //tracking vars
     private Vector2 spawnPoint;
@@ -20,6 +21,8 @@ public class PlayerController : Entity
         //start up input handler
         input = new PlayerActionControls();
         input.Player.Enable();
+
+        animator = GetComponent<Animator>();
     }
 
     protected override void Update()
@@ -37,6 +40,9 @@ public class PlayerController : Entity
 
         //if (horizontalMovement != 0) Debug.Log("HorizontalMovement = " + horizontalMovement + ", becoming " + (Vector2.right * horizontalMovement * moveSpeed * Time.deltaTime));
         transform.position += Vector3.right * horizontalMovement * moveSpeed * Time.deltaTime;
+
+        animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
+        animator.SetFloat("YVel", rb.linearVelocityY);
 
     }
 
