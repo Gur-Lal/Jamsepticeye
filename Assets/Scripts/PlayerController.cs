@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerController : Entity
 {
@@ -16,8 +17,9 @@ public class PlayerController : Entity
     private Vector2 spawnPoint;
     float horizontalMovement;
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         //start up input handler
         input = new PlayerActionControls();
         input.Player.Enable();
@@ -28,6 +30,8 @@ public class PlayerController : Entity
     protected override void Update()
     {
         base.Update(); //base entity physics
+
+        if (IsIncapacitated) return;
 
         if (input.Player.Jump.triggered && IsGrounded)
         {
@@ -53,8 +57,11 @@ public class PlayerController : Entity
 
     public void Die()
     {
-        SpawnCorpse();
-        Respawn();
+        if (IsIncapacitated) return;
+        IsIncapacitated = true;
+        animator.SetTrigger("Death");
+        animator.SetBool("IsDead", true);
+        StartCoroutine(WaitForDeathAnimation(1f));
     }
 
     public void SetSpawnPoint(Vector2 newPos)
@@ -66,11 +73,25 @@ public class PlayerController : Entity
     {
         transform.position = spawnPoint;
         rb.linearVelocity = Vector2.zero;
+        IsIncapacitated = false;
+        animator.SetBool("IsDead", false);
+        animator.SetTrigger("Respawn");
+    }
+
+    public IEnumerator WaitForDeathAnimation(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        SpawnCorpse();
+        Respawn();
     }
 
     [ContextMenu("SpawnCorpse")]
     void SpawnCorpse()
     {
         GameObject corpseObj = GameObject.Instantiate(corpsePrefab, transform.position, Quaternion.identity);
+        Entity entScript = corpseObj.GetComponent<Entity>();
+        if (FacingRight) entScript.FaceRight();
+        else entScript.FaceLeft();
     }
 }

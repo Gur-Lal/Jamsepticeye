@@ -5,14 +5,15 @@ public class Entity : MonoBehaviour
     [SerializeField, Range(1f, 50f)] protected float gravityMult = 30f;
     protected bool IsGrounded;
     protected bool FacingRight;
+    protected bool IsIncapacitated;
 
     //references
     protected Rigidbody2D rb;
     protected Collider2D col;
     protected SpriteRenderer spr;
-    void Start()
+    protected virtual void Awake()
     {
-        Debug.Log("[ENTITY SCRIPT] Starting");
+        Debug.Log("[ENTITY SCRIPT] Awake");
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         spr = GetComponent<SpriteRenderer>();
@@ -27,30 +28,38 @@ public class Entity : MonoBehaviour
             if (rb.linearVelocityY < 0) effectiveGrav *= 2; //gravity is twice as strong when going down (classic platformer stuff!)
             rb.linearVelocityY -= effectiveGrav;
         }
+        else
+        {
+            if (rb.linearVelocityY < 0) rb.linearVelocityY = 0; //minimum y vel is 0 when on ground (makes animations snappier)
+        }
     }
 
     bool CheckIfGrounded()
     {
         Bounds b = col.bounds;
 
-        Vector2 leftPoint = new Vector2(b.min.x, b.min.y - 0.01f);
-        Vector2 rightPoint = new Vector2(b.max.x, b.min.y - 0.01f);
+        Vector2 leftPoint = new Vector2(b.min.x, b.min.y);
+        Vector2 rightPoint = new Vector2(b.max.x, b.min.y);
 
-        Collider2D leftHit = Physics2D.OverlapPoint(leftPoint);
-        Collider2D rightHit = Physics2D.OverlapPoint(rightPoint);
+        RaycastHit2D leftHit = Physics2D.Raycast(leftPoint, Vector2.down, 0.01f);
+        RaycastHit2D rightHit = Physics2D.Raycast(rightPoint, Vector2.down, 0.01f);
 
-        if (leftHit != null || rightHit != null) return true; //something is below
+        #if UNITY_EDITOR
+        Debug.DrawRay(leftPoint, Vector2.down * 0.01f, Color.red); Debug.DrawRay(rightPoint, Vector2.down * 0.01f, Color.red);
+        #endif
+
+        if (leftHit.collider != null || rightHit.collider != null) return true; //something is below
 
         return false;
     }
 
-    protected void FaceRight()
+    public void FaceRight()
     {
         FacingRight = true;
         spr.flipX = true;
     }
 
-    protected void FaceLeft()
+    public void FaceLeft()
     {
         FacingRight = false;
         spr.flipX = false;
