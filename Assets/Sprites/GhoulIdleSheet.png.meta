@@ -1,46 +1,43 @@
 fileFormatVersion: 2
-guid: 8fab366ac0f53af42861177610c5677d
+guid: 9d3308e09cce2b8439ca61591c734e77
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7932253545940640009
-    second: RunAse-Sheet_0
+      213: 3326596410528828479
+    second: GhoulIdleSheet_0
   - first:
-      213: 4557857069018866269
-    second: RunAse-Sheet_1
+      213: 6879431629951928954
+    second: GhoulIdleSheet_1
   - first:
-      213: -8848614126454952645
-    second: RunAse-Sheet_2
+      213: 4053149487406149159
+    second: GhoulIdleSheet_2
   - first:
-      213: 1722790647936073319
-    second: RunAse-Sheet_3
+      213: -1764233173855471157
+    second: GhoulIdleSheet_3
   - first:
-      213: -8786582083578328083
-    second: RunAse-Sheet_4
+      213: 4024327727540565844
+    second: GhoulIdleSheet_4
   - first:
-      213: -3726408388726118216
-    second: RunAse-Sheet_5
+      213: 3575116892659882616
+    second: GhoulIdleSheet_5
   - first:
-      213: -4436307968598869006
-    second: RunAse-Sheet_6
+      213: -5948282339374144014
+    second: GhoulIdleSheet_6
   - first:
-      213: -2912120893705478110
-    second: RunAse-Sheet_7
+      213: 6297666670314901944
+    second: GhoulIdleSheet_7
   - first:
-      213: 8586322427630258025
-    second: RunAse-Sheet_8
+      213: 2136751317435892256
+    second: GhoulIdleSheet_8
   - first:
-      213: -2396660874698324664
-    second: RunAse-Sheet_9
+      213: -5185267591414255211
+    second: GhoulIdleSheet_9
   - first:
-      213: 2541689904915536171
-    second: RunAse-Sheet_10
+      213: -8952008345633748729
+    second: GhoulIdleSheet_10
   - first:
-      213: 2250590213171765416
-    second: RunAse-Sheet_11
-  - first:
-      213: 1570238849857662015
-    second: RunAse-Sheet_12
+      213: -69894305545769002
+    second: GhoulIdleSheet_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -132,24 +129,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RunAse-Sheet_0
+      name: GhoulIdleSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -164,14 +148,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 901ef1ab296051e60800000000000000
-      internalID: 7932253545940640009
+      spriteID: f3c09a07fc17a2e20800000000000000
+      internalID: 3326596410528828479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunAse-Sheet_1
+      name: GhoulIdleSheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -186,14 +170,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d526fdf0bd2c04f30800000000000000
-      internalID: 4557857069018866269
+      spriteID: a7a0fdf5e96a87f50800000000000000
+      internalID: 6879431629951928954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunAse-Sheet_2
+      name: GhoulIdleSheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -208,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3d262e7558633580800000000000000
-      internalID: -8848614126454952645
+      spriteID: 72e666afbfdaf3830800000000000000
+      internalID: 4053149487406149159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunAse-Sheet_3
+      name: GhoulIdleSheet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -230,14 +214,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 76e389077f498e710800000000000000
-      internalID: 1722790647936073319
+      spriteID: bc97263964f2487e0800000000000000
+      internalID: -1764233173855471157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunAse-Sheet_4
+      name: GhoulIdleSheet_4
       rect:
         serializedVersion: 2
         x: 128
@@ -252,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: deb8086f52acf0680800000000000000
-      internalID: -8786582083578328083
+      spriteID: 4577fc31fb849d730800000000000000
+      internalID: 4024327727540565844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunAse-Sheet_5
+      name: GhoulIdleSheet_5
       rect:
         serializedVersion: 2
         x: 160
@@ -274,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b8a1f55053294cc0800000000000000
-      internalID: -3726408388726118216
+      spriteID: 87a9d714fdd5d9130800000000000000
+      internalID: 3575116892659882616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunAse-Sheet_6
+      name: GhoulIdleSheet_6
       rect:
         serializedVersion: 2
         x: 192
@@ -296,14 +280,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2fbfd6938611f62c0800000000000000
-      internalID: -4436307968598869006
+      spriteID: 2f5efd94ab4737da0800000000000000
+      internalID: -5948282339374144014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunAse-Sheet_7
+      name: GhoulIdleSheet_7
       rect:
         serializedVersion: 2
         x: 224
@@ -318,14 +302,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22021bbe9711697d0800000000000000
-      internalID: -2912120893705478110
+      spriteID: 8b1dfed587ec56750800000000000000
+      internalID: 6297666670314901944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunAse-Sheet_8
+      name: GhoulIdleSheet_8
       rect:
         serializedVersion: 2
         x: 256
@@ -340,14 +324,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9670fd171ceb82770800000000000000
-      internalID: 8586322427630258025
+      spriteID: 0224d11900447ad10800000000000000
+      internalID: 2136751317435892256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunAse-Sheet_9
+      name: GhoulIdleSheet_9
       rect:
         serializedVersion: 2
         x: 288
@@ -362,14 +346,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 845878ce1a95dbed0800000000000000
-      internalID: -2396660874698324664
+      spriteID: 591786c299a3a08b0800000000000000
+      internalID: -5185267591414255211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunAse-Sheet_10
+      name: GhoulIdleSheet_10
       rect:
         serializedVersion: 2
         x: 320
@@ -384,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b29dfa78085e54320800000000000000
-      internalID: 2541689904915536171
+      spriteID: 7090b24e6d314c380800000000000000
+      internalID: -8952008345633748729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunAse-Sheet_11
+      name: GhoulIdleSheet_11
       rect:
         serializedVersion: 2
         x: 352
@@ -406,30 +390,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a0e21fefd3bb3f10800000000000000
-      internalID: 2250590213171765416
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RunAse-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f3ca84a1aeb9ac510800000000000000
-      internalID: 1570238849857662015
+      spriteID: 6df2f1adf7fa70ff0800000000000000
+      internalID: -69894305545769002
       vertices: []
       indices: 
       edges: []
@@ -438,7 +400,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6ce50211773e7d94eac5680ee509ba0a
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -448,21 +410,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":13.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":12.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      RunAse-Sheet_0: 7932253545940640009
-      RunAse-Sheet_1: 4557857069018866269
-      RunAse-Sheet_10: 2541689904915536171
-      RunAse-Sheet_11: 2250590213171765416
-      RunAse-Sheet_12: 1570238849857662015
-      RunAse-Sheet_2: -8848614126454952645
-      RunAse-Sheet_3: 1722790647936073319
-      RunAse-Sheet_4: -8786582083578328083
-      RunAse-Sheet_5: -3726408388726118216
-      RunAse-Sheet_6: -4436307968598869006
-      RunAse-Sheet_7: -2912120893705478110
-      RunAse-Sheet_8: 8586322427630258025
-      RunAse-Sheet_9: -2396660874698324664
+      GhoulIdleSheet_0: 3326596410528828479
+      GhoulIdleSheet_1: 6879431629951928954
+      GhoulIdleSheet_10: -8952008345633748729
+      GhoulIdleSheet_11: -69894305545769002
+      GhoulIdleSheet_2: 4053149487406149159
+      GhoulIdleSheet_3: -1764233173855471157
+      GhoulIdleSheet_4: 4024327727540565844
+      GhoulIdleSheet_5: 3575116892659882616
+      GhoulIdleSheet_6: -5948282339374144014
+      GhoulIdleSheet_7: 6297666670314901944
+      GhoulIdleSheet_8: 2136751317435892256
+      GhoulIdleSheet_9: -5185267591414255211
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
