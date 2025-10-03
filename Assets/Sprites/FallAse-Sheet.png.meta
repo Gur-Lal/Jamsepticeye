@@ -1,28 +1,25 @@
 fileFormatVersion: 2
-guid: e81a8a765a40f6b48a1cba5256313766
+guid: cf23ce0609727de478a2fce4138fa1e2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 978942612559604503
-    second: PlayerIdle_0
+      213: 1940853711654910872
+    second: FallAse-Sheet_0
   - first:
-      213: 3499389992042037492
-    second: PlayerIdle_1
+      213: -3306986590526810628
+    second: FallAse-Sheet_1
   - first:
-      213: 6272215952258405886
-    second: PlayerIdle_2
+      213: 5293059062181923997
+    second: FallAse-Sheet_2
   - first:
-      213: 5525604288434156929
-    second: PlayerIdle_3
+      213: -6116795857822761831
+    second: FallAse-Sheet_3
   - first:
-      213: -9128658973605758887
-    second: PlayerIdle_4
+      213: 229665590593201320
+    second: FallAse-Sheet_4
   - first:
-      213: 6624957032425983090
-    second: PlayerIdle_5
-  - first:
-      213: -8746356715637407356
-    second: PlayerIdle_6
+      213: 3729549095493474240
+    second: FallAse-Sheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,145 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerIdle_0
+      name: FallAse-Sheet_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 63
-        width: 15
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71bab159e17e59d00800000000000000
-      internalID: 978942612559604503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_1
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 63
-        width: 15
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4f0093e38a4509030800000000000000
-      internalID: 3499389992042037492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_2
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 63
-        width: 15
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ef596ec4d236b0750800000000000000
-      internalID: 6272215952258405886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_3
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 31
-        width: 15
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1853e7d03d3eeac40800000000000000
-      internalID: 5525604288434156929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_4
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 31
-        width: 15
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 958fb8a770d705180800000000000000
-      internalID: -9128658973605758887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_5
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 31
-        width: 15
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 27c0af9025390fb50800000000000000
-      internalID: 6624957032425983090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_6
-      rect:
-        serializedVersion: 2
-        x: 9
+        x: 7
         y: 0
-        width: 15
-        height: 24
+        width: 23
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +143,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 481849548e2be9680800000000000000
-      internalID: -8746356715637407356
+      spriteID: 89b703cea2c4fea10800000000000000
+      internalID: 1940853711654910872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallAse-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf55ba297393b12d0800000000000000
+      internalID: -3306986590526810628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallAse-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 0
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c04885c29b47940800000000000000
+      internalID: 5293059062181923997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallAse-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 0
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99cb4e25396cc1ba0800000000000000
+      internalID: -6116795857822761831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallAse-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 0
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a4207843afef2300800000000000000
+      internalID: 229665590593201320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallAse-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 0
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c79441742502c330800000000000000
+      internalID: 3729549095493474240
       vertices: []
       indices: 
       edges: []
@@ -298,13 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlayerIdle_0: 978942612559604503
-      PlayerIdle_1: 3499389992042037492
-      PlayerIdle_2: 6272215952258405886
-      PlayerIdle_3: 5525604288434156929
-      PlayerIdle_4: -9128658973605758887
-      PlayerIdle_5: 6624957032425983090
-      PlayerIdle_6: -8746356715637407356
+      FallAse-Sheet_0: 1940853711654910872
+      FallAse-Sheet_1: -3306986590526810628
+      FallAse-Sheet_2: 5293059062181923997
+      FallAse-Sheet_3: -6116795857822761831
+      FallAse-Sheet_4: 229665590593201320
+      FallAse-Sheet_5: 3729549095493474240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
