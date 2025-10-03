@@ -7,6 +7,10 @@ public class Entity : MonoBehaviour
     protected bool FacingRight;
     protected bool IsIncapacitated;
 
+    //tracking
+    protected float LastGroundedTime = Mathf.NegativeInfinity;
+    private bool WasOnGroundLastFrame;
+
     //references
     protected Rigidbody2D rb;
     protected Collider2D col;
@@ -22,15 +26,19 @@ public class Entity : MonoBehaviour
     protected virtual void Update()
     {
         IsGrounded = CheckIfGrounded();
-        if (!IsGrounded)
+        if (IsGrounded)
+        { //on ground
+             if (!WasOnGroundLastFrame) OnGroundTouched(); //trigger things that occur when ground is first hit
+            LastGroundedTime = Time.time;
+            if (rb.linearVelocityY < 0) rb.linearVelocityY = 0; //minimum y vel is 0 when on ground (makes animations snappier)
+            WasOnGroundLastFrame = true;
+        }
+        else //mid-air
         {
             float effectiveGrav = gravityMult * Time.deltaTime;
             if (rb.linearVelocityY < 0) effectiveGrav *= 2; //gravity is twice as strong when going down (classic platformer stuff!)
             rb.linearVelocityY -= effectiveGrav;
-        }
-        else
-        {
-            if (rb.linearVelocityY < 0) rb.linearVelocityY = 0; //minimum y vel is 0 when on ground (makes animations snappier)
+            WasOnGroundLastFrame = false;
         }
     }
 
@@ -51,6 +59,11 @@ public class Entity : MonoBehaviour
         if (leftHit.collider != null || rightHit.collider != null) return true; //something is below
 
         return false;
+    }
+
+    protected virtual void OnGroundTouched()
+    {
+        //pass
     }
 
     public void FaceRight()

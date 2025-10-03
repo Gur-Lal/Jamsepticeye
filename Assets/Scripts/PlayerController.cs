@@ -7,6 +7,8 @@ public class PlayerController : Entity
     //config vars
     [SerializeField, Range(1f, 15f)] float moveSpeed = 7f;
     [SerializeField, Range(1f, 30f)] float jumpForce = 15f;
+    [SerializeField, Range(0.05f, 0.2f)] float coyoteTime = 0.1f;
+    [SerializeField, Range(0.1f, 0.5f)] float jumpBuffer = 0.1f;
     [SerializeField] GameObject corpsePrefab;
 
     //reference vars
@@ -16,6 +18,7 @@ public class PlayerController : Entity
     //tracking vars
     private Vector2 spawnPoint;
     float horizontalMovement;
+    float LastJumpRequestTime = Mathf.NegativeInfinity;
 
     protected override void Awake()
     {
@@ -33,7 +36,7 @@ public class PlayerController : Entity
 
         if (IsIncapacitated) return;
 
-        if (input.Player.Jump.triggered && IsGrounded)
+        if (input.Player.Jump.triggered)
         {
             Jump();
         }
@@ -43,7 +46,7 @@ public class PlayerController : Entity
         else if (horizontalMovement < 0) FaceLeft();
 
         //if (horizontalMovement != 0) Debug.Log("HorizontalMovement = " + horizontalMovement + ", becoming " + (Vector2.right * horizontalMovement * moveSpeed * Time.deltaTime));
-        transform.position += Vector3.right * horizontalMovement * moveSpeed * Time.deltaTime;
+        rb.linearVelocityX = horizontalMovement * moveSpeed; //* Time.deltaTime;
 
         animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
         animator.SetFloat("YVel", rb.linearVelocityY);
@@ -52,13 +55,26 @@ public class PlayerController : Entity
 
     public void Jump()
     {
-        rb.AddForceY(jumpForce, ForceMode2D.Impulse);
+        LastJumpRequestTime = Time.time;
+
+        if (IsGrounded || (Time.time - LastGroundedTime < coyoteTime))
+        {
+            rb.linearVelocityY = 0; //reset y vel
+            rb.AddForceY(jumpForce, ForceMode2D.Impulse);
+        }
+    }
+
+    protected override void OnGroundTouched()
+    {
+        if (Time.time - LastJumpRequestTime < jumpBuffer) Jump(); //jump buffer system, neato
     }
 
     public void Die()
     {
         if (IsIncapacitated) return;
         IsIncapacitated = true;
+        rb.linearVelocityX = 0;
+        rb.linearVelocityY = 0;
         animator.SetTrigger("Death");
         animator.SetBool("IsDead", true);
         StartCoroutine(WaitForDeathAnimation(1f));
