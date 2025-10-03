@@ -5,9 +5,16 @@ using System.Collections;
 public class PlayerController : Entity
 {
     //config vars
+    [Header("Main Config")]
     [SerializeField, Range(1f, 15f)] float moveSpeed = 7f;
-    [SerializeField, Range(1f, 30f)] float jumpForce = 15f;
+    [SerializeField, Range(1f, 30f)] float jumpForce = 11f;
+    [SerializeField, Range(0.1f, 0.4f)] float maxJumpHoldTime = 0.35f;
+    [SerializeField, Range(0.05f, 0.2f)] float coyoteTime = 0.1f;
+    [SerializeField, Range(0.1f, 0.5f)] float jumpBuffer = 0.1f;
+    [Header("References")]
     [SerializeField] GameObject corpsePrefab;
+    [Header("Debug Stuff")]
+    [SerializeField] float DeathRespawnDelay = 1f;
 
     //reference vars
     private PlayerActionControls input;
@@ -16,6 +23,9 @@ public class PlayerController : Entity
     //tracking vars
     private Vector2 spawnPoint;
     float horizontalMovement;
+    float LastJumpRequestTime = Mathf.NegativeInfinity;
+    bool isJumping;
+    float jumpHoldTimer;
 
     protected override void Awake()
     {
@@ -33,9 +43,25 @@ public class PlayerController : Entity
 
         if (IsIncapacitated) return;
 
-        if (input.Player.Jump.triggered && IsGrounded)
+        //Receive inputs
+        if (input.Player.Jump.triggered) Jump(); //trigger start of a jump
+
+        if (isJumping && input.Player.Jump.IsPressed() && jumpHoldTimer > 0f) //detect if holding jump
         {
-            Jump();
+            IsFloatJumping = true;
+            jumpHoldTimer -= Time.deltaTime;
+        }
+        else
+        {
+            IsFloatJumping = false;
+            jumpHoldTimer = 0; //if you release jump, you can't float later. Consider removing this for a different platforming feel.
+        }
+
+        if (input.Player.Jump.WasReleasedThisFrame()) //trigger end of a jump input
+        {
+            isJumping = false;
+            IsFloatJumping = false;
+            jumpHoldTimer = 0;
         }
 
         horizontalMovement = input.Player.Move.ReadValue<Vector2>().x;
@@ -43,7 +69,7 @@ public class PlayerController : Entity
         else if (horizontalMovement < 0) FaceLeft();
 
         //if (horizontalMovement != 0) Debug.Log("HorizontalMovement = " + horizontalMovement + ", becoming " + (Vector2.right * horizontalMovement * moveSpeed * Time.deltaTime));
-        transform.position += Vector3.right * horizontalMovement * moveSpeed * Time.deltaTime;
+        rb.linearVelocityX = horizontalMovement * moveSpeed; //* Time.deltaTime;
 
         animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
         animator.SetFloat("YVel", rb.linearVelocityY);
@@ -52,16 +78,31 @@ public class PlayerController : Entity
 
     public void Jump()
     {
-        rb.AddForceY(jumpForce, ForceMode2D.Impulse);
+        LastJumpRequestTime = Time.time;
+
+        if (IsGrounded || (Time.time - LastGroundedTime < coyoteTime))
+        {
+            jumpHoldTimer = maxJumpHoldTime;
+            isJumping = true;
+            rb.linearVelocityY = 0; //reset y vel
+            rb.AddForceY(jumpForce, ForceMode2D.Impulse);
+        }
+    }
+
+    protected override void OnGroundTouched()
+    {
+        if (Time.time - LastJumpRequestTime < jumpBuffer) Jump(); //jump buffer system, neato
     }
 
     public void Die()
     {
         if (IsIncapacitated) return;
         IsIncapacitated = true;
+        rb.linearVelocityX = 0;
+        rb.linearVelocityY = 0;
         animator.SetTrigger("Death");
         animator.SetBool("IsDead", true);
-        StartCoroutine(WaitForDeathAnimation(1f));
+        StartCoroutine(WaitForDeathAnimation(DeathRespawnDelay));
     }
 
     public void SetSpawnPoint(Vector2 newPos)
