@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity
   gravityMult: 30
+  floatJumpGravityMult: 0.5
 --- !u!50 &8492877842444778970
 Rigidbody2D:
   serializedVersion: 5
@@ -165,9 +166,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1926579557
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4861795786911797250, guid: 6ee9e0b7df9201b4da122d0f79596ba8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -1205,6 +1205,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5779432126870746912, guid: 477d1a34c7a234c41b6dc4a06f333209, type: 3}
+      propertyPath: jumpForce
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779432126870746912, guid: 477d1a34c7a234c41b6dc4a06f333209, type: 3}
+      propertyPath: maxJumpHoldTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779432126870746912, guid: 477d1a34c7a234c41b6dc4a06f333209, type: 3}
+      propertyPath: floatJumpGravityMult
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6136338462592606834, guid: 477d1a34c7a234c41b6dc4a06f333209, type: 3}
       propertyPath: m_Name
       value: PLAYER

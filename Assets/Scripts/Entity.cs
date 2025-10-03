@@ -3,9 +3,11 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     [SerializeField, Range(1f, 50f)] protected float gravityMult = 30f;
+    [SerializeField, Range(0.1f, 1f)] protected float floatJumpGravityMult = 0.25f;
     protected bool IsGrounded;
     protected bool FacingRight;
     protected bool IsIncapacitated;
+    protected bool IsFloatJumping;
 
     //tracking
     protected float LastGroundedTime = Mathf.NegativeInfinity;
@@ -36,6 +38,9 @@ public class Entity : MonoBehaviour
         else //mid-air
         {
             float effectiveGrav = gravityMult * Time.deltaTime;
+
+            if (IsFloatJumping) effectiveGrav *= floatJumpGravityMult; //apply float jump reduction if relevant
+
             if (rb.linearVelocityY < 0) effectiveGrav *= 2; //gravity is twice as strong when going down (classic platformer stuff!)
             rb.linearVelocityY -= effectiveGrav;
             WasOnGroundLastFrame = false;
