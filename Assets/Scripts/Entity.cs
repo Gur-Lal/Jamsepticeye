@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Entity : MonoBehaviour
 {
@@ -54,14 +55,19 @@ public class Entity : MonoBehaviour
         Vector2 leftPoint = new Vector2(b.min.x, b.min.y);
         Vector2 rightPoint = new Vector2(b.max.x, b.min.y);
 
-        RaycastHit2D leftHit = Physics2D.Raycast(leftPoint, Vector2.down, 0.01f);
-        RaycastHit2D rightHit = Physics2D.Raycast(rightPoint, Vector2.down, 0.01f);
+        RaycastHit2D[] leftHits = Physics2D.RaycastAll(leftPoint, Vector2.down, 0.01f);
+        RaycastHit2D[] rightHits = Physics2D.RaycastAll(rightPoint, Vector2.down, 0.01f);
+
+        List<Collider2D> realHits = new List<Collider2D>();
 
         #if UNITY_EDITOR
         Debug.DrawRay(leftPoint, Vector2.down * 0.01f, Color.red); Debug.DrawRay(rightPoint, Vector2.down * 0.01f, Color.red);
         #endif
 
-        if (leftHit.collider != null || rightHit.collider != null) return true; //something is below
+        foreach(var hit in leftHits) if (hit.collider != null && !hit.collider.isTrigger && hit.collider != col ) {realHits.Add(hit.collider); break;} //filter left hits
+        if (realHits.Count == 0) foreach(var hit in rightHits) if (hit.collider != null && !hit.collider.isTrigger && hit.collider != col) {realHits.Add(hit.collider); break;} //if no left hits, filter right hits
+
+        if (realHits.Count > 0) return true; //something is below
 
         return false;
     }
