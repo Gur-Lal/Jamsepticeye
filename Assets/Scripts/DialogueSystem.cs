@@ -3,20 +3,19 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DialogSystem : MonoBehaviour
 {
     [Header("UI References")]
     [SerializeField] private GameObject dialogPanel;
     [SerializeField] private TextMeshProUGUI dialogText;
-    [SerializeField] private TextMeshProUGUI npcNameText;
-    [SerializeField] private Button continueButton;
+    [SerializeField] private TextMeshProUGUI speakerNameText;
     
     [Header("Settings")]
     [SerializeField] private float typeSpeed = 0.05f;
-    [SerializeField] private string npcName = "NPC";
     
-    private string[] currentLines;
+    private DialogLine[] currentLines;
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
@@ -29,7 +28,7 @@ public class DialogSystem : MonoBehaviour
     
     }
 
-    public void StartDialog(string[] lines)
+    public void StartDialog(DialogLine[] lines)
     {
         if (Busy == true) return;
         Busy = true;
@@ -40,9 +39,10 @@ public class DialogSystem : MonoBehaviour
         currentLineIndex = 0;
         
         dialogPanel.SetActive(true);
-        
-        if (npcNameText != null)
-            npcNameText.text = npcName;
+
+        if (speakerNameText != null)
+            speakerNameText.text = lines[currentLineIndex].SpeakerName;
+        else speakerNameText.text = "???";
         
         DisplayLine();
     }
@@ -53,7 +53,11 @@ public class DialogSystem : MonoBehaviour
         {
             if (typingCoroutine != null)
                 StopCoroutine(typingCoroutine);
-                
+
+            //Update speaker name and font
+            speakerNameText.text = currentLines[currentLineIndex].SpeakerName;
+            dialogText.font = currentLines[currentLineIndex].Font;
+
             typingCoroutine = StartCoroutine(TypeText(currentLines[currentLineIndex]));
         }
         else
@@ -62,16 +66,17 @@ public class DialogSystem : MonoBehaviour
         }
     }
 
-    IEnumerator TypeText(string line)
+    IEnumerator TypeText(DialogLine line)
     {
         isTyping = true;
         dialogText.text = "";
         
-        foreach (char letter in line.ToCharArray())
+        foreach (char letter in line.Line.ToCharArray())
         {
             dialogText.text += letter;
             yield return new WaitForSeconds(typeSpeed);
         }
+
         
         isTyping = false;
     }
@@ -79,10 +84,10 @@ public class DialogSystem : MonoBehaviour
     public void OnContinueClicked()
     {
         if (isTyping)
-        {
+        {/* Disallow text skipping for now
             StopCoroutine(typingCoroutine);
-            dialogText.text = currentLines[currentLineIndex];
-            isTyping = false;
+            dialogText.text = currentLines[currentLineIndex].Line;
+            isTyping = false;*/
         }
         else
         {
@@ -96,13 +101,7 @@ public class DialogSystem : MonoBehaviour
     {
         if (dialogPanel.activeSelf)
         {
-            if (PlayerController.input.Interaction)
-            {
-                OnContinueClicked();
-            }
-            else if (Keyboard.current != null && 
-                    (|| 
-                     Keyboard.current.enterKey.wasPressedThisFrame))
+            if (PlayerController.input.Player.Interact.triggered)
             {
                 OnContinueClicked();
             }
@@ -111,14 +110,11 @@ public class DialogSystem : MonoBehaviour
 
     public void EndDialog()
     {
-        dialogPanel.SetActive(false);
         currentLines = null;
         currentLineIndex = 0;
         Busy = false;
-    }
 
-    public void SetNPCName(string name)
-    {
-        npcName = name;
+        if (dialogPanel == null) return;
+        dialogPanel.SetActive(false);
     }
 }

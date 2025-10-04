@@ -256,14 +256,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 36
   m_fontSizeMax: 72
-  m_fontStyle: 8
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -636,12 +636,31 @@ Transform:
   m_GameObject: {fileID: 789749379}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: 2, z: -10}
+  m_LocalPosition: {x: 0.75, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1048478637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5542094897264768315, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+  m_PrefabInstance: {fileID: 1314204101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1048478641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048478637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411b075cad4b6cb438d062995af3cb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BobAnimation
+  amplitude: 0.3
+  frequency: 0.8
 --- !u!1 &1246505236
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -785,6 +804,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
       propertyPath: 'npcLines.Array.data[0]'
       value: It is your time.
       objectReference: {fileID: 0}
@@ -792,10 +815,21 @@ PrefabInstance:
       propertyPath: 'npcLines.Array.data[1]'
       value: Come along now.
       objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[0].Line
+      value: It is your time.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[0].SpeakerName
+      value: Death
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5542094897264768315, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1048478641}
   m_SourcePrefab: {fileID: 100100000, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
 --- !u!1 &1334534799
 GameObject:
@@ -829,7 +863,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1246505237}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2019924416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1913,27 +1947,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSystem
   dialogPanel: {fileID: 1246505236}
   dialogText: {fileID: 88084565}
-  npcNameText: {fileID: 549647214}
-  continueButton: {fileID: 2036062083}
+  speakerNameText: {fileID: 0}
   typeSpeed: 0.05
-  npcName: Death
-  continueAction:
-    m_Name: Continue
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e7ae8bfe-ab63-4bcb-a62a-8c155375ce05
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 10bb28ae-1f66-4c1e-87c8-352afcdfd290
-      m_Path: <Keyboard>/e
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Continue
-      m_Flags: 0
-    m_Flags: 0
   Busy: 0
 --- !u!4 &2019924416
 Transform:
@@ -1947,7 +1962,8 @@ Transform:
   m_LocalPosition: {x: -0.25014, y: -0.9349, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1334534800}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2036062082
@@ -2080,4 +2096,3 @@ SceneRoots:
   - {fileID: 242625091}
   - {fileID: 1314204101}
   - {fileID: 2019924416}
-  - {fileID: 1334534800}
