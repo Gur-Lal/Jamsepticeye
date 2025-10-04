@@ -60,6 +60,7 @@ public class CorpseCounter : MonoBehaviour
         return corpses.Count;
     }
 
+    // Display info on screen (optional - for testing)
     private void OnGUI()
     {
         if (!Application.isPlaying) return;
