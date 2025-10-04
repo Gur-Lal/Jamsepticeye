@@ -1,28 +1,34 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
 
 public class FloorButtonScript : MonoBehaviour
 {
     [Header("Put the result of the button here:")]
     [SerializeField] IButtonActivated ControlledObject;
+    [Header("Config stuff")]
+    [SerializeField] Sprite upSprite;
+    [SerializeField] Sprite downSprite;
     Collider2D buttonTriggerCol;
-    bool active = false;
+    SpriteRenderer spr;
     List<Rigidbody2D> objectsOnButton = new List<Rigidbody2D>();
     void Start()
     {
-        if (ControlledObject == null) Debug.LogError("[FLOOR BUTTON SCRIPT] Error: Unassigned 'ControlledObject'.");
+        if (ControlledObject == null) Debug.LogError("[FLOOR BUTTON SCRIPT] Error: Unassigned 'ControlledObject'. You forgot to attach a door to this button! -J");
         buttonTriggerCol = GetComponent<Collider2D>();
+        spr = GetComponentInChildren<SpriteRenderer>();
+        spr.sprite = upSprite;
     }
 
 
     void Activate()
     {
-        active = true;
+        spr.sprite = downSprite;
         ControlledObject.OnButtonTrigger();
     }
     void Deactivate()
     {
-        active = false;
+        spr.sprite = upSprite;
         ControlledObject.OnButtonDisable();
     }
 
