@@ -443,7 +443,7 @@ MonoBehaviour:
   - blbablbllababl
   - asdasdsadada
   dialogSystem: {fileID: 2084885740}
-  interactionPrompt: {fileID: 257956424}
+  interactionPrompt: {fileID: 0}
 --- !u!61 &398505487
 BoxCollider2D:
   m_ObjectHideFlags: 0
