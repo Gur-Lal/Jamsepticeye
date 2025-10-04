@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 public class DialogSystem : MonoBehaviour
 {
+    public int CurrentLineID = 0;
     [Header("UI References")]
     [SerializeField] private GameObject dialogPanel;
     [SerializeField] private TextMeshProUGUI dialogText;
@@ -54,6 +55,8 @@ public class DialogSystem : MonoBehaviour
             if (typingCoroutine != null)
                 StopCoroutine(typingCoroutine);
 
+            CurrentLineID = currentLineIndex;
+            
             //Update speaker name and font
             speakerNameText.text = currentLines[currentLineIndex].SpeakerName;
             dialogText.font = currentLines[currentLineIndex].Font;

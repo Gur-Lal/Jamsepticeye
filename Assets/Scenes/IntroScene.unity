@@ -805,7 +805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
       propertyPath: dialogLines.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
       propertyPath: 'npcLines.Array.data[0]'
@@ -816,13 +816,97 @@ PrefabInstance:
       value: Come along now.
       objectReference: {fileID: 0}
     - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[1].id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[2].id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[3].id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[0].Font
+      value: 
+      objectReference: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
       propertyPath: dialogLines.Array.data[0].Line
       value: It is your time.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[1].Font
+      value: 
+      objectReference: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[1].Line
+      value: Come along now.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[2].Font
+      value: 
+      objectReference: {fileID: 11400000, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[2].Line
+      value: No! Not yet!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[3].Font
+      value: 
+      objectReference: {fileID: 11400000, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[3].Line
+      value: Please, I...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[4].Font
+      value: 
+      objectReference: {fileID: 11400000, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[4].Line
+      value: I don't want to die!
       objectReference: {fileID: 0}
     - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
       propertyPath: dialogLines.Array.data[0].SpeakerName
       value: Death
       objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[1].SpeakerName
+      value: Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[2].SpeakerName
+      value: You
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[3].SpeakerName
+      value: You
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[4].SpeakerName
+      value: You
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[0].speakerImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[1].speakerImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[2].speakerImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f2a851f3cf81524ab00adff4edf74dd, type: 3}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[3].speakerImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f2a851f3cf81524ab00adff4edf74dd, type: 3}
+    - target: {fileID: 7972261973121352351, guid: ab0f417ebc754b046960d84e6eb8dc83, type: 3}
+      propertyPath: dialogLines.Array.data[4].speakerImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f2a851f3cf81524ab00adff4edf74dd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1947,7 +2031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSystem
   dialogPanel: {fileID: 1246505236}
   dialogText: {fileID: 88084565}
-  speakerNameText: {fileID: 0}
+  speakerNameText: {fileID: 549647214}
   typeSpeed: 0.05
   Busy: 0
 --- !u!4 &2019924416
