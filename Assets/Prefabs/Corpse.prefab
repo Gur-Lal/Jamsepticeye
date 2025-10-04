@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entity
   gravityMult: 30
   floatJumpGravityMult: 0.963
+  MaxVelocities: {x: 20, y: 20}
 --- !u!50 &8492877842444778970
 Rigidbody2D:
   serializedVersion: 5

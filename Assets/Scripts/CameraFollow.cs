@@ -5,7 +5,8 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] Transform transformToFollow;
     [SerializeField] float Zoffset = -1f;
     [SerializeField] float Yoffset = 3f;
-    [SerializeField, Range(0f, 10f)] float followLag = 5f;
+    [SerializeField, Range(0f, 10f)] float followLagX = 5f;
+    [SerializeField, Range(0f, 10f)] float followLagY = 2f;
 
     //Applies after the transform has done its movement for this frame
     void LateUpdate()
@@ -14,7 +15,10 @@ public class CameraFollow : MonoBehaviour
 
         Vector2 targetPos = transformToFollow.position;
         targetPos.y += Yoffset;
-        Vector2 smoothedPos = Vector2.Lerp(transform.position, targetPos, followLag * Time.deltaTime); //slow lerp to pos
-        transform.position = new Vector3(smoothedPos.x, smoothedPos.y, Zoffset);
+
+        float newX = Mathf.Lerp(transform.position.x, targetPos.x, followLagX * Time.deltaTime); //slow lerp to pos
+        float newY = Mathf.Lerp(transform.position.y, targetPos.y, followLagY * Time.deltaTime); //slow lerp to pos
+
+        transform.position = new Vector3(newX, newY, Zoffset);
     }
 }
