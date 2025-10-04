@@ -77,8 +77,8 @@ public class Entity : MonoBehaviour
         float floorTolerance = 0.7f; //floor normal is acceptable if above this
         bool IsFloor(RaycastHit2D hit) => hit.normal.y >= floorTolerance && Mathf.Abs(hit.normal.x) <= (1f - floorTolerance);
 
-        foreach (var hit in leftHits) if (hit.collider != null && hit.collider.gameObject.layer != entityLayer && !hit.collider.isTrigger && hit.collider != col && IsFloor(hit)) { realHits.Add(hit.collider); return true; } //filter left hits
-        foreach(var hit in rightHits) if (hit.collider != null && hit.collider.gameObject.layer != entityLayer && !hit.collider.isTrigger && hit.collider != col && IsFloor(hit)) {realHits.Add(hit.collider); return true;} //if no left hits, filter right hits
+        foreach (var hit in leftHits) if (hit.collider != null && !hit.collider.isTrigger && hit.collider != col && IsFloor(hit)) { realHits.Add(hit.collider); return true; } //filter left hits
+        foreach(var hit in rightHits) if (hit.collider != null && !hit.collider.isTrigger && hit.collider != col && IsFloor(hit)) {realHits.Add(hit.collider); return true;} //if no left hits, filter right hits
 
         return false;
     }
