@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8492877842444778970}
   - component: {fileID: 7885876183643573203}
   - component: {fileID: 1089287130358188747}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Corpse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entity
   gravityMult: 30
   floatJumpGravityMult: 0.963
+  MaxVelocities: {x: 20, y: 20}
 --- !u!50 &8492877842444778970
 Rigidbody2D:
   serializedVersion: 5

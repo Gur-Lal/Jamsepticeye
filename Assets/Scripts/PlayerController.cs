@@ -27,6 +27,10 @@ public class PlayerController : Entity
     bool isJumping;
     float jumpHoldTimer;
 
+    bool isAlmostGrounded; //used for avoiding fall/jump animations on stairs
+    [SerializeField] float isAlmostGroundedDelay = 0.1f;
+    float lastGroundedTime;
+
     protected override void Awake()
     {
         base.Awake();
@@ -37,9 +41,10 @@ public class PlayerController : Entity
         animator = GetComponent<Animator>();
     }
 
-    protected override void Update()
+    protected void Update()
     {
-        base.Update(); //base entity physics
+        if (IsGrounded) { isAlmostGrounded = true; lastGroundedTime = Time.time; }
+        else if (isAlmostGrounded && Time.time - lastGroundedTime > isAlmostGroundedDelay) isAlmostGrounded = false;
 
         if (IsIncapacitated) return;
 
@@ -68,9 +73,13 @@ public class PlayerController : Entity
         if (horizontalMovement > 0) FaceRight();
         else if (horizontalMovement < 0) FaceLeft();
 
+        if (IsTouchingWall == 1 && horizontalMovement > 0) horizontalMovement = 0; //prevent moving into walls (avoids wall cling)
+        else if (IsTouchingWall == -1 && horizontalMovement < 0) horizontalMovement = 0;
+
         //if (horizontalMovement != 0) Debug.Log("HorizontalMovement = " + horizontalMovement + ", becoming " + (Vector2.right * horizontalMovement * moveSpeed * Time.deltaTime));
         rb.linearVelocityX = horizontalMovement * moveSpeed; //* Time.deltaTime;
 
+        animator.SetBool("IsGrounded", isAlmostGrounded);
         animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
         animator.SetFloat("YVel", rb.linearVelocityY);
 
@@ -132,7 +141,14 @@ public class PlayerController : Entity
     {
         GameObject corpseObj = GameObject.Instantiate(corpsePrefab, transform.position, Quaternion.identity);
         Entity entScript = corpseObj.GetComponent<Entity>();
-        if (FacingRight) entScript.FaceRight();
-        else entScript.FaceLeft();
+        if (entScript != null)
+        {
+            if (FacingRight) entScript.FaceRight();
+            else entScript.FaceLeft();
+        }
+        if (CorpseCounter.Instance != null)
+        {
+            CorpseCounter.Instance.RegisterCorpse(corpseObj);
+        }
     }
 }

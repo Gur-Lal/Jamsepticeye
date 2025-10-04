@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3067154112276846323}
   - component: {fileID: 1040042965658890334}
   - component: {fileID: 3477139805738767502}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Ghoul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entity
   gravityMult: 30
   floatJumpGravityMult: 1
+  MaxVelocities: {x: 20, y: 20}
 --- !u!212 &9208336881888271064
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -206,7 +207,7 @@ GameObject:
   - component: {fileID: 4053512340362059293}
   - component: {fileID: 2281229061906461679}
   - component: {fileID: 8213328598886724428}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: HurtAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
