@@ -141,7 +141,14 @@ public class PlayerController : Entity
     {
         GameObject corpseObj = GameObject.Instantiate(corpsePrefab, transform.position, Quaternion.identity);
         Entity entScript = corpseObj.GetComponent<Entity>();
-        if (FacingRight) entScript.FaceRight();
-        else entScript.FaceLeft();
+        if (entScript != null)
+        {
+            if (FacingRight) entScript.FaceRight();
+            else entScript.FaceLeft();
+        }
+        if (CorpseCounter.Instance != null)
+        {
+            CorpseCounter.Instance.RegisterCorpse(corpseObj);
+        }
     }
 }
