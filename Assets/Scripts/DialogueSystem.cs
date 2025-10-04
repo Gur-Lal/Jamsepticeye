@@ -3,52 +3,36 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DialogSystem : MonoBehaviour
 {
+    public int CurrentLineID = 0;
     [Header("UI References")]
     [SerializeField] private GameObject dialogPanel;
     [SerializeField] private TextMeshProUGUI dialogText;
-    [SerializeField] private TextMeshProUGUI npcNameText;
-    [SerializeField] private Button continueButton;
+    [SerializeField] private TextMeshProUGUI speakerNameText;
     
     [Header("Settings")]
     [SerializeField] private float typeSpeed = 0.05f;
-    [SerializeField] private string npcName = "NPC";
-    [SerializeField] private InputAction continueAction;
     
-    private string[] currentLines;
+    private DialogLine[] currentLines;
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
 
+    public bool Busy = false;
+
     void Start()
     {
         dialogPanel.SetActive(false);
-        
-        if (continueButton != null)
-            continueButton.onClick.AddListener(OnContinueClicked);
-        
-        if (continueAction != null)
-        {
-            continueAction.Enable();
-        }
+    
     }
 
-    void OnEnable()
+    public void StartDialog(DialogLine[] lines)
     {
-        if (continueAction != null)
-            continueAction.Enable();
-    }
-
-    void OnDisable()
-    {
-        if (continueAction != null)
-            continueAction.Disable();
-    }
-
-    public void StartDialog(string[] lines)
-    {
+        if (Busy == true) return;
+        Busy = true;
         if (lines == null || lines.Length == 0)
             return;
 
@@ -56,9 +40,10 @@ public class DialogSystem : MonoBehaviour
         currentLineIndex = 0;
         
         dialogPanel.SetActive(true);
-        
-        if (npcNameText != null)
-            npcNameText.text = npcName;
+
+        if (speakerNameText != null)
+            speakerNameText.text = lines[currentLineIndex].SpeakerName;
+        else speakerNameText.text = "???";
         
         DisplayLine();
     }
@@ -69,7 +54,13 @@ public class DialogSystem : MonoBehaviour
         {
             if (typingCoroutine != null)
                 StopCoroutine(typingCoroutine);
-                
+
+            CurrentLineID = currentLineIndex;
+            
+            //Update speaker name and font
+            speakerNameText.text = currentLines[currentLineIndex].SpeakerName;
+            dialogText.font = currentLines[currentLineIndex].Font;
+
             typingCoroutine = StartCoroutine(TypeText(currentLines[currentLineIndex]));
         }
         else
@@ -78,16 +69,17 @@ public class DialogSystem : MonoBehaviour
         }
     }
 
-    IEnumerator TypeText(string line)
+    IEnumerator TypeText(DialogLine line)
     {
         isTyping = true;
         dialogText.text = "";
         
-        foreach (char letter in line.ToCharArray())
+        foreach (char letter in line.Line.ToCharArray())
         {
             dialogText.text += letter;
             yield return new WaitForSeconds(typeSpeed);
         }
+
         
         isTyping = false;
     }
@@ -95,10 +87,10 @@ public class DialogSystem : MonoBehaviour
     public void OnContinueClicked()
     {
         if (isTyping)
-        {
+        {/* Disallow text skipping for now
             StopCoroutine(typingCoroutine);
-            dialogText.text = currentLines[currentLineIndex];
-            isTyping = false;
+            dialogText.text = currentLines[currentLineIndex].Line;
+            isTyping = false;*/
         }
         else
         {
@@ -112,28 +104,20 @@ public class DialogSystem : MonoBehaviour
     {
         if (dialogPanel.activeSelf)
         {
-            if (continueAction != null && continueAction.triggered)
-            {
-                OnContinueClicked();
-            }
-            else if (Keyboard.current != null && 
-                    (Keyboard.current.spaceKey.wasPressedThisFrame || 
-                     Keyboard.current.enterKey.wasPressedThisFrame))
+            if (PlayerController.input.Player.Interact.triggered)
             {
                 OnContinueClicked();
             }
         }
     }
 
-    void EndDialog()
+    public void EndDialog()
     {
-        dialogPanel.SetActive(false);
         currentLines = null;
         currentLineIndex = 0;
-    }
+        Busy = false;
 
-    public void SetNPCName(string name)
-    {
-        npcName = name;
+        if (dialogPanel == null) return;
+        dialogPanel.SetActive(false);
     }
 }
