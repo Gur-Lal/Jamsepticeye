@@ -3,9 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneTp : MonoBehaviour
 {
-    public string sceneToLoad; // Name of the scene to load
-    public string SpawnPoint = "SpawnPoint"; // Tag for identifying the spawn point
-    
+    public string sceneToLoad; // Name of the scene to load 
     private string currentSceneName; // To track the current scene
     private bool playerIsNearby = false;
 
@@ -18,7 +16,7 @@ public class SceneTp : MonoBehaviour
         if (playerIsNearby && PlayerController.input.Player.Interact.triggered) {
             
             SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Additive); // Load new scene additively
-            SceneManager.sceneLoaded += OnSceneLoaded; // Register callback for scene load completion
+           // SceneManager.sceneLoaded += OnSceneLoaded; // Register callback for scene load completion
         }
     }
 
@@ -46,7 +44,7 @@ public class SceneTp : MonoBehaviour
         }
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    /**void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == sceneToLoad)
         {
@@ -70,4 +68,9 @@ public class SceneTp : MonoBehaviour
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
     }
+    
+}
+
+**/
+
 }
