@@ -93,13 +93,13 @@ public class Entity : MonoBehaviour
         if (FacingRight)
         {
             TopPos = new Vector2(col.bounds.center.x, col.bounds.max.y);
-            BottomPos = new Vector2(col.bounds.center.x, col.bounds.min.y);
+            BottomPos = new Vector2(col.bounds.center.x, col.bounds.min.y + 0.15f);
             MidPos = new Vector2(col.bounds.center.x, col.bounds.center.y);
         }
         else
         {
             TopPos = new Vector2(col.bounds.center.x, col.bounds.max.y);
-            BottomPos = new Vector2(col.bounds.center.x, col.bounds.min.y);
+            BottomPos = new Vector2(col.bounds.center.x, col.bounds.min.y + 0.15f);
             MidPos = new Vector2(col.bounds.center.x, col.bounds.center.y);
         }
 
@@ -135,7 +135,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void OnGroundTouched()
     {
-        //pass
+        //pass to child
     }
 
     public void FaceRight()
