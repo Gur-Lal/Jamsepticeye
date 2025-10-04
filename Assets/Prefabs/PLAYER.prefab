@@ -50,12 +50,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   gravityMult: 30
   floatJumpGravityMult: 0.25
+  MaxVelocities: {x: 20, y: 20}
   moveSpeed: 7
   jumpForce: 11
   maxJumpHoldTime: 0.35
   coyoteTime: 0.1
   jumpBuffer: 0.1
   corpsePrefab: {fileID: 2639089107306622783, guid: c0e7ec7957e8c154ea16f9186f98b447, type: 3}
+  DeathRespawnDelay: 1
+  isAlmostGroundedDelay: 0.1
 --- !u!50 &2831797578183651820
 Rigidbody2D:
   serializedVersion: 5
