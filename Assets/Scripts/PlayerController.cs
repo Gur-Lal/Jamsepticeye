@@ -17,7 +17,7 @@ public class PlayerController : Entity
     [SerializeField] float DeathRespawnDelay = 1f;
 
     //reference vars
-    private PlayerActionControls input;
+    static public PlayerActionControls input;
     private Animator animator;
 
     //tracking vars

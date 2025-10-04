@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hospital.unity
     guid: 265d0d50fc40e3e4ca2b86db41fa764b
+  - enabled: 1
+    path: Assets/Scenes/DropperEnd.unity
+    guid: 0cf046ec2d754c5428a37d4c21aee6c0
+  - enabled: 1
+    path: Assets/Scenes/Game2.unity
+    guid: ac4f1e28b74dd2546b93890590ceb74b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
