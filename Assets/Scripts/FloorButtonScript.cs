@@ -24,12 +24,12 @@ public class FloorButtonScript : MonoBehaviour
     void Activate()
     {
         spr.sprite = downSprite;
-        ControlledObject.OnButtonTrigger();
+        ControlledObject.OnButtonTrigger(this);
     }
     void Deactivate()
     {
         spr.sprite = upSprite;
-        ControlledObject.OnButtonDisable();
+        ControlledObject.OnButtonDisable(this);
     }
 
     void OnTriggerEnter2D(Collider2D other)
