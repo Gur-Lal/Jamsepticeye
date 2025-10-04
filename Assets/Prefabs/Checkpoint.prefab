@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4780031415327472699}
   - component: {fileID: 5862142919252865225}
+  - component: {fileID: -6876150218219590617}
   - component: {fileID: 2342154356859791168}
   - component: {fileID: 5682951660142468357}
   m_Layer: 0
@@ -47,6 +48,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
   cooldownSeconds: 3
+--- !u!114 &-6876150218219590617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228868330276011386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411b075cad4b6cb438d062995af3cb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BobAnimation
+  amplitude: 0.25
+  frequency: 0.8
 --- !u!212 &2342154356859791168
 SpriteRenderer:
   m_ObjectHideFlags: 0
