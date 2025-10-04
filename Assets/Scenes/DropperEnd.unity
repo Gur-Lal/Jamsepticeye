@@ -4591,7 +4591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1302464592541727832, guid: 2396cc27577fbce43a78c4e8c70687ee, type: 3}
       propertyPath: m_TagString
-      value: SpawnPoint
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1905841554141012060, guid: 2396cc27577fbce43a78c4e8c70687ee, type: 3}
       propertyPath: m_IsTrigger
@@ -6025,7 +6025,8 @@ MonoBehaviour:
   transformToFollow: {fileID: 1302751218}
   Zoffset: -1
   Yoffset: 3
-  followLag: 5
+  followLagX: 5
+  followLagY: 2
 --- !u!114 &1262218567
 MonoBehaviour:
   m_ObjectHideFlags: 0
