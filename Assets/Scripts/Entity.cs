@@ -20,7 +20,7 @@ public class Entity : MonoBehaviour
     protected SpriteRenderer spr;
     protected virtual void Awake()
     {
-        Debug.Log("[ENTITY SCRIPT] Awake");
+        //Debug.Log("[ENTITY SCRIPT] Awake");
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         spr = GetComponent<SpriteRenderer>();
