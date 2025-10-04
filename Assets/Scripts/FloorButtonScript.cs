@@ -5,6 +5,9 @@ public class FloorButtonScript : MonoBehaviour
 {
     [Header("Put the result of the button here:")]
     [SerializeField] IButtonActivated ControlledObject;
+    [Header("Config stuff")]
+    [SerializeField] Sprite upSprite;
+    [SerializeField] Sprite downSprite;
     Collider2D buttonTriggerCol;
     bool active = false;
     List<Rigidbody2D> objectsOnButton = new List<Rigidbody2D>();
