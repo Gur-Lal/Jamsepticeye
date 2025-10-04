@@ -108,9 +108,11 @@ public class PlayerController : Entity
         if (IsIncapacitated) return;
         IsIncapacitated = true;
         rb.linearVelocityX = 0;
-        rb.linearVelocityY = 0;
+        rb.linearVelocityY = 0; 
         animator.SetTrigger("Death");
         animator.SetBool("IsDead", true);
+        if (CorpseCounter.Instance == null) Debug.LogError("[Player Controller] ERROR: NO CORPSE COUNTER IN THIS SCENE!");
+        else CorpseCounter.Instance.DeleteOldestCorpseIfNeeded();
         StartCoroutine(WaitForDeathAnimation(DeathRespawnDelay));
     }
 
