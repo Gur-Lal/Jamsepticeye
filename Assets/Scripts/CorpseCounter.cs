@@ -59,11 +59,4 @@ public class CorpseCounter : MonoBehaviour
         corpses.RemoveAll(c => c == null);
         return corpses.Count;
     }
-
-    // Display info on screen (optional - for testing)
-    private void OnGUI()
-    {
-        if (!Application.isPlaying) return;
-        GUI.Label(new Rect(10, 10, 250, 30), $"Corpses: {GetCorpseCount()}/{maxCorpses}");
-    }
 }
