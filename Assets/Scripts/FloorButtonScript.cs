@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 public class FloorButtonScript : MonoBehaviour
 {
     [Header("Put the result of the button here:")]
-    [SerializeField] IButtonActivated ControlledObject;
+    [SerializeField] List<IButtonActivated> ControlledObjects = new List<IButtonActivated>();
     [Header("Config stuff")]
     [SerializeField] Sprite upSprite;
     [SerializeField] Sprite downSprite;
@@ -14,7 +14,7 @@ public class FloorButtonScript : MonoBehaviour
     List<Rigidbody2D> objectsOnButton = new List<Rigidbody2D>();
     void Start()
     {
-        if (ControlledObject == null) Debug.LogError("[FLOOR BUTTON SCRIPT] Error: Unassigned 'ControlledObject'. You forgot to attach a door to this button! -J");
+        if (ControlledObjects.Count == 0) Debug.LogError("[FLOOR BUTTON SCRIPT] Error: Unassigned 'ControlledObjects'. You forgot to attach a door to this button! -J");
         buttonTriggerCol = GetComponent<Collider2D>();
         spr = GetComponentInChildren<SpriteRenderer>();
         spr.sprite = upSprite;
@@ -24,12 +24,17 @@ public class FloorButtonScript : MonoBehaviour
     void Activate()
     {
         spr.sprite = downSprite;
-        ControlledObject.OnButtonTrigger();
+        foreach (IButtonActivated ControlledObject in ControlledObjects){
+            ControlledObject.OnButtonTrigger(this);
+        }
+        
     }
     void Deactivate()
     {
         spr.sprite = upSprite;
-        ControlledObject.OnButtonDisable();
+        foreach (IButtonActivated ControlledObject in ControlledObjects){
+            ControlledObject.OnButtonDisable(this);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

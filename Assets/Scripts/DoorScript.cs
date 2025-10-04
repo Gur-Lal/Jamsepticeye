@@ -1,11 +1,15 @@
 using System.Linq.Expressions;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DoorScript : IButtonActivated
 {
     [SerializeField] bool Invert = false; //false = start closed, isOpen when buttons hit. true = start isOpen, close when buttons hit.
     [SerializeField, Range(0f, 0.5f)] float InputRejectionDelay = 0.05f;
+    [SerializeField] List<FloorButtonScript> MandatoryButtonsPressed = new List<FloorButtonScript>();
+    [SerializeField] List<FloorButtonScript> IllegalButtonsPressed = new List<FloorButtonScript>();
+    private List<FloorButtonScript> ButtonsPressed = new List<FloorButtonScript>();
     Collider2D col;
     SpriteRenderer spr;
     Animator animator;
@@ -35,21 +39,56 @@ public class DoorScript : IButtonActivated
 
     }
 
-    public override void OnButtonTrigger()
+    public override void OnButtonTrigger(FloorButtonScript triggered)
     {
-        buttonStateOn = true;
-        StartCoroutine(ChangeStateAfterDelay(true)); //in X seconds, if the button's state is still this desired state, apply change
-        //if (Invert) Close();
-        //else Open();
+        ButtonsPressed.Add(triggered);
+        UpdateState();
     }
 
-    public override void OnButtonDisable()
+    public override void OnButtonDisable(FloorButtonScript triggered)
     {
-        buttonStateOn = false;
-        StartCoroutine(ChangeStateAfterDelay(false)); //in X seconds, if the button's state is still this desired state, apply change
-        //StartCoroutine(ReleaseAfterDelay(Invert));
-        //if (Invert) Open();
-        //else Close();
+        ButtonsPressed.Remove(triggered);
+        UpdateState();
+    }
+
+    void UpdateState()
+    {
+        bool doorShouldBeOpen = CheckState();
+
+        if (!Invert)
+        {
+            if (!doorShouldBeOpen && isOpen) Close();
+
+            if (doorShouldBeOpen && !isOpen) Open();
+        }
+        else //opposite configuration
+        {
+            if (!doorShouldBeOpen && isOpen) Open();
+
+            if (doorShouldBeOpen && !isOpen) Close();
+        }
+    }
+
+    bool CheckState()
+    {
+        foreach (var IllegalButton in IllegalButtonsPressed)
+        {
+            if (ButtonsPressed.Contains(IllegalButton))
+            {
+                return false; //illegal state!
+            }
+        }
+
+
+        foreach (var RequiredButton in MandatoryButtonsPressed)
+        {
+            if (!ButtonsPressed.Contains(RequiredButton))
+            {
+                return false; //a required button is misisng
+            }
+        }
+
+        return true; //no illegal entrances, and all mandatory entrances!
     }
 
     void Open()

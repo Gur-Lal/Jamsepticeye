@@ -18,6 +18,7 @@ public class Entity : MonoBehaviour
     private bool WasOnGroundLastFrame;
 
     //references
+    protected LayerMask entityLayer;
     protected Rigidbody2D rb;
     protected Collider2D col;
     protected SpriteRenderer spr;
@@ -27,6 +28,7 @@ public class Entity : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         spr = GetComponent<SpriteRenderer>();
+        entityLayer = LayerMask.NameToLayer("Entity");
     }
 
     protected virtual void FixedUpdate()
@@ -121,7 +123,7 @@ public class Entity : MonoBehaviour
 
         foreach (var hit in allHits)
         {
-            if (hit.collider != null && !hit.collider.isTrigger && hit.collider != col && IsVerticalWall(hit)) return sign;
+            if (hit.collider != null && hit.collider.gameObject.layer != entityLayer &&  !hit.collider.isTrigger && hit.collider != col && IsVerticalWall(hit)) return sign;
         }
         return 0;
     }
