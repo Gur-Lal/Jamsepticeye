@@ -9,12 +9,19 @@ public class DoorScript : IButtonActivated
     [SerializeField, Range(0f, 0.5f)] float InputRejectionDelay = 0.05f;
     [SerializeField] List<FloorButtonScript> MandatoryButtonsPressed = new List<FloorButtonScript>();
     [SerializeField] List<FloorButtonScript> IllegalButtonsPressed = new List<FloorButtonScript>();
+    [Header("Audio")]
+    [SerializeField] AudioClip doorOpenSound;
+    [SerializeField] AudioClip doorCloseSound;
+    [SerializeField, Range(0f, 1f)] float doorSoundVolume = 0.7f;
+    
     private List<FloorButtonScript> ButtonsPressed = new List<FloorButtonScript>();
     Collider2D col;
     SpriteRenderer spr;
     Animator animator;
+    AudioSource audioSource;
     bool buttonStateOn;
     bool isOpen;
+    
     void Start()
     {
         isOpen = Invert;
@@ -23,6 +30,14 @@ public class DoorScript : IButtonActivated
         animator = GetComponent<Animator>();
         animator.SetBool("StartOpen", Invert);
 
+        //audio source setup
+        audioSource = gameObject.GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = 0f; // 2D sound
     }
 
     IEnumerator ChangeStateAfterDelay(bool DesiredState)
@@ -35,8 +50,6 @@ public class DoorScript : IButtonActivated
             if (DesiredState) Open();
             else Close();
         }
-
-
     }
 
     public override void OnButtonTrigger(FloorButtonScript triggered)
@@ -79,7 +92,6 @@ public class DoorScript : IButtonActivated
             }
         }
 
-
         foreach (var RequiredButton in MandatoryButtonsPressed)
         {
             if (!ButtonsPressed.Contains(RequiredButton))
@@ -97,7 +109,12 @@ public class DoorScript : IButtonActivated
         isOpen = true;
         col.enabled = false;
         animator.SetTrigger("DoorOpen");
-
+        
+        //play opening sound
+        if (doorOpenSound != null)
+        {
+            audioSource.PlayOneShot(doorOpenSound, doorSoundVolume);
+        }
     }
 
     void Close()
@@ -106,7 +123,11 @@ public class DoorScript : IButtonActivated
         isOpen = false;
         col.enabled = true;
         animator.SetTrigger("DoorClose");
-
+        
+        //play closing sound
+        if (doorCloseSound != null)
+        {
+            audioSource.PlayOneShot(doorCloseSound, doorSoundVolume);
+        }
     }
-
 }

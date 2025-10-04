@@ -12,8 +12,18 @@ public class PlayerController : Entity
     [SerializeField, Range(0.1f, 0.4f)] float maxJumpHoldTime = 0.35f;
     [SerializeField, Range(0.05f, 0.2f)] float coyoteTime = 0.1f;
     [SerializeField, Range(0.1f, 0.5f)] float jumpBuffer = 0.1f;
+    
+    [Header("Audio")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] footstepSounds;
+    [SerializeField, Range(0.1f, 1f)] float footstepInterval = 0.4f;
+    [SerializeField, Range(0f, 1f)] float footstepVolume = 0.5f;
+    [SerializeField, Range(0.8f, 1.2f)] float footstepPitchMin = 0.9f;
+    [SerializeField, Range(0.8f, 1.2f)] float footstepPitchMax = 1.1f;
+    
     [Header("References")]
     [SerializeField] GameObject corpsePrefab;
+    
     [Header("Debug Stuff")]
     [SerializeField] float DeathRespawnDelay = 1f;
 
@@ -31,6 +41,9 @@ public class PlayerController : Entity
     [SerializeField] float isAlmostGroundedDelay = 0.1f;
     float lastGroundedTime;
 
+    // Footstep tracking
+    private float footstepTimer = 0f;
+
     protected override void Awake()
     {
         base.Awake();
@@ -39,6 +52,14 @@ public class PlayerController : Entity
         input.Player.Enable();
 
         animator = GetComponent<Animator>();
+        
+        //audio source setup
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+            audioSource.spatialBlend = 0f; // 2D sound
+        }
     }
 
     protected void Update()
@@ -82,7 +103,40 @@ public class PlayerController : Entity
         animator.SetBool("IsGrounded", isAlmostGrounded);
         animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
         animator.SetFloat("YVel", rb.linearVelocityY);
-
+        
+        // Footstep sound handler
+        HandleFootsteps();
+    }
+    // Footstep sound handler
+    private void HandleFootsteps()
+    {
+        bool isMoving = Mathf.Abs(horizontalMovement) > 0.1f;
+        
+        if (IsGrounded && isMoving && footstepSounds != null && footstepSounds.Length > 0)
+        {
+            footstepTimer += Time.deltaTime;
+            
+            if (footstepTimer >= footstepInterval)
+            {
+                PlayFootstepSound();
+                footstepTimer = 0f;
+            }
+        }
+        else
+        {
+            footstepTimer = 0f;
+        }
+    }
+    private void PlayFootstepSound()
+    {
+        if (audioSource == null || footstepSounds == null || footstepSounds.Length == 0)
+            return;
+        
+        AudioClip clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
+        //randomize pitch a bit for variety
+        audioSource.pitch = Random.Range(footstepPitchMin, footstepPitchMax);
+        //play sound
+        audioSource.PlayOneShot(clip, footstepVolume);
     }
 
     public void Jump()
