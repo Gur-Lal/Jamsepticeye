@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 public class Entity : MonoBehaviour
 {
+    [Header("Base Entity Properties:")]
     [SerializeField, Range(1f, 50f)] protected float gravityMult = 30f;
     [SerializeField, Range(0.1f, 1f)] protected float floatJumpGravityMult = 0.25f;
+    [SerializeField] protected Vector2 MaxVelocities = new Vector2(20f, 20f);
     protected bool IsGrounded;
     protected int IsTouchingWall;
     protected bool FacingRight;
@@ -49,6 +51,9 @@ public class Entity : MonoBehaviour
         }
 
         IsTouchingWall = CheckIfTouchingWall();
+
+        if (Mathf.Abs(rb.linearVelocityY) > MaxVelocities.y) rb.linearVelocityY = MaxVelocities.y * Mathf.Sign(rb.linearVelocityY);
+        if (Mathf.Abs(rb.linearVelocityX) > MaxVelocities.x) rb.linearVelocityX = MaxVelocities.x * Mathf.Sign(rb.linearVelocityX);
     }
 
     bool CheckIfGrounded()
