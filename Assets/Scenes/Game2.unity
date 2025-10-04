@@ -272,7 +272,8 @@ MonoBehaviour:
   transformToFollow: {fileID: 1219183466}
   Zoffset: -1
   Yoffset: 3
-  followLag: 5
+  followLagX: 5
+  followLagY: 2
 --- !u!1001 &408820151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -655,8 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a447109064b27af449ea570acca661d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTp
-  sceneToLoad: DropperEnd
-  SpawnPoint: SpawnPoint
+  sceneToLoad: SpikeWall
 --- !u!1001 &1205798081
 PrefabInstance:
   m_ObjectHideFlags: 0
