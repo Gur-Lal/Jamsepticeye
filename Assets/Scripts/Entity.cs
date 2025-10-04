@@ -18,6 +18,7 @@ public class Entity : MonoBehaviour
     private bool WasOnGroundLastFrame;
 
     //references
+    protected LayerMask entityLayer;
     protected Rigidbody2D rb;
     protected Collider2D col;
     protected SpriteRenderer spr;
@@ -27,6 +28,7 @@ public class Entity : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         spr = GetComponent<SpriteRenderer>();
+        entityLayer = LayerMask.NameToLayer("Entity");
     }
 
     protected virtual void FixedUpdate()
@@ -75,8 +77,8 @@ public class Entity : MonoBehaviour
         float floorTolerance = 0.7f; //floor normal is acceptable if above this
         bool IsFloor(RaycastHit2D hit) => hit.normal.y >= floorTolerance && Mathf.Abs(hit.normal.x) <= (1f - floorTolerance);
 
-        foreach (var hit in leftHits) if (hit.collider != null && !hit.collider.isTrigger && hit.collider != col && IsFloor(hit)) { realHits.Add(hit.collider); return true; } //filter left hits
-        foreach(var hit in rightHits) if (hit.collider != null && !hit.collider.isTrigger && hit.collider != col && IsFloor(hit)) {realHits.Add(hit.collider); return true;} //if no left hits, filter right hits
+        foreach (var hit in leftHits) if (hit.collider != null && hit.collider.gameObject.layer != entityLayer && !hit.collider.isTrigger && hit.collider != col && IsFloor(hit)) { realHits.Add(hit.collider); return true; } //filter left hits
+        foreach(var hit in rightHits) if (hit.collider != null && hit.collider.gameObject.layer != entityLayer && !hit.collider.isTrigger && hit.collider != col && IsFloor(hit)) {realHits.Add(hit.collider); return true;} //if no left hits, filter right hits
 
         return false;
     }
@@ -121,7 +123,7 @@ public class Entity : MonoBehaviour
 
         foreach (var hit in allHits)
         {
-            if (hit.collider != null && !hit.collider.isTrigger && hit.collider != col && IsVerticalWall(hit)) return sign;
+            if (hit.collider != null && hit.collider.gameObject.layer != entityLayer &&  !hit.collider.isTrigger && hit.collider != col && IsVerticalWall(hit)) return sign;
         }
         return 0;
     }
