@@ -1893,7 +1893,8 @@ MonoBehaviour:
   transformToFollow: {fileID: 1064512854}
   Zoffset: -1
   Yoffset: 3
-  followLag: 5
+  followLagX: 5
+  followLagY: 2
 --- !u!114 &1489448666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2269,12 +2270,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2639089107306622783, guid: c0e7ec7957e8c154ea16f9186f98b447, type: 3}
     - target: {fileID: 5779432126870746912, guid: 477d1a34c7a234c41b6dc4a06f333209, type: 3}
+      propertyPath: MaxVelocities.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779432126870746912, guid: 477d1a34c7a234c41b6dc4a06f333209, type: 3}
       propertyPath: maxJumpHoldTime
       value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 5779432126870746912, guid: 477d1a34c7a234c41b6dc4a06f333209, type: 3}
       propertyPath: floatJumpGravityMult
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779432126870746912, guid: 477d1a34c7a234c41b6dc4a06f333209, type: 3}
+      propertyPath: isAlmostGroundedDelay
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6136338462592606834, guid: 477d1a34c7a234c41b6dc4a06f333209, type: 3}
       propertyPath: m_Name
@@ -2300,6 +2309,10 @@ PrefabInstance:
     - target: {fileID: 3067154112276846323, guid: 1d3d827322ec84a498572b2c37f14a13, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172472764213012236, guid: 1d3d827322ec84a498572b2c37f14a13, type: 3}
+      propertyPath: MaxVelocities.y
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3620019968337334330, guid: 1d3d827322ec84a498572b2c37f14a13, type: 3}
       propertyPath: m_LocalPosition.x
