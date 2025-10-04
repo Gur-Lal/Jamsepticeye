@@ -6,6 +6,7 @@ public class PlayerController : Entity
 {
     //config vars
     [Header("Main Config")]
+    [SerializeField] Vector2 spawnPoint;
     [SerializeField, Range(1f, 15f)] float moveSpeed = 7f;
     [SerializeField, Range(1f, 30f)] float jumpForce = 11f;
     [SerializeField, Range(0.1f, 0.4f)] float maxJumpHoldTime = 0.35f;
@@ -21,7 +22,6 @@ public class PlayerController : Entity
     private Animator animator;
 
     //tracking vars
-    private Vector2 spawnPoint;
     float horizontalMovement;
     float LastJumpRequestTime = Mathf.NegativeInfinity;
     bool isJumping;
