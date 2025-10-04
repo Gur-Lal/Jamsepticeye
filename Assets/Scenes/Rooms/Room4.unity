@@ -171,6 +171,14 @@ PrefabInstance:
       propertyPath: ControlledObject
       value: 
       objectReference: {fileID: 1524441234}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: ControlledObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: 'ControlledObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1524441234}
     - target: {fileID: 6371259057437277535, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
       propertyPath: m_Name
       value: RightButton
@@ -230,6 +238,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
       propertyPath: ControlledObject
+      value: 
+      objectReference: {fileID: 1524441234}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: ControlledObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: 'ControlledObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 1524441234}
     - target: {fileID: 6371259057437277535, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
@@ -2102,6 +2118,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
       propertyPath: ControlledObject
+      value: 
+      objectReference: {fileID: 1524441234}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: ControlledObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: 'ControlledObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 1524441234}
     - target: {fileID: 6371259057437277535, guid: 35c351c4403b78c448b86169e53e2819, type: 3}

@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671478364867972774, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.530986
+      value: 8.530986
       objectReference: {fileID: 0}
     - target: {fileID: 4671478364867972774, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
       propertyPath: m_LocalPosition.y
@@ -171,6 +171,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+      propertyPath: IllegalButtonsPressed.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+      propertyPath: MandatoryButtonsPressed.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+      propertyPath: 'IllegalButtonsPressed.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1186159689}
+    - target: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+      propertyPath: 'MandatoryButtonsPressed.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1077756685}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -233,6 +249,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2396cc27577fbce43a78c4e8c70687ee, type: 3}
+--- !u!114 &557702409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+  m_PrefabInstance: {fileID: 1229257501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee5c30932084834ca0446991d412de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorScript
 --- !u!1001 &591100619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -285,6 +312,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+      propertyPath: IllegalButtonsPressed.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+      propertyPath: MandatoryButtonsPressed.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+      propertyPath: 'IllegalButtonsPressed.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1077756685}
+    - target: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+      propertyPath: 'MandatoryButtonsPressed.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1186159689}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -338,6 +381,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: ControlledObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: 'ControlledObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 999233498}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: 'ControlledObjects.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1947551809}
     - target: {fileID: 6371259057437277535, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
       propertyPath: m_Name
       value: LeftButton
@@ -347,6 +402,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+--- !u!114 &999233498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+  m_PrefabInstance: {fileID: 591100619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee5c30932084834ca0446991d412de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorScript
 --- !u!1001 &1068842899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395,6 +461,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: ControlledObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: 'ControlledObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 557702409}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: 'ControlledObjects.Array.data[1]'
+      value: 
+      objectReference: {fileID: 999233498}
+    - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+      propertyPath: 'ControlledObjects.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1947551809}
     - target: {fileID: 6371259057437277535, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
       propertyPath: m_Name
       value: RightButton
@@ -404,6 +486,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+--- !u!114 &1077756685 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+  m_PrefabInstance: {fileID: 1068842899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2d99a6fa591f240ba984f973387d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloorButtonScript
 --- !u!1 &1089294465
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,13 +654,13 @@ CompositeCollider2D:
         Y: -30000000
       - X: 140000000
         Y: -90000000
-    - - X: 160000000
+    - - X: 170000000
         Y: -30000000
-      - X: 70000000
+      - X: 80000000
         Y: -30000000
-      - X: 70000000
+      - X: 80000000
         Y: -40000000
-      - X: 160000000
+      - X: 170000000
         Y: -40000000
   m_CompositePaths:
     m_Paths:
@@ -611,10 +704,10 @@ CompositeCollider2D:
       - {x: 26, y: 1.9999707}
       - {x: 25.999971, y: -3}
       - {x: 19.999992, y: -3.0000076}
-    - - {x: 15.999971, y: -4}
-      - {x: 15.999971, y: -3}
-      - {x: 7, y: -3.0000293}
-      - {x: 7.0000296, y: -4}
+    - - {x: 16.999971, y: -4}
+      - {x: 16.999971, y: -3}
+      - {x: 8, y: -3.0000293}
+      - {x: 8.00003, y: -4}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -1108,16 +1201,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 7, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 2147483649
   - first: {x: 8, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -1131,6 +1214,16 @@ Tilemap:
   - first: {x: 9, y: -4, z: 0}
     second:
       serializedVersion: 2
+      m_TileIndex: 11
+      m_TileSpriteIndex: 11
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: 10, y: -4, z: 0}
+    second:
+      serializedVersion: 2
       m_TileIndex: 14
       m_TileSpriteIndex: 18
       m_TileMatrixIndex: 0
@@ -1138,7 +1231,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 2147483649
-  - first: {x: 10, y: -4, z: 0}
+  - first: {x: 11, y: -4, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 13
@@ -1148,21 +1241,11 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 2147483649
-  - first: {x: 11, y: -4, z: 0}
+  - first: {x: 12, y: -4, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 12
       m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 2147483649
-  - first: {x: 12, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1189,6 +1272,16 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 2147483649
   - first: {x: 15, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 11
+      m_TileSpriteIndex: 11
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: 16, y: -4, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 11
@@ -1368,7 +1461,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 1
       dummyAlignment: 0
       m_AllTileFlags: 2
-  - first: {x: 9, y: -1, z: 0}
+  - first: {x: 10, y: -1, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 16
@@ -1428,7 +1521,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1
-  - first: {x: 10, y: 1, z: 0}
+  - first: {x: 11, y: 1, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 6
@@ -1871,6 +1964,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1186159689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
+  m_PrefabInstance: {fileID: 973479445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2d99a6fa591f240ba984f973387d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloorButtonScript
 --- !u!1001 &1188972500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2037,6 +2141,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+      propertyPath: IllegalButtonsPressed.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+      propertyPath: MandatoryButtonsPressed.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+      propertyPath: 'MandatoryButtonsPressed.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1077756685}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2279,6 +2395,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4926310084234350494, guid: 477d1a34c7a234c41b6dc4a06f333209, type: 3}
   m_PrefabInstance: {fileID: 1618465442}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1947551809 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+  m_PrefabInstance: {fileID: 174164796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee5c30932084834ca0446991d412de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorScript
 --- !u!1 &2141040991
 GameObject:
   m_ObjectHideFlags: 0
