@@ -15,40 +15,24 @@ public class DialogSystem : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float typeSpeed = 0.05f;
     [SerializeField] private string npcName = "NPC";
-    [SerializeField] private InputAction continueAction;
     
     private string[] currentLines;
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
 
+    public bool Busy = false;
+
     void Start()
     {
         dialogPanel.SetActive(false);
-        
-        if (continueButton != null)
-            continueButton.onClick.AddListener(OnContinueClicked);
-        
-        if (continueAction != null)
-        {
-            continueAction.Enable();
-        }
-    }
-
-    void OnEnable()
-    {
-        if (continueAction != null)
-            continueAction.Enable();
-    }
-
-    void OnDisable()
-    {
-        if (continueAction != null)
-            continueAction.Disable();
+    
     }
 
     public void StartDialog(string[] lines)
     {
+        if (Busy == true) return;
+        Busy = true;
         if (lines == null || lines.Length == 0)
             return;
 
@@ -112,12 +96,12 @@ public class DialogSystem : MonoBehaviour
     {
         if (dialogPanel.activeSelf)
         {
-            if (continueAction != null && continueAction.triggered)
+            if (PlayerController.input.Interaction)
             {
                 OnContinueClicked();
             }
             else if (Keyboard.current != null && 
-                    (Keyboard.current.spaceKey.wasPressedThisFrame || 
+                    (|| 
                      Keyboard.current.enterKey.wasPressedThisFrame))
             {
                 OnContinueClicked();
@@ -125,11 +109,12 @@ public class DialogSystem : MonoBehaviour
         }
     }
 
-    void EndDialog()
+    public void EndDialog()
     {
         dialogPanel.SetActive(false);
         currentLines = null;
         currentLineIndex = 0;
+        Busy = false;
     }
 
     public void SetNPCName(string name)

@@ -43,10 +43,11 @@ public class NPC : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
-            
+
             if (interactionPrompt != null)
                 interactionPrompt.SetActive(false);
         }
+        dialogSystem.EndDialog();
     }
 
     void StartDialog()
@@ -61,9 +62,10 @@ public class NPC : MonoBehaviour
     //InputAction handler. Move this jurisdiction over to the player controller at some point?
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (playerInRange && context.performed)
+        if (playerInRange && context.performed && !dialogSystem.Busy)
         {
             StartDialog();
+            interactionPrompt.SetActive(false);
         }
     }
 }
