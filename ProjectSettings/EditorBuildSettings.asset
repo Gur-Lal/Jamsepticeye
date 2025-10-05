@@ -11,18 +11,42 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Game.unity
     guid: 12c1ffbfc8059fe43ac3389dc41bd9ba
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Hospital.unity
     guid: 265d0d50fc40e3e4ca2b86db41fa764b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DropperEnd.unity
-    guid: 049f9c098d8de2240a17bf05de36ed37
+    guid: a461fa04d077b7442ad90c2f4081bde6
   - enabled: 0
     path: Assets/Scenes/Game2.unity
-    guid: 3c4c00d311369114d978109015b824e7
+    guid: 4ca6e9e3ca34e5546a1eb89e5ba01605
   - enabled: 0
     path: Assets/Scenes/SpikeWall.unity
-    guid: 078e4552fc72eb14485700d9e2788a85
+    guid: bc75a8f260f7cb648abcbd2fda9cee73
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room0.unity
+    guid: a189de833a9ef2f4ea5100d21d731985
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room1.unity
+    guid: 9bd8a513da512b34781a3208e26a6513
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room2.unity
+    guid: 7cff580756d765749999b0bc9b6e2e19
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room3.unity
+    guid: d1b46f86ec90a884b9cf26eda898a542
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room4.unity
+    guid: 5c8b6522b5f5b934396e57e8904b784e
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room5.unity
+    guid: 1e73b1fa0e424c4428886a8d0659bd5c
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room6.unity
+    guid: 2a5d7efd84c9ad14a85ed4a49eeb5c3a
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room7.unity
+    guid: ad1ad4e2f1062174f9bda1866985bfe0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

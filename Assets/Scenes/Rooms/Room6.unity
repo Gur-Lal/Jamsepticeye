@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &20401271 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5321616249723425058, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+  m_PrefabInstance: {fileID: 1633538766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee5c30932084834ca0446991d412de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorScript
 --- !u!1001 &415072018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174,7 +185,7 @@ PrefabInstance:
     - target: {fileID: 1537109090365512802, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
       propertyPath: 'ControlledObjects.Array.data[0]'
       value: 
-      objectReference: {fileID: 1316010555}
+      objectReference: {fileID: 20401271}
     - target: {fileID: 6371259057437277535, guid: 35c351c4403b78c448b86169e53e2819, type: 3}
       propertyPath: m_Name
       value: MiddleButton
@@ -3063,6 +3074,10 @@ PrefabInstance:
     - target: {fileID: 1302464592541727832, guid: 2396cc27577fbce43a78c4e8c70687ee, type: 3}
       propertyPath: m_Name
       value: LevelExit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763356616083251604, guid: 2396cc27577fbce43a78c4e8c70687ee, type: 3}
+      propertyPath: sceneToLoad
+      value: Room7
       objectReference: {fileID: 0}
     - target: {fileID: 8865888994927741596, guid: 2396cc27577fbce43a78c4e8c70687ee, type: 3}
       propertyPath: m_LocalPosition.x
