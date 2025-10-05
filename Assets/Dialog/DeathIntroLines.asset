@@ -44,7 +44,7 @@ MonoBehaviour:
   - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
     Line: ...
   - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
-    Line: I... I agree.
+    Line: I... I accept.
   - speakerData: {fileID: 11400000, guid: bdb466eeaeb1641499ced88a8a66a4c3, type: 2}
     Line: Thus, was the deal made.
   - speakerData: {fileID: 11400000, guid: 405666db26662ac4997c2fc1de5bf82c, type: 2}

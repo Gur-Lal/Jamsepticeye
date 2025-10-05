@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerName: Death
   portrait: {fileID: 21300000, guid: a1034db4d78767442b796690ef872068, type: 3}
   font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  secondsPerLetterTyped: 0.02
+  secondsPerLetterTyped: 0.04
   textShake: 1

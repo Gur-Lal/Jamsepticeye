@@ -13,6 +13,7 @@ public class NPC : MonoBehaviour
 {
     [Header("Dialog Settings")]
     [SerializeField] private bool CanBeInterrupted = true;
+    [SerializeField] private bool CanBeRepeated = false;
     private bool HidePrompt = false;
     [SerializeField] private DialogLinesData dialogLines;
     [SerializeField] private DialogSystem dialogSystem;
@@ -21,6 +22,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject interactionPrompt;
 
     private bool playerInRange = false;
+    private bool AlreadySpoke = false;
 
     void Start()
     {
@@ -39,6 +41,7 @@ public class NPC : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        if (!CanBeRepeated && AlreadySpoke) return;
         if (collider.CompareTag("Player"))
         {
             playerInRange = true;
@@ -50,6 +53,7 @@ public class NPC : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
+        if (!CanBeRepeated && AlreadySpoke) return;
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
@@ -64,6 +68,8 @@ public class NPC : MonoBehaviour
     {
         if (dialogSystem != null && dialogLines.lines.Count > 0)
         {
+            if (AlreadySpoke && !CanBeRepeated) return;
+            AlreadySpoke = true;
             if (!CanBeInterrupted) HidePrompt = true; //avoids prompt re-appearing if you leave and come back while he's still talking
             dialogSystem.StartDialog(dialogLines.lines, this);
         }
