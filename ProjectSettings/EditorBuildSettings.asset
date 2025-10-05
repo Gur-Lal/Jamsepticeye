@@ -17,12 +17,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/DropperEnd.unity
     guid: a461fa04d077b7442ad90c2f4081bde6
-  - enabled: 0
-    path: Assets/Scenes/Game2.unity
-    guid: 4ca6e9e3ca34e5546a1eb89e5ba01605
-  - enabled: 0
-    path: Assets/Scenes/SpikeWall.unity
-    guid: bc75a8f260f7cb648abcbd2fda9cee73
   - enabled: 1
     path: Assets/Scenes/Rooms/Room0.unity
     guid: a189de833a9ef2f4ea5100d21d731985
@@ -47,6 +41,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/Room7.unity
     guid: ad1ad4e2f1062174f9bda1866985bfe0
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room3.5.unity
+    guid: c22a89d3b869bcf479db94ba916f8e87
+  - enabled: 1
+    path: Assets/Scenes/Rooms/RoomDespawnTutorial.unity
+    guid: 4111777f40d29ab4b98385451c9f02a7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
