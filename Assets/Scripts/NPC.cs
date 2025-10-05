@@ -4,24 +4,25 @@ using UnityEngine.InputSystem;
 
 [System.Serializable] public struct DialogLine
 {
+    public DialogSpeakerData speakerData;
     [TextArea] public string Line;
-    public string SpeakerName;
-    public Sprite speakerImage;
-    public TMP_FontAsset Font;
+    
 }
 
 public class NPC : MonoBehaviour
 {
     [Header("Dialog Settings")]
     [SerializeField] private bool CanBeInterrupted = true;
+    [SerializeField] private bool CanBeRepeated = false;
     private bool HidePrompt = false;
-    [SerializeField] private DialogLine[] dialogLines;
+    [SerializeField] private DialogLinesData dialogLines;
     [SerializeField] private DialogSystem dialogSystem;
 
     [Header("Interaction Prompt")]
     [SerializeField] private GameObject interactionPrompt;
 
     private bool playerInRange = false;
+    private bool AlreadySpoke = false;
 
     void Start()
     {
@@ -40,6 +41,7 @@ public class NPC : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        if (!CanBeRepeated && AlreadySpoke) return;
         if (collider.CompareTag("Player"))
         {
             playerInRange = true;
@@ -51,6 +53,7 @@ public class NPC : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
+        if (!CanBeRepeated && AlreadySpoke) return;
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
@@ -63,10 +66,12 @@ public class NPC : MonoBehaviour
 
     void StartDialog()
     {
-        if (dialogSystem != null && dialogLines.Length > 0)
+        if (dialogSystem != null && dialogLines.lines.Count > 0)
         {
+            if (AlreadySpoke && !CanBeRepeated) return;
+            AlreadySpoke = true;
             if (!CanBeInterrupted) HidePrompt = true; //avoids prompt re-appearing if you leave and come back while he's still talking
-            dialogSystem.StartDialog(dialogLines, this);
+            dialogSystem.StartDialog(dialogLines.lines, this);
         }
     }
 
