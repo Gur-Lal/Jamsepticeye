@@ -13,6 +13,8 @@ using UnityEngine.InputSystem;
 public class NPC : MonoBehaviour
 {
     [Header("Dialog Settings")]
+    [SerializeField] private bool CanBeInterrupted = true;
+    private bool HidePrompt = false;
     [SerializeField] private DialogLine[] dialogLines;
     [SerializeField] private DialogSystem dialogSystem;
 
@@ -31,6 +33,7 @@ public class NPC : MonoBehaviour
     {
         if (playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
+            interactionPrompt.SetActive(false);
             StartDialog();
         }
     }
@@ -41,7 +44,7 @@ public class NPC : MonoBehaviour
         {
             playerInRange = true;
 
-            if (interactionPrompt != null)
+            if (interactionPrompt != null && !HidePrompt)
                 interactionPrompt.SetActive(true);
         }
     }
@@ -55,24 +58,21 @@ public class NPC : MonoBehaviour
             if (interactionPrompt != null)
                 interactionPrompt.SetActive(false);
         }
-        dialogSystem.EndDialog();
+        if (CanBeInterrupted) dialogSystem.EndDialog();
     }
 
     void StartDialog()
     {
         if (dialogSystem != null && dialogLines.Length > 0)
         {
-            dialogSystem.StartDialog(dialogLines);
+            if (!CanBeInterrupted) HidePrompt = true; //avoids prompt re-appearing if you leave and come back while he's still talking
+            dialogSystem.StartDialog(dialogLines, this);
         }
     }
 
-    //InputAction handler. Move this jurisdiction over to the player controller at some point?
-    public void OnInteract(InputAction.CallbackContext context)
+    public void EndOfDialogue() //called by dialogue system when it ends
     {
-        if (playerInRange && context.performed && !dialogSystem.Busy)
-        {
-            StartDialog();
-            interactionPrompt.SetActive(false);
-        }
+        HidePrompt = false;
     }
+
 }
