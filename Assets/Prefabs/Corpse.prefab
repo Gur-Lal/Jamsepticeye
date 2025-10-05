@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8492877842444778970}
   - component: {fileID: 7885876183643573203}
   - component: {fileID: 1089287130358188747}
+  - component: {fileID: -1685941863349682780}
   m_Layer: 3
   m_Name: Corpse
   m_TagString: Untagged
@@ -181,3 +182,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1685941863349682780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2639089107306622783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18489d5647a88ac42ac73d001447b8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CorpseDecay
+  state0: {fileID: -4861795786911797250, guid: 6ee9e0b7df9201b4da122d0f79596ba8, type: 3}
+  state1: {fileID: 21300000, guid: 32fd940424e8a814eb7438a0a4490961, type: 3}
+  state2: {fileID: 21300000, guid: 95e5f1ac7804b4e4c89eb7831b3a8200, type: 3}
