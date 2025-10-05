@@ -12,6 +12,7 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] private GameObject dialogPanel;
     [SerializeField] private TextMeshProUGUI dialogText;
     [SerializeField] private TextMeshProUGUI speakerNameText;
+    [SerializeField] private Image portraitImage;
     
     [Header("Settings")]
     [SerializeField] private float typeSpeed = 0.05f;
@@ -27,6 +28,7 @@ public class DialogSystem : MonoBehaviour
     void Start()
     {
         dialogPanel.SetActive(false);
+        if (portraitImage) portraitImage.gameObject.SetActive(false);
     
     }
 
@@ -42,6 +44,7 @@ public class DialogSystem : MonoBehaviour
         currentLineIndex = 0;
         
         dialogPanel.SetActive(true);
+        if (portraitImage) portraitImage.gameObject.SetActive(true);
 
         if (speakerNameText != null)
             speakerNameText.text = lines[currentLineIndex].SpeakerName;
@@ -63,6 +66,7 @@ public class DialogSystem : MonoBehaviour
             speakerNameText.text = currentLines[currentLineIndex].SpeakerName;
             dialogText.font = currentLines[currentLineIndex].Font;
             speakerNameText.font = currentLines[currentLineIndex].Font;
+            if (portraitImage != null) portraitImage.sprite = currentLines[currentLineIndex].speakerImage;
 
             typingCoroutine = StartCoroutine(TypeText(currentLines[currentLineIndex]));
         }
@@ -122,6 +126,7 @@ public class DialogSystem : MonoBehaviour
 
         if (dialogPanel == null) return;
         dialogPanel.SetActive(false);
+        if (portraitImage) portraitImage.gameObject.SetActive(false);
 
         source.EndOfDialogue();
     }
