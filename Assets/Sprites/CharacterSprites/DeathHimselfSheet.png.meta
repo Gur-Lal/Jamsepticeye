@@ -1,0 +1,993 @@
+fileFormatVersion: 2
+guid: f86c723b5d91715458a14bcb5ad8d4b9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4097163329224417146
+    second: DeathHimselfSheet_0
+  - first:
+      213: -2749023372068672718
+    second: DeathHimselfSheet_1
+  - first:
+      213: -4843745141117014686
+    second: DeathHimselfSheet_2
+  - first:
+      213: 7099219058813557252
+    second: DeathHimselfSheet_3
+  - first:
+      213: -2297093955396712490
+    second: DeathHimselfSheet_4
+  - first:
+      213: -6158218939100356500
+    second: DeathHimselfSheet_5
+  - first:
+      213: 8969772117116506615
+    second: DeathHimselfSheet_6
+  - first:
+      213: -2157863866601816126
+    second: DeathHimselfSheet_7
+  - first:
+      213: 5009264934433386624
+    second: DeathHimselfSheet_8
+  - first:
+      213: 5708236442568406713
+    second: DeathHimselfSheet_9
+  - first:
+      213: -912951362703228027
+    second: DeathHimselfSheet_10
+  - first:
+      213: -2640874440489399985
+    second: DeathHimselfSheet_11
+  - first:
+      213: 6348691237650066498
+    second: DeathHimselfSheet_12
+  - first:
+      213: 1101040536331539349
+    second: DeathHimselfSheet_13
+  - first:
+      213: -4543385074707146848
+    second: DeathHimselfSheet_14
+  - first:
+      213: -412162071391211544
+    second: DeathHimselfSheet_15
+  - first:
+      213: 7430903048728696345
+    second: DeathHimselfSheet_16
+  - first:
+      213: -5324466535797343291
+    second: DeathHimselfSheet_17
+  - first:
+      213: -5718262365914475778
+    second: DeathHimselfSheet_18
+  - first:
+      213: 6138929455694918384
+    second: DeathHimselfSheet_19
+  - first:
+      213: 5056920849470581550
+    second: DeathHimselfSheet_20
+  - first:
+      213: 5667922452544548430
+    second: DeathHimselfSheet_21
+  - first:
+      213: 1230343815774291631
+    second: DeathHimselfSheet_22
+  - first:
+      213: -4475528867424099608
+    second: DeathHimselfSheet_23
+  - first:
+      213: 7516813501534498208
+    second: DeathHimselfSheet_24
+  - first:
+      213: -2082490481055821447
+    second: DeathHimselfSheet_25
+  - first:
+      213: -2339229613519858123
+    second: DeathHimselfSheet_26
+  - first:
+      213: -1390045457026432929
+    second: DeathHimselfSheet_27
+  - first:
+      213: 2308379026176135073
+    second: DeathHimselfSheet_28
+  - first:
+      213: 188606607236292723
+    second: DeathHimselfSheet_29
+  - first:
+      213: -2722631607572855885
+    second: DeathHimselfSheet_30
+  - first:
+      213: 8794405287879471262
+    second: DeathHimselfSheet_31
+  - first:
+      213: 797690897929457789
+    second: DeathHimselfSheet_32
+  - first:
+      213: -4360594025319065361
+    second: DeathHimselfSheet_33
+  - first:
+      213: 3876210651881669562
+    second: DeathHimselfSheet_34
+  - first:
+      213: -2376961949446162365
+    second: DeathHimselfSheet_35
+  - first:
+      213: 368244625847371465
+    second: DeathHimselfSheet_36
+  - first:
+      213: 1280871337953429799
+    second: DeathHimselfSheet_37
+  - first:
+      213: 7355152028850742029
+    second: DeathHimselfSheet_38
+  - first:
+      213: -4503434204248827679
+    second: DeathHimselfSheet_39
+  - first:
+      213: 4369825844905489395
+    second: DeathHimselfSheet_40
+  - first:
+      213: 9063078500526292175
+    second: DeathHimselfSheet_41
+  - first:
+      213: 1911367783233639894
+    second: DeathHimselfSheet_42
+  - first:
+      213: 1526924122181139287
+    second: DeathHimselfSheet_43
+  - first:
+      213: -8583621568526187449
+    second: DeathHimselfSheet_44
+  - first:
+      213: -5668751811158391456
+    second: DeathHimselfSheet_45
+  - first:
+      213: 2601694372902772264
+    second: DeathHimselfSheet_46
+  - first:
+      213: 7872873348538548423
+    second: DeathHimselfSheet_47
+  - first:
+      213: -1075653325164108046
+    second: DeathHimselfSheet_48
+  - first:
+      213: 6978618865507493232
+    second: DeathHimselfSheet_49
+  - first:
+      213: 3410477728581574170
+    second: DeathHimselfSheet_50
+  - first:
+      213: -199180218348126410
+    second: DeathHimselfSheet_51
+  - first:
+      213: 528664503405748518
+    second: DeathHimselfSheet_52
+  - first:
+      213: 8652517541516145023
+    second: DeathHimselfSheet_53
+  - first:
+      213: 2426802685548267295
+    second: DeathHimselfSheet_54
+  - first:
+      213: 290315716034721985
+    second: DeathHimselfSheet_55
+  - first:
+      213: 4341502538764744957
+    second: DeathHimselfSheet_56
+  - first:
+      213: -9016061918640858471
+    second: DeathHimselfSheet_57
+  - first:
+      213: -884622355943813704
+    second: DeathHimselfSheet_58
+  - first:
+      213: 6382044888157525052
+    second: DeathHimselfSheet_59
+  - first:
+      213: -7360032572541911591
+    second: DeathHimselfSheet_60
+  - first:
+      213: -2295434351040074950
+    second: DeathHimselfSheet_61
+  - first:
+      213: 3669353545359939095
+    second: DeathHimselfSheet_62
+  - first:
+      213: 7039457199898763567
+    second: DeathHimselfSheet_63
+  - first:
+      213: 8831379877984012093
+    second: DeathHimselfSheet_64
+  - first:
+      213: -3762134469003056169
+    second: DeathHimselfSheet_65
+  - first:
+      213: -6390563495281797595
+    second: DeathHimselfSheet_66
+  - first:
+      213: 6291782866506476202
+    second: DeathHimselfSheet_67
+  - first:
+      213: 5194053952208673143
+    second: DeathHimselfSheet_68
+  - first:
+      213: -7562433756897364783
+    second: DeathHimselfSheet_69
+  - first:
+      213: -1185373262658643934
+    second: DeathHimselfSheet_70
+  - first:
+      213: -5038648265607704880
+    second: DeathHimselfSheet_71
+  - first:
+      213: -764446661760258587
+    second: DeathHimselfSheet_72
+  - first:
+      213: -9134036285891388443
+    second: DeathHimselfSheet_73
+  - first:
+      213: -1587839605903375252
+    second: DeathHimselfSheet_74
+  - first:
+      213: -588325521218827779
+    second: DeathHimselfSheet_75
+  - first:
+      213: 6416501512314632427
+    second: DeathHimselfSheet_76
+  - first:
+      213: 4799824171219166873
+    second: DeathHimselfSheet_77
+  - first:
+      213: -7881968640815449071
+    second: DeathHimselfSheet_78
+  - first:
+      213: 1982910323274866230
+    second: DeathHimselfSheet_79
+  - first:
+      213: -2982079506260585457
+    second: DeathHimselfSheet_80
+  - first:
+      213: 8794054578074814207
+    second: DeathHimselfSheet_81
+  - first:
+      213: -8448897927674420580
+    second: DeathHimselfSheet_82
+  - first:
+      213: 5594133665679755223
+    second: DeathHimselfSheet_83
+  - first:
+      213: 2834674350171132612
+    second: DeathHimselfSheet_84
+  - first:
+      213: 1155569367878756813
+    second: DeathHimselfSheet_85
+  - first:
+      213: -5179096004310689786
+    second: DeathHimselfSheet_86
+  - first:
+      213: -8576168863144489836
+    second: DeathHimselfSheet_87
+  - first:
+      213: -8182612841806146343
+    second: DeathHimselfSheet_88
+  - first:
+      213: 6777985826012042341
+    second: DeathHimselfSheet_89
+  - first:
+      213: 5240304452524897603
+    second: DeathHimselfSheet_90
+  - first:
+      213: 7952076766413137220
+    second: DeathHimselfSheet_91
+  - first:
+      213: -2947270147090601033
+    second: DeathHimselfSheet_92
+  - first:
+      213: -5302270742963360328
+    second: DeathHimselfSheet_93
+  - first:
+      213: -3153885109010711323
+    second: DeathHimselfSheet_94
+  - first:
+      213: 4989777489767666627
+    second: DeathHimselfSheet_95
+  - first:
+      213: -7556673033088919696
+    second: DeathHimselfSheet_96
+  - first:
+      213: 883660730521990579
+    second: DeathHimselfSheet_97
+  - first:
+      213: -8550511597794869380
+    second: DeathHimselfSheet_98
+  - first:
+      213: -415789843761610695
+    second: DeathHimselfSheet_99
+  - first:
+      213: -2589815246771843820
+    second: DeathHimselfSheet_100
+  - first:
+      213: -8186704775900728026
+    second: DeathHimselfSheet_101
+  - first:
+      213: 971189836445243139
+    second: DeathHimselfSheet_102
+  - first:
+      213: 8157310039774808495
+    second: DeathHimselfSheet_103
+  - first:
+      213: -87804053796729407
+    second: DeathHimselfSheet_104
+  - first:
+      213: -6176171200382827345
+    second: DeathHimselfSheet_105
+  - first:
+      213: -8440724671982359953
+    second: DeathHimselfSheet_106
+  - first:
+      213: -2967734586965579492
+    second: DeathHimselfSheet_107
+  - first:
+      213: 4217047522612409087
+    second: DeathHimselfSheet_108
+  - first:
+      213: -1109454562593986115
+    second: DeathHimselfSheet_109
+  - first:
+      213: 2062431885116539973
+    second: DeathHimselfSheet_110
+  - first:
+      213: 3529164018061547049
+    second: DeathHimselfSheet_111
+  - first:
+      213: 386703133502632890
+    second: DeathHimselfSheet_112
+  - first:
+      213: -94446152514880932
+    second: DeathHimselfSheet_113
+  - first:
+      213: -5831582365100806429
+    second: DeathHimselfSheet_114
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DeathHimselfSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68062d6e8a3f327c0800000000000000
+      internalID: -4097163329224417146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ba99cdec189d9d0800000000000000
+      internalID: -2749023372068672718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d2239157f87ccb0800000000000000
+      internalID: -4843745141117014686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ad347ee1e758260800000000000000
+      internalID: 7099219058813557252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d7c1e4d7351f10e0800000000000000
+      internalID: -2297093955396712490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6027d5a08c998aa0800000000000000
+      internalID: -6158218939100356500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f1dee477380b7c70800000000000000
+      internalID: 8969772117116506615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf3c850f3abd02e0800000000000000
+      internalID: -2157863866601816126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 080f8baeaeb748540800000000000000
+      internalID: 5009264934433386624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6ba3d0dcab73f40800000000000000
+      internalID: 5708236442568406713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5838dd8929b8453f0800000000000000
+      internalID: -912951362703228027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f49883630bab95bd0800000000000000
+      internalID: -2640874440489399985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24c64c83b051b1850800000000000000
+      internalID: 6348691237650066498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593d853c88ea74f00800000000000000
+      internalID: 1101040536331539349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a7d440b857a2f0c0800000000000000
+      internalID: -4543385074707146848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef66d0a7c4b74af0800000000000000
+      internalID: -412162071391211544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91657d3c3fedf1760800000000000000
+      internalID: 7430903048728696345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_17
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb385b55e1bb16b0800000000000000
+      internalID: -5324466535797343291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_18
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef2de23cca6a4a0b0800000000000000
+      internalID: -5718262365914475778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f2b0e380dbd13550800000000000000
+      internalID: 6138929455694918384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_20
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2be5f948bacd2640800000000000000
+      internalID: 5056920849470581550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_21
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4ee06ec07188ae40800000000000000
+      internalID: 5667922452544548430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathHimselfSheet_22
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa643da8e2f031110800000000000000
+      internalID: 1230343815774291631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c0f909c903c38f04e8df876c4ec02eb2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":23.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":78.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      DeathHimselfSheet_0: -4097163329224417146
+      DeathHimselfSheet_1: -2749023372068672718
+      DeathHimselfSheet_10: -912951362703228027
+      DeathHimselfSheet_11: -2640874440489399985
+      DeathHimselfSheet_12: 6348691237650066498
+      DeathHimselfSheet_13: 1101040536331539349
+      DeathHimselfSheet_14: -4543385074707146848
+      DeathHimselfSheet_15: -412162071391211544
+      DeathHimselfSheet_16: 7430903048728696345
+      DeathHimselfSheet_17: -5324466535797343291
+      DeathHimselfSheet_18: -5718262365914475778
+      DeathHimselfSheet_19: 6138929455694918384
+      DeathHimselfSheet_2: -4843745141117014686
+      DeathHimselfSheet_20: 5056920849470581550
+      DeathHimselfSheet_21: 5667922452544548430
+      DeathHimselfSheet_22: 1230343815774291631
+      DeathHimselfSheet_3: 7099219058813557252
+      DeathHimselfSheet_4: -2297093955396712490
+      DeathHimselfSheet_5: -6158218939100356500
+      DeathHimselfSheet_6: 8969772117116506615
+      DeathHimselfSheet_7: -2157863866601816126
+      DeathHimselfSheet_8: 5009264934433386624
+      DeathHimselfSheet_9: 5708236442568406713
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

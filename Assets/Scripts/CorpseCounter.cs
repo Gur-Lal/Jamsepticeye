@@ -27,6 +27,20 @@ public class CorpseCounter : MonoBehaviour
         return corpses.Count < maxCorpses;
     }
 
+    public void DeleteOldestCorpseIfNeeded()
+    {
+        if (enableLimit && corpses.Count > maxCorpses)
+        {
+            if (corpses.Count == 0) return;
+            GameObject oldest = corpses[0];
+            corpses.RemoveAt(0);
+            if (oldest != null)
+            {
+                Destroy(oldest);
+            }
+        }
+    }
+
     public void RegisterCorpse(GameObject corpse)
     {
         if (corpse == null)
@@ -36,16 +50,7 @@ public class CorpseCounter : MonoBehaviour
 
         corpses.Add(corpse);
 
-        // If limit exceeded, destroy oldest
-        if (enableLimit && corpses.Count > maxCorpses)
-        {
-            GameObject oldest = corpses[0];
-            corpses.RemoveAt(0);
-            if (oldest != null)
-            {
-                Destroy(oldest);
-            }
-        }
+        DeleteOldestCorpseIfNeeded();
     }
 
     public void UnregisterCorpse(GameObject corpse)
