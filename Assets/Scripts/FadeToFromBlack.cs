@@ -6,6 +6,7 @@ using System.Collections;
 public class FadeToFromBlack : MonoBehaviour
 {
     [SerializeField] public float fadeDuration = 2f;
+    [SerializeField] public float fadeInDelay = 0f;
     private Image fadeImage;
     private Coroutine fadeRoutine;
 
@@ -18,6 +19,12 @@ public class FadeToFromBlack : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(WaitThenFadeIn()); 
+    }
+
+    IEnumerator WaitThenFadeIn()
+    {
+        yield return new WaitForSeconds(fadeInDelay);
         FadeIn();
     }
 

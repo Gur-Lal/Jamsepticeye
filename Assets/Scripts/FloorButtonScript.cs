@@ -85,7 +85,6 @@ public class FloorButtonScript : MonoBehaviour
                 }
                 Activate();
             }
-            
             if (!objectsOnButton.Contains(otherRB)) objectsOnButton.Add(otherRB);
         }
     }

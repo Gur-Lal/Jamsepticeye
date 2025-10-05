@@ -1191,7 +1191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8566c2f79ebe8e8439c29ee8a494cca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeToFromBlack
-  fadeDuration: 5
+  fadeDuration: 3
+  fadeInDelay: 2
 --- !u!1001 &1314204101
 PrefabInstance:
   m_ObjectHideFlags: 0
