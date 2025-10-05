@@ -78,11 +78,12 @@ public class MusicPlayer : MonoBehaviour
         }
     }
 
-    public void EndMusic(float fadeOutTime = 1f)
+    public float EndMusic(float fadeOutTime = 1f)
     {
-        if (!gameObject.activeInHierarchy) return; //in case of unloading
+        if (!gameObject.activeInHierarchy) return 0f; //in case of unloading
         if (fadeRoutine != null) StopCoroutine(fadeRoutine);
         fadeRoutine = StartCoroutine(FadeOutAndEnd(fadeOutTime));
+        return fadeOutTime;
     }
 
     private IEnumerator FadeOutAndEnd(float duration)
