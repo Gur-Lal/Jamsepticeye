@@ -2616,6 +2616,7 @@ MonoBehaviour:
   dialogPanel: {fileID: 1323018426}
   dialogText: {fileID: 1919223200}
   speakerNameText: {fileID: 490097822}
+  portraitImage: {fileID: 0}
   typeSpeed: 0.025
   Busy: 0
 --- !u!4 &1459961362
@@ -3433,7 +3434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.75}
+  m_AnchoredPosition: {x: 0, y: 2}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4791337776751826423

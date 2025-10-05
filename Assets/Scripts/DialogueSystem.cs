@@ -79,11 +79,13 @@ public class DialogSystem : MonoBehaviour
     IEnumerator TypeText(DialogLine line)
     {
         isTyping = true;
-        dialogText.text = "";
-        
-        foreach (char letter in line.Line.ToCharArray())
+        dialogText.text = line.Line;
+
+        int totalChars = line.Line.Length;
+
+        for (int i = 0; i <= totalChars; i++)
         {
-            dialogText.text += letter;
+            dialogText.maxVisibleCharacters = i;
             yield return new WaitForSeconds(typeSpeed);
         }
 
