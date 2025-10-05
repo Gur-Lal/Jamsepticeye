@@ -22,6 +22,7 @@ public class DialogSystem : MonoBehaviour
     private Coroutine typingCoroutine;
 
     public bool Busy = false;
+    NPC source;
 
     void Start()
     {
@@ -29,9 +30,10 @@ public class DialogSystem : MonoBehaviour
     
     }
 
-    public void StartDialog(DialogLine[] lines)
+    public void StartDialog(DialogLine[] lines, NPC source_)
     {
         if (Busy == true) return;
+        source = source_;
         Busy = true;
         if (lines == null || lines.Length == 0)
             return;
@@ -120,5 +122,7 @@ public class DialogSystem : MonoBehaviour
 
         if (dialogPanel == null) return;
         dialogPanel.SetActive(false);
+
+        source.EndOfDialogue();
     }
 }
