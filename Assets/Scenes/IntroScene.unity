@@ -670,6 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogSystem
   CurrentLineID: 0
+  PausePlayerControl: 0
   dialogPanel: {fileID: 1748386412}
   dialogText: {fileID: 541360841}
   speakerNameText: {fileID: 2108223622}

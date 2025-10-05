@@ -12,7 +12,7 @@ public class PlayerController : Entity
     [SerializeField, Range(0.1f, 0.4f)] float maxJumpHoldTime = 0.35f;
     [SerializeField, Range(0.05f, 0.2f)] float coyoteTime = 0.1f;
     [SerializeField, Range(0.1f, 0.5f)] float jumpBuffer = 0.1f;
-    
+
     [Header("Audio")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip[] footstepSounds;
@@ -20,10 +20,10 @@ public class PlayerController : Entity
     [SerializeField, Range(0f, 1f)] float footstepVolume = 0.5f;
     [SerializeField, Range(0.8f, 1.2f)] float footstepPitchMin = 0.9f;
     [SerializeField, Range(0.8f, 1.2f)] float footstepPitchMax = 1.1f;
-    
+
     [Header("References")]
     [SerializeField] GameObject corpsePrefab;
-    
+
     [Header("Debug Stuff")]
     [SerializeField] float DeathRespawnDelay = 1f;
 
@@ -52,7 +52,7 @@ public class PlayerController : Entity
         input.Player.Enable();
 
         animator = GetComponent<Animator>();
-        
+
         //audio source setup
         if (audioSource == null)
         {
@@ -103,7 +103,7 @@ public class PlayerController : Entity
         animator.SetBool("IsGrounded", isAlmostGrounded);
         animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
         animator.SetFloat("YVel", rb.linearVelocityY);
-        
+
         // Footstep sound handler
         HandleFootsteps();
     }
@@ -111,11 +111,11 @@ public class PlayerController : Entity
     private void HandleFootsteps()
     {
         bool isMoving = Mathf.Abs(horizontalMovement) > 0.1f;
-        
+
         if (IsGrounded && isMoving && footstepSounds != null && footstepSounds.Length > 0)
         {
             footstepTimer += Time.deltaTime;
-            
+
             if (footstepTimer >= footstepInterval)
             {
                 PlayFootstepSound();
@@ -131,7 +131,7 @@ public class PlayerController : Entity
     {
         if (audioSource == null || footstepSounds == null || footstepSounds.Length == 0)
             return;
-        
+
         AudioClip clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
         //randomize pitch a bit for variety
         audioSource.pitch = Random.Range(footstepPitchMin, footstepPitchMax);
@@ -162,7 +162,7 @@ public class PlayerController : Entity
         if (IsIncapacitated) return;
         IsIncapacitated = true;
         rb.linearVelocityX = 0;
-        rb.linearVelocityY = 0; 
+        rb.linearVelocityY = 0;
         animator.SetTrigger("Death");
         animator.SetBool("IsDead", true);
         if (CorpseCounter.Instance == null) Debug.LogError("[Player Controller] ERROR: NO CORPSE COUNTER IN THIS SCENE!");
@@ -207,4 +207,7 @@ public class PlayerController : Entity
             CorpseCounter.Instance.RegisterCorpse(corpseObj);
         }
     }
+
+    public void Incapacitate() { IsIncapacitated = true; }
+    public void Deincapacitate() { IsIncapacitated = false; }
 }

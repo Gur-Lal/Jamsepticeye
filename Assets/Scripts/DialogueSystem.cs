@@ -8,6 +8,8 @@ using System.Collections.Generic;
 public class DialogSystem : MonoBehaviour
 {
     public int CurrentLineID = 0;
+    [Header("Settings")]
+    [SerializeField] private bool PausePlayerControl = false;
     [Header("UI References")]
     [SerializeField] private GameObject dialogPanel;
     [SerializeField] private TextMeshProUGUI dialogText;
@@ -17,7 +19,9 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] List<IDialogueAction> DialogueActions;
     
     private float typeSpeed = 0.05f;
-    
+
+    private PlayerController pcontr;
+
     private List<DialogLine> currentLines;
     private int currentLineIndex = 0;
     private bool isTyping = false;
@@ -31,6 +35,7 @@ public class DialogSystem : MonoBehaviour
     {
         dialogPanel.SetActive(false);
         if (portraitImage) portraitImage.gameObject.SetActive(false);
+        pcontr = FindFirstObjectByType<PlayerController>();
     
     }
 
@@ -41,6 +46,8 @@ public class DialogSystem : MonoBehaviour
         Busy = true;
         if (lines == null || lines.Count == 0)
             return;
+
+        if (PausePlayerControl && pcontr != null) pcontr.Incapacitate();
 
         currentLines = lines;
         currentLineIndex = 0;
@@ -145,6 +152,8 @@ public class DialogSystem : MonoBehaviour
         Busy = false;
 
         if (dialogPanel == null) return;
+
+        if (PausePlayerControl && pcontr != null) pcontr.Deincapacitate();
         dialogPanel.SetActive(false);
         if (portraitImage) portraitImage.gameObject.SetActive(false);
 
