@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class CameraOffsetDDialog : IDialogueAction
 {
+    [SerializeField] float YoffsetVal = 0f;
     CameraFollow scr;
     float original;
     float originalSize;
@@ -14,7 +15,7 @@ public class CameraOffsetDDialog : IDialogueAction
 
     public override void Ping(int id)
     {
-        if (id == validDialogIDs[0]) scr.Yoffset = 0f;
-        if (id == validDialogIDs[-1]) scr.Yoffset = original;
+        if (id == 0) scr.Yoffset = YoffsetVal;
+        if (id == -1) scr.Yoffset = original;
     }
 }

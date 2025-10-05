@@ -51,6 +51,8 @@ public class CorpseCounter : MonoBehaviour
         corpses.Add(corpse);
 
         DeleteOldestCorpseIfNeeded();
+        
+        for (int i = 0; i < corpses.Count; i++) { CorpseDecay cd = corpses[i].GetComponent<CorpseDecay>(); cd.Prep(); cd.Up(i, corpses.Count); }
     }
 
     public void UnregisterCorpse(GameObject corpse)

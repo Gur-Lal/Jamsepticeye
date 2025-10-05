@@ -6,17 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/SplashScreen.unity
+    guid: e2fdf2b87503c174782d174509ea0b29
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 47507f3639a8e5f45aeb6acec4b02494
-  - enabled: 0
-    path: Assets/Scenes/Game.unity
-    guid: 12c1ffbfc8059fe43ac3389dc41bd9ba
-  - enabled: 0
-    path: Assets/Scenes/Hospital.unity
-    guid: 265d0d50fc40e3e4ca2b86db41fa764b
-  - enabled: 0
-    path: Assets/Scenes/DropperEnd.unity
-    guid: a461fa04d077b7442ad90c2f4081bde6
+  - enabled: 1
+    path: Assets/Scenes/IntroScene.unity
+    guid: 94d45136f53a9704a8edf94db98cd7ef
   - enabled: 1
     path: Assets/Scenes/Rooms/Room0.unity
     guid: a189de833a9ef2f4ea5100d21d731985
@@ -31,22 +28,22 @@ EditorBuildSettings:
     guid: d1b46f86ec90a884b9cf26eda898a542
   - enabled: 1
     path: Assets/Scenes/Rooms/Room4.unity
-    guid: 5c8b6522b5f5b934396e57e8904b784e
+    guid: 4111777f40d29ab4b98385451c9f02a7
   - enabled: 1
     path: Assets/Scenes/Rooms/Room5.unity
-    guid: 1e73b1fa0e424c4428886a8d0659bd5c
+    guid: 5c8b6522b5f5b934396e57e8904b784e
   - enabled: 1
     path: Assets/Scenes/Rooms/Room6.unity
-    guid: 2a5d7efd84c9ad14a85ed4a49eeb5c3a
+    guid: 1e73b1fa0e424c4428886a8d0659bd5c
   - enabled: 1
     path: Assets/Scenes/Rooms/Room7.unity
+    guid: 2a5d7efd84c9ad14a85ed4a49eeb5c3a
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room8.unity
     guid: ad1ad4e2f1062174f9bda1866985bfe0
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room3.5.unity
-    guid: c22a89d3b869bcf479db94ba916f8e87
-  - enabled: 1
-    path: Assets/Scenes/Rooms/RoomDespawnTutorial.unity
-    guid: 4111777f40d29ab4b98385451c9f02a7
+    path: Assets/Scenes/OutroScene.unity
+    guid: ca2ae16b39113de4e918b001c8c5fe82
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

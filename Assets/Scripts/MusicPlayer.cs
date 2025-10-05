@@ -10,7 +10,7 @@ public class MusicPlayer : MonoBehaviour
     //[SerializeField] private AudioClip outroClip; //if add relevant logic down below
 
     [Header("Settings")]
-    [SerializeField] private bool PersistAcrossScenes = true;
+    [SerializeField] public bool PersistAcrossScenes = true;
     [SerializeField, Range(0f, 1f)] public float volume = 1f;
     [SerializeField] private bool PlayOnStart = true;
     [SerializeField] private float PlayOnStartDelay = 1f;
