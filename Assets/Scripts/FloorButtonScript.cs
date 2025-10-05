@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.Rendering.Universal;
 
 public class FloorButtonScript : MonoBehaviour
@@ -7,18 +8,20 @@ public class FloorButtonScript : MonoBehaviour
     [Header("Put the result of the button here:")]
     [SerializeField] List<IButtonActivated> ControlledObjects = new List<IButtonActivated>();
     [Header("Config stuff")]
+    [SerializeField] private float releaseDelay = 0.25f;
+    private Coroutine releaseRoutine;
     [SerializeField] Sprite upSprite;
     [SerializeField] Sprite downSprite;
     [Header("Audio")]
     [SerializeField] AudioClip buttonPressSound;
     [SerializeField] AudioClip buttonReleaseSound;
     [SerializeField, Range(0f, 1f)] float buttonSoundVolume = 0.6f;
-    
+
     Collider2D buttonTriggerCol;
     SpriteRenderer spr;
     AudioSource audioSource;
     List<Rigidbody2D> objectsOnButton = new List<Rigidbody2D>();
-    
+
     void Start()
     {
         if (ControlledObjects.Count == 0) Debug.LogError("[FLOOR BUTTON SCRIPT] Error: Unassigned 'ControlledObjects'. You forgot to attach a door to this button! -J");
@@ -44,23 +47,25 @@ public class FloorButtonScript : MonoBehaviour
         {
             audioSource.PlayOneShot(buttonPressSound, buttonSoundVolume);
         }
-        
-        foreach (IButtonActivated ControlledObject in ControlledObjects){
+
+        foreach (IButtonActivated ControlledObject in ControlledObjects)
+        {
             ControlledObject.OnButtonTrigger(this);
         }
     }
-    
+
     void Deactivate()
     {
         spr.sprite = upSprite;
-        
+
         // Play release sound
         if (buttonReleaseSound != null)
         {
             audioSource.PlayOneShot(buttonReleaseSound, buttonSoundVolume);
         }
-        
-        foreach (IButtonActivated ControlledObject in ControlledObjects){
+
+        foreach (IButtonActivated ControlledObject in ControlledObjects)
+        {
             ControlledObject.OnButtonDisable(this);
         }
     }
@@ -71,8 +76,17 @@ public class FloorButtonScript : MonoBehaviour
         if (otherRB != null && otherRB.bodyType == RigidbodyType2D.Dynamic)
         {
             //if the other component has a dynamic rigidbody, its considered a weighted object
-            if (objectsOnButton.Count == 0) Activate();
-            objectsOnButton.Add(otherRB);
+            if (objectsOnButton.Count == 0)
+            {
+                if (releaseRoutine != null)
+                {
+                    StopCoroutine(releaseRoutine);
+                    releaseRoutine = null;
+                }
+                Activate();
+            }
+            
+            if (!objectsOnButton.Contains(otherRB)) objectsOnButton.Add(otherRB);
         }
     }
 
@@ -83,7 +97,20 @@ public class FloorButtonScript : MonoBehaviour
         {
             //if the other component has a dynamic rigidbody, its considered a weighted object
             objectsOnButton.Remove(otherRB);
-            if (objectsOnButton.Count == 0) Deactivate();
+            if (objectsOnButton.Count == 0)
+            {
+                if (releaseRoutine != null) StopCoroutine(releaseRoutine);
+                releaseRoutine = StartCoroutine(DelayedDeactivate());
+            }
         }
+    }
+
+    IEnumerator DelayedDeactivate()
+    {
+        yield return new WaitForSeconds(releaseDelay);
+
+        if (objectsOnButton.Count == 0) Deactivate();
+
+        releaseRoutine = null;
     }
 }

@@ -159,6 +159,6 @@ public class DialogSystem : MonoBehaviour
 
         foreach (var ping in DialogueActions) ping.Ping(-1); //end all relevant dialogue actions
 
-        source.EndOfDialogue();
+        if (source != null) source.EndOfDialogue();
     }
 }
