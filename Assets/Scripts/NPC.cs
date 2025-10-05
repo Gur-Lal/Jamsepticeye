@@ -4,10 +4,9 @@ using UnityEngine.InputSystem;
 
 [System.Serializable] public struct DialogLine
 {
+    public DialogSpeakerData speakerData;
     [TextArea] public string Line;
-    public string SpeakerName;
-    public Sprite speakerImage;
-    public TMP_FontAsset Font;
+    
 }
 
 public class NPC : MonoBehaviour
@@ -15,7 +14,7 @@ public class NPC : MonoBehaviour
     [Header("Dialog Settings")]
     [SerializeField] private bool CanBeInterrupted = true;
     private bool HidePrompt = false;
-    [SerializeField] private DialogLine[] dialogLines;
+    [SerializeField] private DialogLinesData dialogLines;
     [SerializeField] private DialogSystem dialogSystem;
 
     [Header("Interaction Prompt")]
@@ -63,10 +62,10 @@ public class NPC : MonoBehaviour
 
     void StartDialog()
     {
-        if (dialogSystem != null && dialogLines.Length > 0)
+        if (dialogSystem != null && dialogLines.lines.Count > 0)
         {
             if (!CanBeInterrupted) HidePrompt = true; //avoids prompt re-appearing if you leave and come back while he's still talking
-            dialogSystem.StartDialog(dialogLines, this);
+            dialogSystem.StartDialog(dialogLines.lines, this);
         }
     }
 

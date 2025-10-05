@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f407ab980c71b04897b500fb01b088b, type: 3}
+  m_Name: PlayerSpeaker
+  m_EditorClassIdentifier: Assembly-CSharp::DialogSpeakerData
+  speakerName: You
+  portrait: {fileID: -7165162994186742415, guid: bf312f4f647453a429fd28de64388847, type: 3}
+  font: {fileID: 11400000, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
+  secondsPerLetterTyped: 0.035
+  textShake: 0

@@ -1,28 +1,10 @@
 fileFormatVersion: 2
-guid: bf312f4f647453a429fd28de64388847
+guid: a1034db4d78767442b796690ef872068
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7165162994186742415
-    second: protagonista_0
-  - first:
-      213: -8885643464461005080
-    second: protagonista_1
-  - first:
-      213: 8858940105962702453
-    second: protagonista_2
-  - first:
-      213: 6062558952801307109
-    second: protagonista_3
-  - first:
-      213: -1831624094322059629
-    second: protagonista_4
-  - first:
-      213: 1652483532263777623
-    second: protagonista_5
-  - first:
-      213: 3787578392524730682
-    second: protagonista_6
+      213: -8264397628564404379
+    second: DeathPortraitNew_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -64,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -118,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: protagonista_0
+      name: DeathPortraitNew_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1080
-        height: 1080
+        width: 2161
+        height: 2150
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 17599bd283a309c90800000000000000
-      internalID: -7165162994186742415
+      spriteID: 56786dab426fe4d80800000000000000
+      internalID: -8264397628564404379
       vertices: []
       indices: 
       edges: []
@@ -143,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: afb48d88b761ec74a8e0bd096958dc72
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -151,11 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1080.0,"y":1080.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      protagonista_0: -7165162994186742415
+      DeathPortraitNew_0: -8264397628564404379
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

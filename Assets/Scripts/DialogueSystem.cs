@@ -13,14 +13,16 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogText;
     [SerializeField] private TextMeshProUGUI speakerNameText;
     [SerializeField] private Image portraitImage;
+    [SerializeField] private TextShakeScript textShaker;
+    [SerializeField] List<IDialogueAction> DialogueActions;
     
-    [Header("Settings")]
-    [SerializeField] private float typeSpeed = 0.05f;
+    private float typeSpeed = 0.05f;
     
-    private DialogLine[] currentLines;
+    private List<DialogLine> currentLines;
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
+    private bool IsFirstLine;
 
     public bool Busy = false;
     NPC source;
@@ -32,12 +34,12 @@ public class DialogSystem : MonoBehaviour
     
     }
 
-    public void StartDialog(DialogLine[] lines, NPC source_)
+    public void StartDialog(List<DialogLine> lines, NPC source_)
     {
         if (Busy == true) return;
         source = source_;
         Busy = true;
-        if (lines == null || lines.Length == 0)
+        if (lines == null || lines.Count == 0)
             return;
 
         currentLines = lines;
@@ -47,15 +49,24 @@ public class DialogSystem : MonoBehaviour
         if (portraitImage) portraitImage.gameObject.SetActive(true);
 
         if (speakerNameText != null)
-            speakerNameText.text = lines[currentLineIndex].SpeakerName;
+            speakerNameText.text = lines[currentLineIndex].speakerData.speakerName;
         else speakerNameText.text = "???";
-        
+
+        IsFirstLine = true;
+        StartCoroutine(InputDelay());
+
         DisplayLine();
+    }
+
+    IEnumerator InputDelay()
+    {
+        yield return new WaitForSeconds(0.2f); //0.2f second delay before first line of dialogue can be skipped so they dont skip it accidentally
+        IsFirstLine = false;
     }
 
     void DisplayLine()
     {
-        if (currentLineIndex < currentLines.Length)
+        if (currentLineIndex < currentLines.Count)
         {
             if (typingCoroutine != null)
                 StopCoroutine(typingCoroutine);
@@ -63,10 +74,17 @@ public class DialogSystem : MonoBehaviour
             CurrentLineID = currentLineIndex;
 
             //Update speaker name and font
-            speakerNameText.text = currentLines[currentLineIndex].SpeakerName;
-            dialogText.font = currentLines[currentLineIndex].Font;
-            speakerNameText.font = currentLines[currentLineIndex].Font;
-            if (portraitImage != null) portraitImage.sprite = currentLines[currentLineIndex].speakerImage;
+            speakerNameText.text = currentLines[currentLineIndex].speakerData.speakerName;
+            typeSpeed = currentLines[currentLineIndex].speakerData.secondsPerLetterTyped;
+            dialogText.font = currentLines[currentLineIndex].speakerData.font;
+            speakerNameText.font = currentLines[currentLineIndex].speakerData.font;
+            if (portraitImage != null) portraitImage.sprite = currentLines[currentLineIndex].speakerData.portrait;
+
+            bool textShake = currentLines[currentLineIndex].speakerData.textShake;
+            if (textShake && textShaker != null) textShaker.StartShake();
+            else if (textShaker != null) textShaker.StopShake();
+
+            foreach (var ping in DialogueActions) ping.Ping(currentLineIndex); //activate all relevant dialogue actions
 
             typingCoroutine = StartCoroutine(TypeText(currentLines[currentLineIndex]));
         }
@@ -95,13 +113,13 @@ public class DialogSystem : MonoBehaviour
 
     public void OnContinueClicked()
     {
-        if (isTyping)
-        {/* Disallow text skipping for now
+        if (isTyping && !IsFirstLine)
+        {//Allow text skipping?
             StopCoroutine(typingCoroutine);
-            dialogText.text = currentLines[currentLineIndex].Line;
-            isTyping = false;*/
+            dialogText.maxVisibleCharacters = currentLines[currentLineIndex].Line.Length;
+            isTyping = false;
         }
-        else
+        else if (!isTyping) 
         {
             // Move to next line
             currentLineIndex++;
@@ -129,6 +147,8 @@ public class DialogSystem : MonoBehaviour
         if (dialogPanel == null) return;
         dialogPanel.SetActive(false);
         if (portraitImage) portraitImage.gameObject.SetActive(false);
+
+        foreach (var ping in DialogueActions) ping.Ping(-1); //end all relevant dialogue actions
 
         source.EndOfDialogue();
     }

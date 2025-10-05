@@ -3,8 +3,8 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] Transform transformToFollow;
-    [SerializeField] float Zoffset = -1f;
-    [SerializeField] float Yoffset = 3f;
+    [SerializeField] public float Zoffset = -1f;
+    [SerializeField] public float Yoffset = 3f;
     [SerializeField, Range(0f, 10f)] float followLagX = 5f;
     [SerializeField, Range(0f, 10f)] float followLagY = 2f;
 

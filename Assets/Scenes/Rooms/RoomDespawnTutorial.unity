@@ -2617,7 +2617,7 @@ MonoBehaviour:
   dialogText: {fileID: 1919223200}
   speakerNameText: {fileID: 490097822}
   portraitImage: {fileID: 0}
-  typeSpeed: 0.025
+  textShaker: {fileID: 0}
   Busy: 0
 --- !u!4 &1459961362
 Transform:
@@ -3145,71 +3145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   CanBeInterrupted: 1
-  dialogLines:
-  - Line: If only I knew...
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  - Line: Ah! Our Lord has condemned yet another soul to this treacherous path...
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  - Line: ...
-    SpeakerName: You
-    speakerImage: {fileID: 21300000, guid: 2f2a851f3cf81524ab00adff4edf74dd, type: 3}
-    Font: {fileID: 11400000, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
-  - Line: Who... Who are you?
-    SpeakerName: You
-    speakerImage: {fileID: 21300000, guid: 2f2a851f3cf81524ab00adff4edf74dd, type: 3}
-    Font: {fileID: 11400000, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
-  - Line: Oh Death, it's always the same bloody question!
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  - Line: I've had to introduce myself to too many of your sheep...
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  - Line: The foolish lambs go about their days as if time is their ally!
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  - Line: And then one day... They get their first glimpse of Him!
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  - Line: I don't understand... What are you saying?
-    SpeakerName: You
-    speakerImage: {fileID: 21300000, guid: 2f2a851f3cf81524ab00adff4edf74dd, type: 3}
-    Font: {fileID: 11400000, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
-  - Line: Where am I? Is this... still the hospital I was just in?
-    SpeakerName: You
-    speakerImage: {fileID: 21300000, guid: 2f2a851f3cf81524ab00adff4edf74dd, type: 3}
-    Font: {fileID: 11400000, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
-  - Line: Some see a hospital, others their childhood home...
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  - Line: Not all minds are the same, girl.
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  - Line: It would behoove you most greatly if you  accustomate yourself to Death.
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  - Line: I myself have been too afraid...
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  - Line: If only I knew... The rule of three...
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
-  - Line: If only I knew...
-    SpeakerName: ???
-    speakerImage: {fileID: 21300000, guid: ef5b914e753bfbc45af2335d84bd0cb5, type: 3}
-    Font: {fileID: 11400000, guid: cd592fa31036218439e0d59b45c3ee6e, type: 2}
+  dialogLines: {fileID: 0}
   dialogSystem: {fileID: 1459961361}
   interactionPrompt: {fileID: 510723003588577921}
 --- !u!1 &2141040991
