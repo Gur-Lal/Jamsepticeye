@@ -54,7 +54,7 @@ MonoBehaviour:
   IllegalButtonsPressed: []
   doorOpenSound: {fileID: 8300000, guid: b36bc9662b5aa494b9239036adee0c14, type: 3}
   doorCloseSound: {fileID: 8300000, guid: 649c48996af41d44d8b63e1d2cae59d5, type: 3}
-  doorSoundVolume: 0.7
+  doorSoundVolume: 0.25
 --- !u!212 &5829709034612402238
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -194,8 +194,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.5
+  m_Pitch: 1.6
   Loop: 0
   Mute: 0
   Spatialize: 0

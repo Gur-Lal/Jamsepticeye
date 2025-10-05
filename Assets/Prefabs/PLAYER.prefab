@@ -63,7 +63,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c213d148c02aa4e4db317464b13f7ea7, type: 3}
   - {fileID: 8300000, guid: e352156abe652ce4d8091ef3d05a6112, type: 3}
   footstepInterval: 0.25
-  footstepVolume: 0.5
+  footstepVolume: 0.3
   footstepPitchMin: 0.8
   footstepPitchMax: 1.2
   corpsePrefab: {fileID: 2639089107306622783, guid: c0e7ec7957e8c154ea16f9186f98b447, type: 3}
@@ -92,7 +92,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -300,7 +300,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

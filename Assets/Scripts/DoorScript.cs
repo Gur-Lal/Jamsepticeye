@@ -121,6 +121,7 @@ public class DoorScript : IButtonActivated
     {
         if (!isOpen) return;
         isOpen = false;
+        if (col == null) return;
         col.enabled = true;
         animator.SetTrigger("DoorClose");
         

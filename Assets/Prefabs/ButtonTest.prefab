@@ -189,7 +189,7 @@ MonoBehaviour:
   downSprite: {fileID: 21300000, guid: 0c9b3d5ce807a6941b8738796dd7d16e, type: 3}
   buttonPressSound: {fileID: 8300000, guid: d9554e9676748e14a9960df3ca86f399, type: 3}
   buttonReleaseSound: {fileID: 8300000, guid: 6f3370487d087394b91f4918ddd460aa, type: 3}
-  buttonSoundVolume: 0.6
+  buttonSoundVolume: 0.2
 --- !u!61 &5656559724960538966
 BoxCollider2D:
   m_ObjectHideFlags: 0
