@@ -56,10 +56,11 @@ public class DialogSystem : MonoBehaviour
                 StopCoroutine(typingCoroutine);
 
             CurrentLineID = currentLineIndex;
-            
+
             //Update speaker name and font
             speakerNameText.text = currentLines[currentLineIndex].SpeakerName;
             dialogText.font = currentLines[currentLineIndex].Font;
+            speakerNameText.font = currentLines[currentLineIndex].Font;
 
             typingCoroutine = StartCoroutine(TypeText(currentLines[currentLineIndex]));
         }
