@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f407ab980c71b04897b500fb01b088b, type: 3}
   m_Name: PlayerSpeaker
   m_EditorClassIdentifier: Assembly-CSharp::DialogSpeakerData
-  speakerName: You
+  speakerName: Tish
   portrait: {fileID: -7165162994186742415, guid: bf312f4f647453a429fd28de64388847, type: 3}
   font: {fileID: 11400000, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
   secondsPerLetterTyped: 0.035
