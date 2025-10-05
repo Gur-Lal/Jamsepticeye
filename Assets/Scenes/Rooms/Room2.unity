@@ -1716,6 +1716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelExit
       objectReference: {fileID: 0}
+    - target: {fileID: 5763356616083251604, guid: 2396cc27577fbce43a78c4e8c70687ee, type: 3}
+      propertyPath: sceneToLoad
+      value: Room3
+      objectReference: {fileID: 0}
     - target: {fileID: 8865888994927741596, guid: 2396cc27577fbce43a78c4e8c70687ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.502117
