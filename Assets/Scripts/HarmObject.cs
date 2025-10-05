@@ -5,8 +5,8 @@ public class HarmObject : MonoBehaviour
     Collider2D trigCol;
 
     [Header("Effect")]
-    [SerializeField] private ParticleSystem bloodEffect;   // Assign a blood effect prefab in the inspector
-    [SerializeField] private Transform effectSpawnPoint;   // point to spawn the effect
+    [SerializeField] private ParticleSystem bloodEffect;   //effect prefab
+    [SerializeField] private Transform effectSpawnPoint;   //point to spawn the effect
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class HarmObject : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         other.GetComponent<PlayerController>().Die();
 
-        // Play blood effect
+        //play blood effect
         PlayBloodEffect();
     }
 
@@ -27,7 +27,7 @@ public class HarmObject : MonoBehaviour
     {
         if (bloodEffect != null)
         {
-            // Instantiate the effect
+            //instantiate the effect
             Vector3 spawnPos = effectSpawnPoint != null ? effectSpawnPoint.position : transform.position;
             Instantiate(bloodEffect, spawnPos, Quaternion.identity);
         }

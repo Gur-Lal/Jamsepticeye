@@ -3,8 +3,8 @@ using UnityEngine;
 public class FanDeath : MonoBehaviour
 {
     [SerializeField] GameObject prompt;
-    [SerializeField] ParticleSystem bloodEffect;   // Assign a blood effect prefab in the inspector
-    [SerializeField] Transform effectSpawnPoint;   // point to spawn the effect
+    [SerializeField] ParticleSystem bloodEffect;   //effect prefab
+    [SerializeField] Transform effectSpawnPoint;   //point to spawn the effect
 
     private bool playerIsNearby = false;
     private Collider2D playerCol;

@@ -44,7 +44,7 @@ public class PlayerController : Entity
     [SerializeField] float isAlmostGroundedDelay = 0.1f;
     float lastGroundedTime;
 
-    // Footstep tracking
+    //footstep tracking
     private float footstepTimer = 0f;
 
     protected override void Awake()
@@ -107,10 +107,10 @@ public class PlayerController : Entity
         animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
         animator.SetFloat("YVel", rb.linearVelocityY);
 
-        // Footstep sound handler
+        //footstep sound handler
         HandleFootsteps();
     }
-    // Footstep sound handler
+    //footstep sound handler
     private void HandleFootsteps()
     {
         bool isMoving = Mathf.Abs(horizontalMovement) > 0.1f;
@@ -157,7 +157,7 @@ public class PlayerController : Entity
 
     protected override void OnGroundTouched()
     {
-        // Spawn dust cloud effect when landing
+        //spawn dust cloud effect when landing
         if (dustCloudEffect != null)
         {
             Instantiate(dustCloudEffect, transform.position + Vector3.down * 0.5f, Quaternion.identity);
