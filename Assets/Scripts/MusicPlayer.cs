@@ -13,6 +13,7 @@ public class MusicPlayer : MonoBehaviour
     [SerializeField] private bool PersistAcrossScenes = true;
     [SerializeField, Range(0f, 1f)] public float volume = 1f;
     [SerializeField] private bool PlayOnStart = true;
+    [SerializeField] private float PlayOnStartDelay = 1f;
 
     private AudioSource source;
     private Coroutine fadeRoutine; //keep track of running coroutine
@@ -42,7 +43,13 @@ public class MusicPlayer : MonoBehaviour
 
     void Start()
     {
-        if (PlayOnStart) PlayMusic();
+        if (PlayOnStart) StartCoroutine(WaitThenPlay(PlayOnStartDelay));
+    }
+
+    private IEnumerator WaitThenPlay(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        PlayMusic();
     }
 
     public void PlayMusic()
