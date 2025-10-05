@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FanDeath
   prompt: {fileID: 6328228212096475251}
+  bloodEffect: {fileID: 4673684978031966616, guid: 23d11861300824247998c1c8d0cbe8f2, type: 3}
+  effectSpawnPoint: {fileID: 0}
 --- !u!212 &622012785721579058
 SpriteRenderer:
   m_ObjectHideFlags: 0

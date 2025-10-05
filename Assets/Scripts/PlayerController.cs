@@ -27,6 +27,9 @@ public class PlayerController : Entity
     [Header("Debug Stuff")]
     [SerializeField] float DeathRespawnDelay = 1f;
 
+    [Header("Particles")]
+    [SerializeField] ParticleSystem dustCloudEffect;
+
     //reference vars
     static public PlayerActionControls input;
     private Animator animator;
@@ -154,6 +157,12 @@ public class PlayerController : Entity
 
     protected override void OnGroundTouched()
     {
+        // Spawn dust cloud effect when landing
+        if (dustCloudEffect != null)
+        {
+            Instantiate(dustCloudEffect, transform.position + Vector3.down * 0.5f, Quaternion.identity);
+        }
+
         if (Time.time - LastJumpRequestTime < jumpBuffer) Jump(); //jump buffer system, neato
     }
 

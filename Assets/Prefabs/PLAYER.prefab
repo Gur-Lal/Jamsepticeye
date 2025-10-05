@@ -68,6 +68,7 @@ MonoBehaviour:
   footstepPitchMax: 1.2
   corpsePrefab: {fileID: 2639089107306622783, guid: c0e7ec7957e8c154ea16f9186f98b447, type: 3}
   DeathRespawnDelay: 1
+  dustCloudEffect: {fileID: 1202929186772055074, guid: fb2047639f5b26a49adcc04b8fccb54f, type: 3}
   isAlmostGroundedDelay: 0.1
 --- !u!50 &2831797578183651820
 Rigidbody2D:

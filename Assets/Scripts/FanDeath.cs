@@ -3,6 +3,9 @@ using UnityEngine;
 public class FanDeath : MonoBehaviour
 {
     [SerializeField] GameObject prompt;
+    [SerializeField] ParticleSystem bloodEffect;   // Assign a blood effect prefab in the inspector
+    [SerializeField] Transform effectSpawnPoint;   // point to spawn the effect
+
     private bool playerIsNearby = false;
     private Collider2D playerCol;
 
@@ -20,11 +23,24 @@ public class FanDeath : MonoBehaviour
             if (playerCol != null && PlayerController.input.Player.Interact.triggered)
             {
                 playerCol.GetComponent<PlayerController>().Die();
+
+                // Play blood effect
+                PlayBloodEffect();
             }
         }
         else
         {
             if (prompt != null) prompt.SetActive(false);
+        }
+    }
+
+    void PlayBloodEffect()
+    {
+        if (bloodEffect != null)
+        {
+            
+            Vector3 spawnPos = effectSpawnPoint != null ? effectSpawnPoint.position : transform.position;
+            Instantiate(bloodEffect, spawnPos, Quaternion.identity);
         }
     }
 
