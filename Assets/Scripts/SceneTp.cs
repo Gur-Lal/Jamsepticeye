@@ -12,9 +12,22 @@ public class SceneTp : MonoBehaviour
         {
 
             PlayerController.input.Disable();
+
+            //Check if a music player should be ended
+            MusicPlayer m = FindFirstObjectByType<MusicPlayer>();
+            float timeToWait = 0f;
+            if (m != null && m.PersistAcrossScenes == false)
+            {
+                timeToWait = m.EndMusic();
+            }
             FadeToFromBlack fadeScript = FindFirstObjectByType<FadeToFromBlack>();
-            if (fadeScript != null) { fadeScript.FadeOut(); StartCoroutine(LoadAfterTime(fadeScript.fadeDuration+0.2f)); }
-            else SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single); //load new scene
+            if (fadeScript != null)
+            {
+                fadeScript.FadeOut();
+                timeToWait = Mathf.Max(timeToWait, fadeScript.fadeDuration);
+                
+            }
+            StartCoroutine(LoadAfterTime(timeToWait + 0.2f)); //load new scene
 
         }
     }

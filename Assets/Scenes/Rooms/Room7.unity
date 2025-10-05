@@ -654,6 +654,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 702e07ef72558964fa94256af7fa1354, type: 3}
+--- !u!1 &456427136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 456427138}
+  - component: {fileID: 456427137}
+  m_Layer: 0
+  m_Name: MusicStopper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &456427137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456427136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 808316fbfa059554ca02c4ea03ab40e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastLevelMusicStopper
+--- !u!4 &456427138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456427136}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &710661638
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +795,18 @@ PrefabInstance:
     - target: {fileID: 3620019968337334330, guid: 1d3d827322ec84a498572b2c37f14a13, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208336881888271064, guid: 1d3d827322ec84a498572b2c37f14a13, type: 3}
+      propertyPath: m_Color.b
+      value: 0.17974362
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208336881888271064, guid: 1d3d827322ec84a498572b2c37f14a13, type: 3}
+      propertyPath: m_Color.g
+      value: 0.17974362
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208336881888271064, guid: 1d3d827322ec84a498572b2c37f14a13, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7056604
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3935,6 +3991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelExit
       objectReference: {fileID: 0}
+    - target: {fileID: 5763356616083251604, guid: 2396cc27577fbce43a78c4e8c70687ee, type: 3}
+      propertyPath: sceneToLoad
+      value: OutroScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8865888994927741596, guid: 2396cc27577fbce43a78c4e8c70687ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.441505
@@ -4271,3 +4331,4 @@ SceneRoots:
   - {fileID: 306874068}
   - {fileID: 180811636}
   - {fileID: 204406741}
+  - {fileID: 456427138}
