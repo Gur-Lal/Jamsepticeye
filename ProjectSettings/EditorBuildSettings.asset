@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 47507f3639a8e5f45aeb6acec4b02494
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 12c1ffbfc8059fe43ac3389dc41bd9ba
   - enabled: 1
@@ -19,7 +19,7 @@ EditorBuildSettings:
     guid: 049f9c098d8de2240a17bf05de36ed37
   - enabled: 0
     path: Assets/Scenes/Game2.unity
-    guid: 3c4c00d311369114d978109015b824e7
+    guid: ac4f1e28b74dd2546b93890590ceb74b
   - enabled: 0
     path: Assets/Scenes/SpikeWall.unity
     guid: 078e4552fc72eb14485700d9e2788a85

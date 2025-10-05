@@ -103,3 +103,5 @@ InitTestScene*.unity*
 /Packages
 /Assets/TextMesh Pro/
 .vsconfig
+Assets/Scenes/BGfadetest.unity.meta
+Assets/Scripts/Fadingblackbg.cs.meta
