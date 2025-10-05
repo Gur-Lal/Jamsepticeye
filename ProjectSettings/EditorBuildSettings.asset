@@ -41,12 +41,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/Room7.unity
     guid: ad1ad4e2f1062174f9bda1866985bfe0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Rooms/Room3.5.unity
     guid: c22a89d3b869bcf479db94ba916f8e87
   - enabled: 1
     path: Assets/Scenes/Rooms/RoomDespawnTutorial.unity
     guid: 4111777f40d29ab4b98385451c9f02a7
+  - enabled: 1
+    path: Assets/Scenes/OutroScene.unity
+    guid: ca2ae16b39113de4e918b001c8c5fe82
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
