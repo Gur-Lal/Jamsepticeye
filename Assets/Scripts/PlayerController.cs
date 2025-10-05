@@ -27,6 +27,9 @@ public class PlayerController : Entity
     [Header("Debug Stuff")]
     [SerializeField] float DeathRespawnDelay = 1f;
 
+    [Header("Particles")]
+    [SerializeField] ParticleSystem dustCloudEffect;
+
     //reference vars
     static public PlayerActionControls input;
     private Animator animator;
@@ -41,7 +44,7 @@ public class PlayerController : Entity
     [SerializeField] float isAlmostGroundedDelay = 0.1f;
     float lastGroundedTime;
 
-    // Footstep tracking
+    //footstep tracking
     private float footstepTimer = 0f;
 
     protected override void Awake()
@@ -104,10 +107,10 @@ public class PlayerController : Entity
         animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
         animator.SetFloat("YVel", rb.linearVelocityY);
 
-        // Footstep sound handler
+        //footstep sound handler
         HandleFootsteps();
     }
-    // Footstep sound handler
+    //footstep sound handler
     private void HandleFootsteps()
     {
         bool isMoving = Mathf.Abs(horizontalMovement) > 0.1f;
@@ -154,6 +157,12 @@ public class PlayerController : Entity
 
     protected override void OnGroundTouched()
     {
+        //spawn dust cloud effect when landing
+        if (dustCloudEffect != null)
+        {
+            Instantiate(dustCloudEffect, transform.position + Vector3.down * 0.5f, Quaternion.identity);
+        }
+
         if (Time.time - LastJumpRequestTime < jumpBuffer) Jump(); //jump buffer system, neato
     }
 
