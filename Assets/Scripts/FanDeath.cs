@@ -12,6 +12,9 @@ public class FanDeath : MonoBehaviour
     void Start()
     {
         if (prompt != null) prompt.SetActive(false);
+
+        AudioSource src = GetComponent<AudioSource>();
+        if (src != null) if(AudioManager.Instance != null)  src.volume *= AudioManager.Instance.sfxVolume;
     }
 
     void Update()

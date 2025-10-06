@@ -54,13 +54,15 @@ public class DoorScript : IButtonActivated
 
     public override void OnButtonTrigger(FloorButtonScript triggered)
     {
-        ButtonsPressed.Add(triggered);
+
+        if (!ButtonsPressed.Contains(triggered)) ButtonsPressed.Add(triggered);
         UpdateState();
     }
 
     public override void OnButtonDisable(FloorButtonScript triggered)
     {
         ButtonsPressed.Remove(triggered);
+
         UpdateState();
     }
 
@@ -88,6 +90,7 @@ public class DoorScript : IButtonActivated
         {
             if (ButtonsPressed.Contains(IllegalButton))
             {
+                //Debug.Log("Door " + this.gameObject.name + "found an illegal button called " + IllegalButton.transform.name);
                 return false; //illegal state!
             }
         }
@@ -96,6 +99,7 @@ public class DoorScript : IButtonActivated
         {
             if (!ButtonsPressed.Contains(RequiredButton))
             {
+                //Debug.Log("Door " + this.gameObject.name + "found an missing reuired button called " + RequiredButton.transform.name);
                 return false; //a required button is misisng
             }
         }
@@ -113,7 +117,7 @@ public class DoorScript : IButtonActivated
         //play opening sound
         if (doorOpenSound != null)
         {
-            audioSource.PlayOneShot(doorOpenSound, doorSoundVolume);
+            if(AudioManager.Instance != null) audioSource.PlayOneShot(doorOpenSound, doorSoundVolume * AudioManager.Instance.sfxVolume);
         }
     }
 
@@ -128,7 +132,7 @@ public class DoorScript : IButtonActivated
         //play closing sound
         if (doorCloseSound != null)
         {
-            audioSource.PlayOneShot(doorCloseSound, doorSoundVolume);
+            if(AudioManager.Instance != null) audioSource.PlayOneShot(doorCloseSound, doorSoundVolume * AudioManager.Instance.sfxVolume);
         }
     }
 }

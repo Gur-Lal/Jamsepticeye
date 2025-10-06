@@ -41,9 +41,21 @@ public class MusicPlayer : MonoBehaviour
         source.volume = volume;
     }
 
+    void UpdateMusicVol()
+    {
+        if(AudioManager.Instance != null)  source.volume = AudioManager.Instance.musicVolume;
+    }
+
     void Start()
     {
+        UpdateMusicVol();
         if (PlayOnStart) StartCoroutine(WaitThenPlay(PlayOnStartDelay));
+    }
+
+    void FixedUpdate()
+    {
+        if(AudioManager.Instance != null)  if (source.volume != AudioManager.Instance.musicVolume)
+        UpdateMusicVol(); //regularly check
     }
 
     private IEnumerator WaitThenPlay(float duration)

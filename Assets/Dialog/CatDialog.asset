@@ -15,5 +15,5 @@ MonoBehaviour:
   lines:
   - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
     Line: My precious BB is waiting for me back home...
-  - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
+  - speakerData: {fileID: 11400000, guid: c11e0fcc024819b49b5707a862e73abd, type: 2}
     Line: I'll get out of here, I promise.

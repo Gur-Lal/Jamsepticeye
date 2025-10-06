@@ -1589,7 +1589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8566c2f79ebe8e8439c29ee8a494cca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeToFromBlack
-  fadeDuration: 0.5
+  fadeDuration: 1.5
 --- !u!114 &1934623864
 MonoBehaviour:
   m_ObjectHideFlags: 0

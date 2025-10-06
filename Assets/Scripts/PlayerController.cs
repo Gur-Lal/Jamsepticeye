@@ -56,12 +56,17 @@ public class PlayerController : Entity
 
         animator = GetComponent<Animator>();
 
-        //audio source setup
+    }
+
+    void Start()
+    {
+         //audio source setup
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.playOnAwake = false;
             audioSource.spatialBlend = 0f; // 2D sound
+            if(AudioManager.Instance != null)  audioSource.volume *= AudioManager.Instance.sfxVolume;
         }
     }
 
@@ -70,6 +75,9 @@ public class PlayerController : Entity
         if (IsGrounded) { isAlmostGrounded = true; lastGroundedTime = Time.time; }
         else if (isAlmostGrounded && Time.time - lastGroundedTime > isAlmostGroundedDelay) isAlmostGrounded = false;
 
+        horizontalMovement = 0;
+        rb.linearVelocityX = 0;
+        animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
         if (IsIncapacitated) return;
 
         //Receive inputs

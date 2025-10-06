@@ -31,7 +31,7 @@ MonoBehaviour:
     Line: What heights will they reach through you?
   - speakerData: {fileID: 11400000, guid: bdb466eeaeb1641499ced88a8a66a4c3, type: 2}
     Line: The Cycle must continue.
-  - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
+  - speakerData: {fileID: 11400000, guid: c11e0fcc024819b49b5707a862e73abd, type: 2}
     Line: I...
   - speakerData: {fileID: 11400000, guid: 405666db26662ac4997c2fc1de5bf82c, type: 2}
     Line: You have learnt the true meaning of Death.
