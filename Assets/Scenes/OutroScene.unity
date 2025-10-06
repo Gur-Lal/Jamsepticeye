@@ -273,7 +273,7 @@ Transform:
   m_GameObject: {fileID: 349338530}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.25, y: 27, z: 0}
+  m_LocalPosition: {x: -29, y: 27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02112de35af8554bb366cc263998eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutroEndingCollision
-  NextScene: Room0
+  NextScene: Menu
   musicPlayerToStop: {fileID: 982486982}
 --- !u!1 &365720245
 GameObject:
@@ -1233,6 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeToFromBlack
   fadeDuration: 0.5
+  fadeInDelay: 0
 --- !u!114 &832207576
 MonoBehaviour:
   m_ObjectHideFlags: 0

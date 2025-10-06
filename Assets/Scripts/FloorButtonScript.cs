@@ -29,7 +29,7 @@ public class FloorButtonScript : MonoBehaviour
         spr = GetComponentInChildren<SpriteRenderer>();
         spr.sprite = upSprite;
 
-        // AudioSource add
+        //add AudioSource
         audioSource = gameObject.GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -37,12 +37,13 @@ public class FloorButtonScript : MonoBehaviour
         }
         audioSource.playOnAwake = false;
         audioSource.spatialBlend = 0f; //2D sound
+        if(AudioManager.Instance != null)  audioSource.volume *= AudioManager.Instance.sfxVolume;
     }
 
     void Activate()
     {
         spr.sprite = downSprite;
-        // Play press sound
+        //play press sound
         if (buttonPressSound != null)
         {
             audioSource.PlayOneShot(buttonPressSound, buttonSoundVolume);
@@ -58,7 +59,7 @@ public class FloorButtonScript : MonoBehaviour
     {
         spr.sprite = upSprite;
 
-        // Play release sound
+        //play release sound
         if (buttonReleaseSound != null)
         {
             audioSource.PlayOneShot(buttonReleaseSound, buttonSoundVolume);
@@ -78,11 +79,11 @@ public class FloorButtonScript : MonoBehaviour
             //if the other component has a dynamic rigidbody, its considered a weighted object
             if (objectsOnButton.Count == 0)
             {
-                if (releaseRoutine != null)
+                /*if (releaseRoutine != null)
                 {
                     StopCoroutine(releaseRoutine);
                     releaseRoutine = null;
-                }
+                }*/
                 Activate();
             }
             if (!objectsOnButton.Contains(otherRB)) objectsOnButton.Add(otherRB);
@@ -96,11 +97,12 @@ public class FloorButtonScript : MonoBehaviour
         {
             //if the other component has a dynamic rigidbody, its considered a weighted object
             objectsOnButton.Remove(otherRB);
-            if (objectsOnButton.Count == 0)
+            if (objectsOnButton.Count == 0) Deactivate();
+            /*if (objectsOnButton.Count == 0)
             {
                 if (releaseRoutine != null) StopCoroutine(releaseRoutine);
                 releaseRoutine = StartCoroutine(DelayedDeactivate());
-            }
+            }*/
         }
     }
 

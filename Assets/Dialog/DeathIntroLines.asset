@@ -17,9 +17,9 @@ MonoBehaviour:
     Line: It is your time.
   - speakerData: {fileID: 11400000, guid: 405666db26662ac4997c2fc1de5bf82c, type: 2}
     Line: Come along now.
-  - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
+  - speakerData: {fileID: 11400000, guid: 40b582e6e8059654d9ab4bd3e0db439c, type: 2}
     Line: No! Not yet! Please, I...
-  - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
+  - speakerData: {fileID: 11400000, guid: c11e0fcc024819b49b5707a862e73abd, type: 2}
     Line: I don't want to die!
   - speakerData: {fileID: 11400000, guid: 405666db26662ac4997c2fc1de5bf82c, type: 2}
     Line: Few enough do.
@@ -27,7 +27,7 @@ MonoBehaviour:
     Line: The Cycle must continue.
   - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
     Line: But I still have so much I wanted to do!
-  - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
+  - speakerData: {fileID: 11400000, guid: c11e0fcc024819b49b5707a862e73abd, type: 2}
     Line: Please, can't you make an exception?
   - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
     Line: I just need a little more time!
@@ -41,7 +41,7 @@ MonoBehaviour:
     Line: But you must first learn...
   - speakerData: {fileID: 11400000, guid: 405666db26662ac4997c2fc1de5bf82c, type: 2}
     Line: ..the true meaning of Death.
-  - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
+  - speakerData: {fileID: 11400000, guid: c11e0fcc024819b49b5707a862e73abd, type: 2}
     Line: ...
   - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
     Line: I... I accept.

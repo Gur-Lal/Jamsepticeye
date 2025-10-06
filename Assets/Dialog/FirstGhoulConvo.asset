@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736de1b9554b0d149a98f1c95b2ecc06, type: 3}
+  m_Name: FirstGhoulConvo
+  m_EditorClassIdentifier: Assembly-CSharp::DialogLinesData
+  lines:
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: Ah, it seems our Lord has condemned yet another soul to this treacherous
+      path.
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: Might this time be any different?
+  - speakerData: {fileID: 11400000, guid: c11e0fcc024819b49b5707a862e73abd, type: 2}
+    Line: ...
+  - speakerData: {fileID: 11400000, guid: c11e0fcc024819b49b5707a862e73abd, type: 2}
+    Line: Who... Who are you?
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: Oh Death, it's always the same bloody question.
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: I've had to introduce myself to one too many of you sheep
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: You fools go about your days as if they'll last an eternity and then...
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: ...when met with the possibility of an irreparable end...
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: ...you cling to whatever fleeting shred of hope appears before you!
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: Death and his disciples do not exist in direct opposition to your existence
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: We are an ever-pervasive, natural force.
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: One with the sole purpose of amplifying the gift of life.
+  - speakerData: {fileID: 11400000, guid: 40b582e6e8059654d9ab4bd3e0db439c, type: 2}
+    Line: I don't understand...why are you saying all of this? Where am I?
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: Some see a hospital, others their childhood home.
+  - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
+    Line: Wait, is this...the hospital I was just in?
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: Some see a hospital, others their childhood home
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: Not all minds are the same, girl.
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: It would behoove you most greatly if you accustomed yourself to Death.
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: You'll need it on the path ahead.
+  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
+    Line: May your soul not get lost in the purgatory of your own mind.

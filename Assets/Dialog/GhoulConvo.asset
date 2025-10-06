@@ -14,6 +14,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogLinesData
   lines:
   - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
-    Line: HELLO
+    Line: Excuse me, are you... okay?
   - speakerData: {fileID: 11400000, guid: 0554f53bd828e2448880dca649c367fc, type: 2}
-    Line: HI
+    Line: Oh don't worry about this old geezer, I'm doin' mighty fine, lass.
+  - speakerData: {fileID: 11400000, guid: 0554f53bd828e2448880dca649c367fc, type: 2}
+    Line: Just sittin' here takin' in the beautiful views of the lake I used to always
+      fish at with my pops.
+  - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
+    Line: Taking in the views...of a lake?
+  - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
+    Line: Sir, we're in a hospital right now. Where do you see a lake?
+  - speakerData: {fileID: 11400000, guid: 0554f53bd828e2448880dca649c367fc, type: 2}
+    Line: Tsk, tsk... Still haven't learned the true nature of this place, then,
+      I take it?
+  - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
+    Line: What are you talking about? I mean... I guess not.
+  - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
+    Line: I desperately agreed to that strange creature's offer, and somehow ended
+      up here...
+  - speakerData: {fileID: 11400000, guid: c11e0fcc024819b49b5707a862e73abd, type: 2}
+    Line: ...
+  - speakerData: {fileID: 11400000, guid: c11e0fcc024819b49b5707a862e73abd, type: 2}
+    Line: ...This place makes no sense. That other creature told me not everyone
+      sees the same thing...
+  - speakerData: {fileID: 11400000, guid: 0554f53bd828e2448880dca649c367fc, type: 2}
+    Line: Indeed they don't, kid. I haven't figured it out myself, neither.
+  - speakerData: {fileID: 11400000, guid: 0554f53bd828e2448880dca649c367fc, type: 2}
+    Line: I'm willin' to bet it's probably Death's own morbid way of trying to teach
+      us some sort of lesson.
+  - speakerData: {fileID: 11400000, guid: 0554f53bd828e2448880dca649c367fc, type: 2}
+    Line: As for what that lesson is?
+  - speakerData: {fileID: 11400000, guid: 0554f53bd828e2448880dca649c367fc, type: 2}
+    Line: Well, beats me. I'm just a fisherman with a lake of regrets, wallowin'
+      in my misery.
+  - speakerData: {fileID: 11400000, guid: 0554f53bd828e2448880dca649c367fc, type: 2}
+    Line: Hopefully better things await ye, lass.
+  - speakerData: {fileID: 11400000, guid: c11e0fcc024819b49b5707a862e73abd, type: 2}
+    Line: ...
+  - speakerData: {fileID: 11400000, guid: 0554f53bd828e2448880dca649c367fc, type: 2}
+    Line: Cheer up, lass.
+  - speakerData: {fileID: 11400000, guid: 0554f53bd828e2448880dca649c367fc, type: 2}
+    Line: If you ever get stuck, take some advice from my old man.
+  - speakerData: {fileID: 11400000, guid: 0554f53bd828e2448880dca649c367fc, type: 2}
+    Line: '"All good things come in threes", he used to say...'

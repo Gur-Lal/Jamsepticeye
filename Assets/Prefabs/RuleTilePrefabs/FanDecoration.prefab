@@ -97,7 +97,7 @@ SpriteRenderer:
   m_SortingLayerID: 2077187027
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: -6244331378461285946, guid: 0e522331bccbe984eb5b123db2aec9b8, type: 3}
+  m_Sprite: {fileID: 8925704879901551442, guid: ee7516d5ffa7e9f43825566677bbdf51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,9 +122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpriteLoopScript
   FPS: 12
   SpriteList:
-  - {fileID: -6244331378461285946, guid: 0e522331bccbe984eb5b123db2aec9b8, type: 3}
-  - {fileID: -7218585148433565355, guid: 0e522331bccbe984eb5b123db2aec9b8, type: 3}
-  - {fileID: 7853064059665563146, guid: 0e522331bccbe984eb5b123db2aec9b8, type: 3}
+  - {fileID: 8925704879901551442, guid: ee7516d5ffa7e9f43825566677bbdf51, type: 3}
+  - {fileID: 6169682889953715337, guid: ee7516d5ffa7e9f43825566677bbdf51, type: 3}
+  - {fileID: -526874426062066015, guid: ee7516d5ffa7e9f43825566677bbdf51, type: 3}
 --- !u!58 &8357563066232211145
 CircleCollider2D:
   m_ObjectHideFlags: 0

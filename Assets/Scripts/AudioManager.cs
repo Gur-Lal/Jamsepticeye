@@ -1,16 +1,46 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static AudioManager Instance { get; private set; }
+
+    [Range(0f, 1f)] public float musicVolume = 1f;
+    [Range(0f, 1f)] public float sfxVolume = 1f;
+
+    void Awake()
     {
-        
+        if (Instance != null && Instance != this) //unique existence
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void Start()
     {
-        
+        musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+    }
+
+    public void SetMusicVolume(float value)
+    {
+        musicVolume = value;
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        sfxVolume = value;
+    }
+
+    void OnDisable()
+    {
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
+        PlayerPrefs.SetFloat("SoundVolume", sfxVolume);
+        PlayerPrefs.Save();
     }
 }

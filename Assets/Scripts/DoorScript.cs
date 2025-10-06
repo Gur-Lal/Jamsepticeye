@@ -52,11 +52,6 @@ public class DoorScript : IButtonActivated
         }
     }
 
-    void FixedUpdate()
-    {
-        UpdateState();
-    }
-
     public override void OnButtonTrigger(FloorButtonScript triggered)
     {
 
@@ -122,7 +117,7 @@ public class DoorScript : IButtonActivated
         //play opening sound
         if (doorOpenSound != null)
         {
-            audioSource.PlayOneShot(doorOpenSound, doorSoundVolume);
+            if(AudioManager.Instance != null) audioSource.PlayOneShot(doorOpenSound, doorSoundVolume * AudioManager.Instance.sfxVolume);
         }
     }
 
@@ -137,7 +132,7 @@ public class DoorScript : IButtonActivated
         //play closing sound
         if (doorCloseSound != null)
         {
-            audioSource.PlayOneShot(doorCloseSound, doorSoundVolume);
+            if(AudioManager.Instance != null) audioSource.PlayOneShot(doorCloseSound, doorSoundVolume * AudioManager.Instance.sfxVolume);
         }
     }
 }
