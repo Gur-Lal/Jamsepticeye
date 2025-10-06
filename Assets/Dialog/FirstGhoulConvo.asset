@@ -40,8 +40,6 @@ MonoBehaviour:
     Line: One with the sole purpose of amplifying the gift of life.
   - speakerData: {fileID: 11400000, guid: 40b582e6e8059654d9ab4bd3e0db439c, type: 2}
     Line: I don't understand...why are you saying all of this? Where am I?
-  - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
-    Line: Some see a hospital, others their childhood home.
   - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
     Line: Wait, is this...the hospital I was just in?
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
