@@ -111,6 +111,7 @@ public class DoorScript : IButtonActivated
     {
         if (isOpen) return;
         isOpen = true;
+        spr.color = Color.grey;
         col.enabled = false;
         animator.SetTrigger("DoorOpen");
         
@@ -125,6 +126,7 @@ public class DoorScript : IButtonActivated
     {
         if (!isOpen) return;
         isOpen = false;
+        spr.color = Color.white;
         if (col == null) return;
         col.enabled = true;
         animator.SetTrigger("DoorClose");
