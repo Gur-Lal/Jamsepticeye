@@ -33,7 +33,7 @@ MonoBehaviour:
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
     Line: ...you cling to whatever fleeting shred of hope appears before you!
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
-    Line: Death and his disciples do not exist in direct opposition to your existence
+    Line: Death and his disciples do not exist in direct opposition to your existence.
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
     Line: We are an ever-pervasive, natural force.
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
@@ -43,7 +43,7 @@ MonoBehaviour:
   - speakerData: {fileID: 11400000, guid: e2988eef139d2d1498c2f61c623f91b9, type: 2}
     Line: Wait, is this...the hospital I was just in?
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
-    Line: Some see a hospital, others their childhood home
+    Line: Some see a hospital, others their childhood home.
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
     Line: Not all minds are the same, girl.
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
@@ -51,4 +51,4 @@ MonoBehaviour:
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
     Line: You'll need it on the path ahead.
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
-    Line: May your soul not get lost in the purgatory of your own mind.
+    Line: May your soul not get lost in the purgatory of your own mind...
