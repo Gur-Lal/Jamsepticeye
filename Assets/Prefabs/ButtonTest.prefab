@@ -40,7 +40,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382496909997548054}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloorButtonScript
   ControlledObjects:
   - {fileID: 0}
+  releaseDelay: 0.25
   upSprite: {fileID: 21300000, guid: 08655826101158e4ba46c7493a6a2daa, type: 3}
   downSprite: {fileID: 21300000, guid: 0c9b3d5ce807a6941b8738796dd7d16e, type: 3}
   buttonPressSound: {fileID: 8300000, guid: d9554e9676748e14a9960df3ca86f399, type: 3}

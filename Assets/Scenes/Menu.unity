@@ -3082,7 +3082,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1224490706}
+    m_TransformParent: {fileID: 2101807467}
     m_Modifications:
     - target: {fileID: 7851944847415326693, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_Name
@@ -3110,11 +3110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4088,7 +4088,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Music & Composition:\nChristopher P\xE9rez"
+  m_text: 'Music & Composition:
+
+    Christopher Perez'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
   m_sharedMaterial: {fileID: 6611390234205700232, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
@@ -4173,7 +4175,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1224490706}
+    m_TransformParent: {fileID: 2101807467}
     m_Modifications:
     - target: {fileID: 7851944847415326693, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_Name
@@ -4201,11 +4203,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4472,7 +4474,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1224490706}
+    m_TransformParent: {fileID: 2101807467}
     m_Modifications:
     - target: {fileID: 7851944847415326693, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_Name
@@ -4500,11 +4502,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5413,7 +5415,7 @@ MonoBehaviour:
     - Adam Norris (Lead)           
     - Gur Lal
 
-    - Nedim                              - Matthew B.'
+    - Nedim Olcek                     - Matthew B.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
   m_sharedMaterial: {fileID: 6611390234205700232, guid: 95b84e5c6d72f454a8e52ce9a8f813b8, type: 2}
@@ -9231,7 +9233,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1224490706}
+    m_TransformParent: {fileID: 2101807467}
     m_Modifications:
     - target: {fileID: 7851944847415326693, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_Name
@@ -9259,11 +9261,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9293,7 +9295,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1224490706}
+    m_TransformParent: {fileID: 2101807467}
     m_Modifications:
     - target: {fileID: 7851944847415326693, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_Name
@@ -9321,11 +9323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9058179577550905339, guid: d78616be02ac5c748aeef7f7113f6d69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10570,7 +10572,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1224490706}
   - {fileID: 1233355477}
   - {fileID: 18820712}
   - {fileID: 724726254}
@@ -10581,6 +10582,11 @@ Transform:
   - {fileID: 895615081}
   - {fileID: 1471254015}
   - {fileID: 955148594}
+  - {fileID: 21914537}
+  - {fileID: 487436382}
+  - {fileID: 756097721}
+  - {fileID: 1354337489}
+  - {fileID: 1418665862}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2101807468
