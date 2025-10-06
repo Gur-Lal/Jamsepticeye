@@ -25,7 +25,7 @@ MonoBehaviour:
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
     Line: Oh Death, it's always the same bloody question.
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
-    Line: I've had to introduce myself to one too many of you sheep
+    Line: I've had to introduce myself to one too many of you sheep.
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
     Line: You fools go about your days as if they'll last an eternity and then...
   - speakerData: {fileID: 11400000, guid: a6f3c70a0dfbb2442974db224597f41f, type: 2}
