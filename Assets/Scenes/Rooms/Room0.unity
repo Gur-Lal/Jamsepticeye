@@ -206,8 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0aa6911d5acbeb4b9e51db041a562c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicPlayer
-  introClip: {fileID: 0}
-  loopClip: {fileID: 8300000, guid: e3a9e433f9ef9b3418cef3f8eda35401, type: 3}
+  introClip: {fileID: 8300000, guid: c5b4f31cf8ab09944a41a9e739bce9bb, type: 3}
+  loopClip: {fileID: 8300000, guid: f7557977eea6fe94eab651ff77766c86, type: 3}
   PersistAcrossScenes: 1
   volume: 1
   PlayOnStart: 1
@@ -1590,6 +1590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeToFromBlack
   fadeDuration: 1.5
+  fadeInDelay: 0
 --- !u!114 &1934623864
 MonoBehaviour:
   m_ObjectHideFlags: 0
