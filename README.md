@@ -9,7 +9,9 @@ DeathBed was made for Jamsepticeye in 5 days from October 1st to October 5.
 
 
 Credits: 
-Devs: Adam Norris, Gur Lal, Matthew B & Nedim Olcek
+Lead dev: Adam Norris
+
+Devs: Gur Lal, Matthew B & Nedim Olcek
 
 Music: Christopher Pérez
 
