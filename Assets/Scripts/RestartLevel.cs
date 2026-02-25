@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RestartLevel : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] float RestartHoldTimeRequired = 3f;
     [SerializeField] GameObject InfoText;
+    [SerializeField] Image ProgressWheel;
     bool useInfoText = false;
+    bool useProgressWheel = false;
     float timeCounter = 0f;
     void Start()
     {
@@ -14,6 +17,13 @@ public class RestartLevel : MonoBehaviour
         {
             useInfoText = true;
             InfoText.SetActive(false);
+        }
+
+        if (ProgressWheel != null)
+        {
+            useProgressWheel = true;
+            ProgressWheel.fillAmount = 0f;
+            ProgressWheel.gameObject.SetActive(false);
         }
     }
 
@@ -24,16 +34,36 @@ public class RestartLevel : MonoBehaviour
         {
             timeCounter += Time.deltaTime;
             if (useInfoText) InfoText.SetActive(true);
+
+            if (useProgressWheel)
+            {
+                ProgressWheel.gameObject.SetActive(true);
+                ProgressWheel.fillAmount = timeCounter / RestartHoldTimeRequired;
+            }
         }
-        else { timeCounter = 0f; InfoText.SetActive(false); }
+        else
+        {
+            timeCounter = 0f; 
+            if (useInfoText) InfoText.SetActive(false);
+
+            if (useProgressWheel)
+            {
+                ProgressWheel.fillAmount = 0f;
+                ProgressWheel.gameObject.SetActive(false);
+            }
+        }
 
         if (timeCounter > RestartHoldTimeRequired)
         {
             timeCounter = 0f;
-            Debug.Log("[Restart Level Script] RESTARTING SCENE");
 
             InfoText.SetActive(false);
 
+            if(useProgressWheel)
+            {
+                ProgressWheel.fillAmount = 0f;
+                ProgressWheel.gameObject.SetActive(false);
+            }
             PlayerController.input.Disable();
 
             Scene current = SceneManager.GetActiveScene();
