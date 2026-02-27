@@ -970,7 +970,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tileset1_38
+      name: TestTile
       rect:
         serializedVersion: 2
         x: 64
@@ -1079,6 +1079,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":11.0,"y":5.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":2,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      TestTile: -594292590
       Tileset1_0: -2870143772410390703
       Tileset1_1: 1644939726588251722
       Tileset1_10: 1033838006
@@ -1111,7 +1112,6 @@ TextureImporter:
       Tileset1_35: 892400029
       Tileset1_36: 328018320
       Tileset1_37: -274631339
-      Tileset1_38: -594292590
       Tileset1_39: -410265861
       Tileset1_4: 7901823937690315267
       Tileset1_40: 1047260192
