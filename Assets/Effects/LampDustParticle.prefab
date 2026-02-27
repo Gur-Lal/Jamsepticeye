@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1047513949041525577}
   - component: {fileID: 2950399909703704244}
   m_Layer: 0
-  m_Name: LambDustParticle
+  m_Name: LampDustParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

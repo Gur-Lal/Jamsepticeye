@@ -7,7 +7,7 @@ public class FloorButtonScript : MonoBehaviour
 {
     [Header("Put the result of the button here:")]
     [SerializeField] List<IButtonActivated> ControlledObjects = new List<IButtonActivated>();
-    [Header("Config stuff")]
+    [Header("Config")]
     [SerializeField] private float releaseDelay = 0.25f;
     private Coroutine releaseRoutine;
     [SerializeField] Sprite upSprite;

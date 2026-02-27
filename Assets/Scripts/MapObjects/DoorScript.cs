@@ -5,10 +5,14 @@ using System.Collections.Generic;
 
 public class DoorScript : IButtonActivated
 {
-    [SerializeField] bool Invert = false; //false = start closed, isOpen when buttons hit. true = start isOpen, close when buttons hit.
+    [SerializeField] bool UnpoweredStateIsClosed = true; //false = start closed, isOpen when buttons hit. true = start isOpen, close when buttons hit.
     [SerializeField, Range(0f, 0.5f)] float InputRejectionDelay = 0.05f;
     [SerializeField] List<FloorButtonScript> MandatoryButtonsPressed = new List<FloorButtonScript>();
     [SerializeField] List<FloorButtonScript> IllegalButtonsPressed = new List<FloorButtonScript>();
+    [Header("Sprites")]
+    [SerializeField] Sprite closedSprite;
+    [SerializeField] Sprite openSprite;
+
     [Header("Audio")]
     [SerializeField] AudioClip doorOpenSound;
     [SerializeField] AudioClip doorCloseSound;
@@ -16,19 +20,19 @@ public class DoorScript : IButtonActivated
     
     private List<FloorButtonScript> ButtonsPressed = new List<FloorButtonScript>();
     Collider2D col;
+    CustomAnimator animator;
     SpriteRenderer spr;
-    Animator animator;
     AudioSource audioSource;
     bool buttonStateOn;
     bool isOpen;
     
     void Start()
     {
-        isOpen = Invert;
+        isOpen = !UnpoweredStateIsClosed;
         col = GetComponent<Collider2D>();
         spr = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-        animator.SetBool("StartOpen", Invert);
+        animator = GetComponent<CustomAnimator>();
+        animator.SetDefaultSprite( UnpoweredStateIsClosed? openSprite : closedSprite );
 
         //audio source setup
         audioSource = gameObject.GetComponent<AudioSource>();
@@ -45,7 +49,7 @@ public class DoorScript : IButtonActivated
         yield return new WaitForSeconds(InputRejectionDelay);
         if (buttonStateOn == DesiredState)  //if the button state is STILL what it was before the delay, set the new state
         {
-            if (Invert) DesiredState = !DesiredState;
+            if (!UnpoweredStateIsClosed) DesiredState = !DesiredState;
 
             if (DesiredState) Open();
             else Close();
@@ -70,7 +74,7 @@ public class DoorScript : IButtonActivated
     {
         bool doorShouldBeOpen = CheckState();
 
-        if (!Invert)
+        if (UnpoweredStateIsClosed)
         {
             if (!doorShouldBeOpen && isOpen) Close();
 
@@ -113,7 +117,7 @@ public class DoorScript : IButtonActivated
         isOpen = true;
         spr.color = Color.grey;
         col.enabled = false;
-        animator.SetTrigger("DoorOpen");
+        animator.Play("Open", restartIfSame:false);
         
         //play opening sound
         if (doorOpenSound != null)
@@ -129,7 +133,7 @@ public class DoorScript : IButtonActivated
         spr.color = Color.white;
         if (col == null) return;
         col.enabled = true;
-        animator.SetTrigger("DoorClose");
+        animator.Play("Closed", restartIfSame:false);
         
         //play closing sound
         if (doorCloseSound != null)
