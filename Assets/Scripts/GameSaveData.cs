@@ -5,7 +5,7 @@ using System;
 [System.Serializable]
 public class GameSaveData
 {
-    public int currentLevelID;
+    public string currentLevelName;
     public Vector2Data playerPosition;
     public List<EntityStateData> entityStates;
 

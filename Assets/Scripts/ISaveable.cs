@@ -2,8 +2,8 @@ using UnityEngine;
 
 public interface ISaveable
 {
-    string getEntityID();
-    string getEntityType();
+    string GetEntityID();
+    string GetEntityType();
     EntityStateData SaveState();
 
     void loadState(EntityStateData data);

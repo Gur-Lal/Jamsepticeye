@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.IO;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SaveLoadManager : MonoBehaviour
@@ -35,22 +34,22 @@ public class SaveLoadManager : MonoBehaviour
         if (!saveableObjects.Contains(saveable))
         {
             saveableObjects.Add(saveable);
-            Debug.Log(saveable.getEntityID() + "added to save system");
+            Debug.Log(saveable.GetEntityID() + " added to save system");
         }
     }
 
     public void UnregisterSaveable(ISaveable saveable)
     {
         saveableObjects.Remove(saveable);
-        Debug.Log(saveable.getEntityID() + "Remove to save system");
+        Debug.Log(saveable.GetEntityID() + " Remove to save system");
     }
 
-    public void SaveGame(int levelID, Vector2 playerPos)
+    public void SaveGame(string levelName, Vector2 playerPos)
     {
         Debug.Log("the game is being saved...");
 
         currentSaveData = new GameSaveData();
-        currentSaveData.currentLevelID = levelID;
+        currentSaveData.currentLevelName = levelName;
         currentSaveData.playerPosition = new Vector2Data (playerPos);
 
         foreach (ISaveable saveable in saveableObjects)
@@ -85,7 +84,7 @@ public class SaveLoadManager : MonoBehaviour
 
         currentSaveData = JsonUtility.FromJson<GameSaveData>(json);
 
-        Debug.Log("Game loaded! Level: " + currentSaveData.currentLevelID);
+        Debug.Log("Game loaded! Level: " + currentSaveData.currentLevelName);
         Debug.Log("Number of objects uploaded: " + currentSaveData.entityStates.Count);
 
         return currentSaveData;
@@ -102,7 +101,7 @@ public class SaveLoadManager : MonoBehaviour
 
         foreach (EntityStateData entityData in currentSaveData.entityStates)
         {
-            ISaveable saveable = saveableObjects.Find(s => s.getEntityID() == entityData.entityID);
+            ISaveable saveable = saveableObjects.Find(s => s.GetEntityID() == entityData.entityID);
 
             if (saveable != null)
             {
@@ -122,14 +121,12 @@ public class SaveLoadManager : MonoBehaviour
         return File.Exists(saveFilePath);
     }
 
-    public int GameSavedLevelID()
+    public string GameSavedLevelName()
     {
         if (currentSaveData != null)
-        {
-            return currentSaveData.currentLevelID;
-        }
+            return currentSaveData.currentLevelName;
         else
-            return 0;
+            return "";
     }
 
     public Vector2 GetSavedPlayerPosition()
