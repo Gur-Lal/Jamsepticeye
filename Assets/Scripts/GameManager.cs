@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,10 +19,10 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F5))
+        if (Keyboard.current.f5Key.wasPressedThisFrame)
             SaveLoadManager.Instance.SaveGame(currentLevelName, Player.position);
 
-        if (Input.GetKeyDown(KeyCode.F9))
+        if (Keyboard.current.f9Key.wasPressedThisFrame)
             StartCoroutine(LoadGameRoutine());
     }
 
