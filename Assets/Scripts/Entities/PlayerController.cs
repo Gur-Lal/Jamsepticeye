@@ -58,6 +58,16 @@ public class PlayerController : Entity
 
     }
 
+    private void OnDestroy()
+    {
+        if(input != null)
+        {
+            input.Player.Disable();
+            input.Dispose();
+            input = null;
+        }
+    }
+
     void Start()
     {
          //audio source setup

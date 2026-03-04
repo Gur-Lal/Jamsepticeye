@@ -19,6 +19,13 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
+        if (Player == null)
+        {
+           Player = GameObject.FindWithTag("Player")?.transform; 
+        }
+
+        if (Player == null) return;
+
         if (Keyboard.current.f5Key.wasPressedThisFrame)
             SaveLoadManager.Instance.SaveGame(currentLevelName, Player.position);
 
