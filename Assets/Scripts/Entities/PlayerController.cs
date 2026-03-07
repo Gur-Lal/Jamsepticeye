@@ -35,6 +35,7 @@ public class PlayerController : Entity
     private Animator animator;
 
     //tracking vars
+    bool isGrabbingSomething;
     float horizontalMovement;
     float LastJumpRequestTime = Mathf.NegativeInfinity;
     bool isJumping;
@@ -43,6 +44,9 @@ public class PlayerController : Entity
     bool isAlmostGrounded; //used for avoiding fall/jump animations on stairs
     [SerializeField] float isAlmostGroundedDelay = 0.1f;
     float lastGroundedTime;
+    [SerializeField] GrabConnector grabConnector;
+    [SerializeField, Range(0f,1f)] float GrabCooldown = 0.2f;
+    float lastGrabTime;
 
     //footstep tracking
     private float footstepTimer = 0f;
@@ -81,6 +85,8 @@ public class PlayerController : Entity
         if (IsIncapacitated) return;
 
         //Receive inputs
+        if (input.Player.Grab.triggered) Grab();
+
         if (input.Player.Jump.triggered) Jump(); //trigger start of a jump
 
         if (isJumping && input.Player.Jump.IsPressed() && jumpHoldTimer > 0f) //detect if holding jump
@@ -148,6 +154,59 @@ public class PlayerController : Entity
         audioSource.pitch = Random.Range(footstepPitchMin, footstepPitchMax);
         //play sound
         audioSource.PlayOneShot(clip, footstepVolume);
+    }
+
+    public void Grab()
+    {
+        if (isGrabbingSomething)
+        {
+            GameObject GrabbedObject = grabConnector.GetGrabbedObject();
+            if (GrabbedObject != null && Time.time - lastGrabTime > GrabCooldown)
+            {
+                grabConnector.SetGrabbedObject(null);
+                isGrabbingSomething = false;
+            }
+        }
+        else
+        {
+            //Check for grabbable objects in front of the player
+            //Find the closest one
+            //Parent it to the GrabConnector
+            //Link the two grabConnectors
+            GameObject nearestGrabbableObject = FindNearestGrabbableObjectInBox();
+            grabConnector.SetGrabbedObject(nearestGrabbableObject);
+            if (grabConnector.GetGrabbedObject()!=null) isGrabbingSomething = true;
+        }
+
+        lastGrabTime = Time.time;
+    }
+
+    private GameObject FindNearestGrabbableObjectInBox()
+    {
+        Vector2 center = transform.position;
+        Vector2 size = new Vector2(4f, 4f);
+
+        DebugUtils.DebugDrawBox2D(center, size, Color.red, 0.2f);
+
+        Collider2D[] hits = Physics2D.OverlapBoxAll(center, size, 0f);
+
+        float closestDistSqr = Mathf.Infinity;
+        GameObject closestObject = null;
+
+        foreach (Collider2D c in hits)
+        {
+            if (c.CompareTag("Grabbable"))
+            {
+                Debug.Log(">>> Found grabbable " + c.name);
+                float distSqr = Vector2.SqrMagnitude((Vector2)c.transform.position - center);
+                if (distSqr < closestDistSqr)
+                {
+                    closestDistSqr = distSqr;
+                    closestObject = c.gameObject;
+                }
+            }
+        }
+        return closestObject;
     }
 
     public void Jump()
