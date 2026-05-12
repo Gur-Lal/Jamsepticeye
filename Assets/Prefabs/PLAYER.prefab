@@ -105,7 +105,8 @@ MonoBehaviour:
   maxJumpHoldTime: 0.35
   coyoteTime: 0.1
   jumpBuffer: 0.1
-  maxTetherDistance: 1.25
+  maxGrabDistanceX: 1.25
+  maxGrabDistanceY: 1.25
   grabHoldOffset: 0.8
   speedMultWhilePushing: 1
   speedMultWhilePulling: 0.5

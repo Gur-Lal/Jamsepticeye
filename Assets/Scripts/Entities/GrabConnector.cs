@@ -54,9 +54,10 @@ public class GrabConnector : MonoBehaviour
 
     }
 
-    public void SteerTowardPos(Vector2 targetPos)
+    public void SteerTowardPos(Vector2 targetPosition)
     {
-        Vector2 delta = targetPos - (Vector2)attachedEntity.transform.position;
-        attachedEntity.GetRigidbody().linearVelocity = delta * trackingSpeed; 
+        Vector2 newVelocity = attachedEntity.GetRigidbody().linearVelocity;
+        newVelocity.x = (targetPosition.x - attachedEntity.GetRigidbody().position.x) * trackingSpeed;
+        attachedEntity.GetRigidbody().linearVelocity = newVelocity;
     }
 }

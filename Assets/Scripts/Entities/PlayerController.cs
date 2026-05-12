@@ -14,7 +14,8 @@ public class PlayerController : Entity
     [SerializeField, Range(0.05f, 0.2f)] float coyoteTime = 0.1f;
     [SerializeField, Range(0.1f, 0.5f)] float jumpBuffer = 0.1f;
     [Header("Grab Mechanic")]
-    [SerializeField, Range(0f,15f)] float maxTetherDistance = 2; //How far away can the grabber be from the grabbed's center before the tether breaks? A non-positive value means infinite range.
+    [SerializeField, Range(0f,15f)] float maxGrabDistanceX = 1.25f; //How far away can the grabber be from the grabbed's center before the tether breaks? A non-positive value means infinite range.
+    [SerializeField, Range(0f,15f)] float maxGrabDistanceY = 1.25f;
     [SerializeField] float grabHoldOffset = 1.1f; 
     [SerializeField, Range(0f, 1f)] float speedMultWhilePushing = 1f;
     [SerializeField, Range(0f, 1f)] float speedMultWhilePulling = 0.5f;
@@ -88,6 +89,8 @@ public class PlayerController : Entity
         if (IsGrounded) { isAlmostGrounded = true; lastGroundedTime = Time.time; }
         else if (isAlmostGrounded && Time.time - lastGroundedTime > isAlmostGroundedDelay) isAlmostGrounded = false;
 
+        if (!IsGrounded && !isAlmostGrounded && isGrabbingSomething ) Grab(); //immediately drop grabbed object if not on stable ground to prevent flying on them
+
         horizontalMovement = 0;
         rb.linearVelocityX = 0;
         if (IsIncapacitated) return;
@@ -157,7 +160,14 @@ public class PlayerController : Entity
 
         GameObject grabbedObj = grabConnector.GetGrabbedObject();
         //enforce distance limits
-        if (Vector2.Distance( transform.position, grabbedObj.transform.position ) > maxTetherDistance) { Grab(); return false; } //immediately release item
+        float xDist = Mathf.Abs(transform.position.x - grabbedObj.transform.position.x);
+        float yDist = Mathf.Abs(transform.position.y - grabbedObj.transform.position.y);
+
+        if (xDist > maxGrabDistanceX || yDist > maxGrabDistanceY) //immediately release item
+        {
+            Grab();
+            return false;
+        }
 
         //otherwise steer it towards the hold pos
         Vector2 holdTarget = (Vector2)transform.position + Vector2.right * (FacingRight ? 1 : -1) * grabHoldOffset;
