@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using System.Linq;
 
 public class PlayerController : Entity
 {
@@ -8,10 +9,16 @@ public class PlayerController : Entity
     [Header("Main Config")]
     [SerializeField] Vector2 spawnPoint;
     [SerializeField, Range(1f, 15f)] float moveSpeed = 7f;
-    [SerializeField, Range(1f, 30f)] float jumpForce = 11f;
+    [SerializeField, Range(1f, 300f)] float jumpForce = 11f * 15f;
     [SerializeField, Range(0.1f, 0.4f)] float maxJumpHoldTime = 0.35f;
     [SerializeField, Range(0.05f, 0.2f)] float coyoteTime = 0.1f;
     [SerializeField, Range(0.1f, 0.5f)] float jumpBuffer = 0.1f;
+    [Header("Grab Mechanic")]
+    [SerializeField, Range(0f,15f)] float maxTetherDistance = 2; //How far away can the grabber be from the grabbed's center before the tether breaks? A non-positive value means infinite range.
+    [SerializeField] float grabHoldOffset = 1.1f; 
+    [SerializeField, Range(0f, 1f)] float speedMultWhilePushing = 1f;
+    [SerializeField, Range(0f, 1f)] float speedMultWhilePulling = 0.5f;
+    [SerializeField] float grabDistanceCenter = 0.7f;
 
     [Header("Audio")]
     [SerializeField] AudioSource audioSource;
@@ -36,6 +43,8 @@ public class PlayerController : Entity
 
     //tracking vars
     bool isGrabbingSomething;
+    bool isPushingSomething;
+    bool isPullingSomething;
     float horizontalMovement;
     float LastJumpRequestTime = Mathf.NegativeInfinity;
     bool isJumping;
@@ -81,7 +90,6 @@ public class PlayerController : Entity
 
         horizontalMovement = 0;
         rb.linearVelocityX = 0;
-        animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
         if (IsIncapacitated) return;
 
         //Receive inputs
@@ -107,23 +115,60 @@ public class PlayerController : Entity
             jumpHoldTimer = 0;
         }
 
+        //NOTE: MOVE THIS INTO FIXED UPDATE?
         horizontalMovement = input.Player.Move.ReadValue<Vector2>().x;
-        if (horizontalMovement > 0) FaceRight();
-        else if (horizontalMovement < 0) FaceLeft();
+        if (!isGrabbingSomething) //only update player orientation visuals while not grabbing things
+        {
+            if (horizontalMovement > 0) FaceRight();
+            else if (horizontalMovement < 0) FaceLeft();
+        }
 
         if (IsTouchingWall == 1 && horizontalMovement > 0) horizontalMovement = 0; //prevent moving into walls (avoids wall cling)
         else if (IsTouchingWall == -1 && horizontalMovement < 0) horizontalMovement = 0;
 
+        
+
         //if (horizontalMovement != 0) Debug.Log("HorizontalMovement = " + horizontalMovement + ", becoming " + (Vector2.right * horizontalMovement * moveSpeed * Time.deltaTime));
-        rb.linearVelocityX = horizontalMovement * moveSpeed; //* Time.deltaTime;
+        rb.linearVelocityX = horizontalMovement * moveSpeed * (isPushingSomething? speedMultWhilePushing : 1) * (isPullingSomething? speedMultWhilePulling : 1); //* Time.deltaTime;
 
         animator.SetBool("IsGrounded", isAlmostGrounded);
         animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
         animator.SetFloat("YVel", rb.linearVelocityY);
 
-        //footstep sound handler
+        bool pushableObjectAhead = IsTouchingPushableObject != 0 && (Mathf.Sign(IsTouchingPushableObject) == Mathf.Sign(horizontalMovement));
+        bool isPushingGrabbedObject = UpdateGrabbedObject(); //pushing state can ALSO be enabled by this, but cannot be disabled by it.
+        isPullingSomething = animator.GetBool("Pulling");
+        isPushingSomething = horizontalMovement != 0 && !isPullingSomething && (pushableObjectAhead || isPushingGrabbedObject);
+    
+        Debug.Log("IS PULLING? "+isPullingSomething+" IS PUSHING? "+isPushingSomething);
+
+        animator.SetBool("Pushing", isPushingSomething); //as long as pulling isn't occurring, pushing can occur due to either of these two states.
+
         HandleFootsteps();
     }
+
+    private bool UpdateGrabbedObject()
+    {
+        if (!isGrabbingSomething || grabConnector.GetGrabbedObject() == null )
+        {
+            animator.SetBool("Pulling", false);
+            return false;
+        }
+
+        GameObject grabbedObj = grabConnector.GetGrabbedObject();
+        //enforce distance limits
+        if (Vector2.Distance( transform.position, grabbedObj.transform.position ) > maxTetherDistance) { Grab(); return false; } //immediately release item
+
+        //otherwise steer it towards the hold pos
+        Vector2 holdTarget = (Vector2)transform.position + Vector2.right * (FacingRight ? 1 : -1) * grabHoldOffset;
+        grabConnector.GetGrabbedConnector().SteerTowardPos(holdTarget);
+
+        //handle push/pull animation states
+        animator.SetBool("Pulling", Mathf.Sign(horizontalMovement) == Mathf.Sign(transform.position.x - grabbedObj.transform.position.x));
+        //these bools mark whether or not the push/pull walk anims should override the basic walk cycle animation
+        return true;
+    }
+
     //footstep sound handler
     private void HandleFootsteps()
     {
@@ -133,7 +178,7 @@ public class PlayerController : Entity
         {
             footstepTimer += Time.deltaTime;
 
-            if (footstepTimer >= footstepInterval)
+            if (footstepTimer >= footstepInterval * (isPullingSomething  ? (1f/speedMultWhilePulling) : 1f) * (isPushingSomething  ? (1f/speedMultWhilePushing) : 1f))
             {
                 PlayFootstepSound();
                 footstepTimer = 0f;
@@ -183,8 +228,10 @@ public class PlayerController : Entity
 
     private GameObject FindNearestGrabbableObjectInBox()
     {
-        Vector2 center = transform.position;
-        Vector2 size = new Vector2(4f, 4f);
+        Vector2 center = (Vector2)transform.position
+            + Vector2.right * (FacingRight? 1 : -1) * grabDistanceCenter
+            + Vector2.up * (spr.bounds.extents.y - 0.2f);
+        Vector2 size = new Vector2(1.1f, 1f);
 
         DebugUtils.DebugDrawBox2D(center, size, Color.red, 0.2f);
 
@@ -212,6 +259,8 @@ public class PlayerController : Entity
     public void Jump()
     {
         LastJumpRequestTime = Time.time;
+
+        if (isGrabbingSomething) return;
 
         if (IsGrounded || (Time.time - LastGroundedTime < coyoteTime))
         {

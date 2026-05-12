@@ -9,6 +9,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected Vector2 MaxVelocities = new Vector2(20f, 20f);
     protected bool IsGrounded;
     protected int IsTouchingWall;
+    protected int IsTouchingPushableObject;
     protected bool FacingRight;
     protected bool IsIncapacitated;
     protected bool IsFloatJumping;
@@ -52,7 +53,7 @@ public class Entity : MonoBehaviour
             WasOnGroundLastFrame = false;
         }
 
-        IsTouchingWall = CheckIfTouchingWall();
+        CheckIfTouchingWall();
 
         if (Mathf.Abs(rb.linearVelocityY) > MaxVelocities.y) rb.linearVelocityY = MaxVelocities.y * Mathf.Sign(rb.linearVelocityY);
         if (Mathf.Abs(rb.linearVelocityX) > MaxVelocities.x) rb.linearVelocityX = MaxVelocities.x * Mathf.Sign(rb.linearVelocityX);
@@ -83,7 +84,7 @@ public class Entity : MonoBehaviour
         return false;
     }
 
-    int CheckIfTouchingWall()
+    void CheckIfTouchingWall()
     {
         int sign = 1;
         if (!FacingRight) sign = -1;
@@ -123,9 +124,22 @@ public class Entity : MonoBehaviour
 
         foreach (var hit in allHits)
         {
-            if (hit.collider != null && hit.collider.gameObject.layer != entityLayer &&  !hit.collider.isTrigger && hit.collider != col && IsVerticalWall(hit)) return sign;
+            if (hit.collider != null && !hit.collider.isTrigger && hit.collider != col)
+                if (hit.collider.gameObject.layer != entityLayer && IsVerticalWall(hit))
+                {
+                    IsTouchingWall = sign;
+                    return;
+                }
+                else if (hit.collider.gameObject.layer == entityLayer && hit.collider.gameObject.GetComponentInChildren<GrabConnector>() != null)
+                {
+                    IsTouchingPushableObject = sign;
+                    return;
+                }
+            
         }
-        return 0;
+        IsTouchingWall = 0;
+        IsTouchingPushableObject = 0;
+        return;
     }
 
 
@@ -150,5 +164,10 @@ public class Entity : MonoBehaviour
     {
         FacingRight = false;
         spr.flipX = false;
+    }
+
+    public Rigidbody2D GetRigidbody()
+    {
+        return rb;
     }
 }
