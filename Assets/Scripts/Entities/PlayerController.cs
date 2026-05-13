@@ -13,11 +13,12 @@ public class PlayerController : Entity
     [SerializeField, Range(0.1f, 0.4f)] float maxJumpHoldTime = 0.35f;
     [SerializeField, Range(0.05f, 0.2f)] float coyoteTime = 0.1f;
     [SerializeField, Range(0.1f, 0.5f)] float jumpBuffer = 0.1f;
+    [SerializeField, Range(0f, 5f)] float speedMultWhileOnSlope = 1.2f;
     [Header("Grab Mechanic")]
     [SerializeField, Range(0f,15f)] float maxGrabDistanceX = 1.25f; //How far away can the grabber be from the grabbed's center before the tether breaks? A non-positive value means infinite range.
     [SerializeField, Range(0f,15f)] float maxGrabDistanceY = 1.25f;
     [SerializeField] float grabHoldOffset = 1.1f; 
-    [SerializeField, Range(0f, 1f)] float speedMultWhilePushing = 1f;
+    [SerializeField, Range(0f, 1f)] float speedMultWhilePushingWithoutGrab = 1f;
     [SerializeField, Range(0f, 1f)] float speedMultWhilePulling = 0.5f;
     [SerializeField] float grabDistanceCenter = 0.7f;
 
@@ -128,11 +129,12 @@ public class PlayerController : Entity
 
         if (IsTouchingWall == 1 && horizontalMovement > 0) horizontalMovement = 0; //prevent moving into walls (avoids wall cling)
         else if (IsTouchingWall == -1 && horizontalMovement < 0) horizontalMovement = 0;
-
         
+        //determine if touching slope and needs to get a speed boost to make it up
+        bool needsSlopeSpeedBoost = (IsTouchingSlope == 1 && horizontalMovement > 0) || (IsTouchingSlope == -1 && horizontalMovement < 0); 
 
         //if (horizontalMovement != 0) Debug.Log("HorizontalMovement = " + horizontalMovement + ", becoming " + (Vector2.right * horizontalMovement * moveSpeed * Time.deltaTime));
-        rb.linearVelocityX = horizontalMovement * moveSpeed * (isPushingSomething? speedMultWhilePushing : 1) * (isPullingSomething? speedMultWhilePulling : 1); //* Time.deltaTime;
+        rb.linearVelocityX = horizontalMovement * moveSpeed * ((isPushingSomething && !isGrabbingSomething)? speedMultWhilePushingWithoutGrab : 1) * (isPullingSomething? speedMultWhilePulling : 1) * (needsSlopeSpeedBoost? speedMultWhileOnSlope : 1) ; //* Time.deltaTime;
 
         animator.SetBool("IsGrounded", isAlmostGrounded);
         animator.SetFloat("XVel", Mathf.Abs(horizontalMovement));
@@ -143,8 +145,6 @@ public class PlayerController : Entity
         isPullingSomething = animator.GetBool("Pulling");
         isPushingSomething = horizontalMovement != 0 && !isPullingSomething && (pushableObjectAhead || isPushingGrabbedObject);
     
-        Debug.Log("IS PULLING? "+isPullingSomething+" IS PUSHING? "+isPushingSomething);
-
         animator.SetBool("Pushing", isPushingSomething); //as long as pulling isn't occurring, pushing can occur due to either of these two states.
 
         HandleFootsteps();
@@ -188,7 +188,7 @@ public class PlayerController : Entity
         {
             footstepTimer += Time.deltaTime;
 
-            if (footstepTimer >= footstepInterval * (isPullingSomething  ? (1f/speedMultWhilePulling) : 1f) * (isPushingSomething  ? (1f/speedMultWhilePushing) : 1f))
+            if (footstepTimer >= footstepInterval * (isPullingSomething  ? (1f/speedMultWhilePulling) : 1f) * (isPushingSomething  ? (1f/speedMultWhilePushingWithoutGrab) : 1f))
             {
                 PlayFootstepSound();
                 footstepTimer = 0f;
@@ -196,7 +196,7 @@ public class PlayerController : Entity
         }
         else
         {
-            footstepTimer = 0f;
+            footstepTimer = footstepInterval + 1f; //always start the first cycle with an instant footstep
         }
     }
     private void PlayFootstepSound()
@@ -270,7 +270,7 @@ public class PlayerController : Entity
     {
         LastJumpRequestTime = Time.time;
 
-        if (isGrabbingSomething) return;
+        if (isGrabbingSomething) Grab(); //Immediately drop grabbed object if you jump
 
         if (IsGrounded || (Time.time - LastGroundedTime < coyoteTime))
         {

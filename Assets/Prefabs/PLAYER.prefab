@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   gravityMult: 30
   floatJumpGravityMult: 0.25
+  gravityMultWhileGrounded: 2
   MaxVelocities: {x: 20, y: 20}
   spawnPoint: {x: 0, y: 0}
   moveSpeed: 7
@@ -105,10 +106,11 @@ MonoBehaviour:
   maxJumpHoldTime: 0.35
   coyoteTime: 0.1
   jumpBuffer: 0.1
-  maxGrabDistanceX: 1.25
+  speedMultWhileOnSlope: 1.2
+  maxGrabDistanceX: 1.5
   maxGrabDistanceY: 1.25
   grabHoldOffset: 0.8
-  speedMultWhilePushing: 1
+  speedMultWhilePushingWithoutGrab: 0.6
   speedMultWhilePulling: 0.5
   grabDistanceCenter: 0.6
   audioSource: {fileID: 0}
